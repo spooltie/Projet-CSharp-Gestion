@@ -88,6 +88,34 @@ namespace GSBIncidents
             conn.Close();
         }
 
+        /// AJOUTER UN TICKET 
+        /// <summary>
+        /// <param name="unTicket"></param>
+        public static void AjouteTicket(Ticket unTicket)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "INSERT INTO Ticket (Id_Ticket, Incident, Etat, Niveau_urgence, Suivi) "
+                   + "VALUES (@Id_Ticket, @Incident, @Etat, @Suivi, @Niveau_urgence)";
+
+            cmd.CommandText = reqSql;
+
+            cmd.Parameters.AddWithValue("@Id_Ticket", unTicket.ID_ticket);
+            cmd.Parameters.AddWithValue("@Incident", unTicket.Incident);
+            cmd.Parameters.AddWithValue("@Etat", unTicket.Etat);
+            cmd.Parameters.AddWithValue("@Suivi", unTicket.Suivi);
+            cmd.Parameters.AddWithValue("@Niveau_urgence", unTicket.Niveau_urgence);
+
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+
 
     }
 }

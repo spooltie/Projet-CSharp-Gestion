@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mysql.Data.MySqlClient;
 
 namespace GSBIncidents
 {
     internal class Personnel
     {
-        public int Id;
+        public int Id_personnel;
         public String Nom;
         public String Prenom;
         public int Date_Embauche;
@@ -17,9 +18,9 @@ namespace GSBIncidents
         public String MDP;
         public String Poste;
 
-        public Personnel(String id, String nom, String prenom, int date_embauche, String fonction, String login, String mdp, String poste)
+        public Personnel( int Id_personnel, String nom, String prenom, int date_embauche, String fonction, String login, String mdp, String poste)
         {
-            this.Id = id;
+            this.Id_personnel = Id_personnel;
             this.Nom = nom;
             this.Prenom = prenom;
             this.Date_Embauche = date_embauche;

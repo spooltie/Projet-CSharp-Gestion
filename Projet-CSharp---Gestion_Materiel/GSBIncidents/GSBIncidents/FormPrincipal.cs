@@ -9,7 +9,7 @@
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+            tabMenu.Hide;
         }
 
         #region Entête

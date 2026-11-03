@@ -21,7 +21,16 @@
 
         #endregion
 
-        #region Onglet Mes tickets
+        #region Onglet Connexion
+
+        private void btnSeConnecter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region Onglet Utilisateur
 
         private void btnEnvoyer_Click(object sender, EventArgs e)
         {
@@ -35,7 +44,7 @@
 
         #endregion
 
-        #region Onglet Matériel
+        #region Onglet Technicien
 
         private void btnAjouterMateriel_Click(object sender, EventArgs e)
         {
@@ -51,10 +60,6 @@
         {
 
         }
-
-        #endregion
-
-        #region Onglet Incidents
 
         private void lstIncidents_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -73,7 +78,7 @@
 
         #endregion
 
-        #region Onglet Personnel
+        #region Onglet Responsable
 
         private void rbTechnicien_CheckedChanged(object sender, EventArgs e)
         {

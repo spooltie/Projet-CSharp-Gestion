@@ -26,6 +26,5 @@ GSBIncidents/
 ├── GSBIncidents.sln
 └── GSBIncidents/
     ├── Program.cs
-    ├── FormConnexion.cs        # écran de connexion
-    └── FormPrincipal.cs        # fenêtre principale (onglets selon le profil)
+    └── FormPrincipal.cs        # fenêtre unique : onglets Connexion, Utilisateur, Technicien, Responsable
 ```

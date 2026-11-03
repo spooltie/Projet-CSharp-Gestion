@@ -6,7 +6,7 @@
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormConnexion());
+            Application.Run(new FormPrincipal());
         }
     }
 }

@@ -8,7 +8,7 @@ namespace GSBIncidents
 {
     internal class Personnel
     {
-        public String Id;
+        public int Id;
         public String Nom;
         public String Prenom;
         public int Date_Embauche;

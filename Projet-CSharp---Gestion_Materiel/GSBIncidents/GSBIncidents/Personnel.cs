@@ -17,7 +17,7 @@ namespace GSBIncidents
         public String MDP;
         public String Poste;
 
-        public Personnel(String id, String nom, String prenom, int date_embauche, String fonction, String login, String mdp, String poste)
+        public Personnel(int id, String nom, String prenom, int date_embauche, String fonction, String login, String mdp, String poste)
         {
             this.Id = id;
             this.Nom = nom;

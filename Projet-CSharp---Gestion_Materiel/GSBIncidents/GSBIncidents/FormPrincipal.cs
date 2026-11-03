@@ -9,7 +9,9 @@
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            tabMenu.Hide;
+            tabMenu.TabPages[1].Hide();
+            tabMenu.TabPages[2].Hide();
+            tabMenu.TabPages[3].Hide();
         }
 
         #region Entête

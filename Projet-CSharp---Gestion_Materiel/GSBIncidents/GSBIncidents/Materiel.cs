@@ -8,14 +8,14 @@ namespace GSBIncidents
 {
     internal class Materiel
     {
-        public int id_materiel;
-        public String processus;
-        public String disque;
-        public String logiciel;
-        public String suivis;
-        public String etat;
+        public int Id_materiel;
+        public String Processus;
+        public String Disque;
+        public String Logiciel;
+        public String Suivis;
+        public String Etat;
         
-        public Materiel(String Id_materiel, String Processus, String Disque, int Logiciel, String Suivis, String Etat)
+        public Materiel(int Id_materiel, String Processus, String Disque, String Logiciel, String Suivis, String Etat)
         {
             this.Id_materiel = Id_materiel;
             this.Processus = Processus;

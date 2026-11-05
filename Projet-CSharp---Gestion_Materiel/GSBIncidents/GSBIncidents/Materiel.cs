@@ -17,12 +17,12 @@ namespace GSBIncidents
         
         public Materiel(String Id_materiel, String Processus, String Disque, int Logiciel, String Suivis, String Etat)
         {
-            this.Id_materiel = Id_materiel;
-            this.Processus = Processus;
-            this.Disque = Disque;
-            this.Logiciel = Logiciel;
-            this.Suivis = Suivis;
-            this.Etat = Etat;
+            this.id_materiel = Id_materiel;
+            this.processus = Processus;
+            this.disque = Disque;
+            this.logiciel = Logiciel;
+            this.suivis = Suivis;
+            this.etat = Etat;
         }
 
     }

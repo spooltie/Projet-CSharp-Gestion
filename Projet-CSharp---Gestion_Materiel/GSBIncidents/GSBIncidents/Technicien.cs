@@ -15,9 +15,9 @@ namespace GSBIncidents
         
         public Technicien(String Id_tech, String Formation, String Competence)
         {
-            this.Id_materiel = Id_tech;
-            this.Processus = Formation;
-            this.Disque = Competence;
+            this.id_tech = Id_tech;
+            this.formation = Formation;
+            this.competence = Competence;
 
         }
 

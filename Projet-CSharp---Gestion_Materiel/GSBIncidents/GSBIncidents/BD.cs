@@ -189,6 +189,51 @@ namespace GSBIncidents
 
         }
 
+        /// SUPPRESSION UTILISATEUR 
+        /// <summary>
+        /// <param name="unUtilsateur"></param>
+        public static void DeleteUtlisateur(Utilisateur unUtilisateur)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "DELETE FROM Utilisateur WHERE id_user = @id_user";
+
+            cmd.CommandText = reqSql;
+            cmd.Parameters.AddWithValue("@id_user", unUtilisateur.Id_user);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        /// SUPPRESSION TECHNICIEN 
+        /// <summary>
+        /// <param name="unTechnicien"></param>
+        public static void DeleteTechnicien(Technicien unTechnicien)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "DELETE FROM Technicien WHERE id_tech = @id_tech";
+
+            cmd.CommandText = reqSql;
+            cmd.Parameters.AddWithValue("@id_tech", unTechnicien.id_tech);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+
+
+
 
     }
 

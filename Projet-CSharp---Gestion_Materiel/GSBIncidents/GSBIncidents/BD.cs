@@ -231,7 +231,39 @@ namespace GSBIncidents
 
         }
 
+        public static void UpdateUtilisateur(Utilisateur unUtilisateur)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
 
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "UPDATE Utilisateur SET nom_user WHERE id_user = @id_user";
+
+            cmd.CommandText = reqSql;
+            cmd.Parameters.AddWithValue("@id_user", unUtilisateur.Id_user);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void UpdateTechnicien(Technicien unTechnicien)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "UPDATE Technicien SET nom_tech WHERE id_tech = @id_tech";
+
+            cmd.CommandText = reqSql;
+            cmd.Parameters.AddWithValue("@id_tech", unTechnicien.id_tech);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
 
 
 

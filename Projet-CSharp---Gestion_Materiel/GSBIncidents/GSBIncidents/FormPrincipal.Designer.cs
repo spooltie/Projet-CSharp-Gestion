@@ -23,1457 +23,1578 @@
 
         private void InitializeComponent()
         {
-            this.panelEntete = new System.Windows.Forms.Panel();
-            this.lblApplication = new System.Windows.Forms.Label();
-            this.lblUtilisateur = new System.Windows.Forms.Label();
-            this.btnDeconnexion = new System.Windows.Forms.Button();
-            this.tabMenu = new System.Windows.Forms.TabControl();
-            this.tabConnexion = new System.Windows.Forms.TabPage();
-            this.tabUtilisateur = new System.Windows.Forms.TabPage();
-            this.tabTechnicien = new System.Windows.Forms.TabPage();
-            this.tabResponsable = new System.Windows.Forms.TabPage();
-            this.carteConnexion = new System.Windows.Forms.Panel();
-            this.lblTitre = new System.Windows.Forms.Label();
-            this.lblSousTitre = new System.Windows.Forms.Label();
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.lblMotDePasse = new System.Windows.Forms.Label();
-            this.txtMotDePasse = new System.Windows.Forms.TextBox();
-            this.lblPoste = new System.Windows.Forms.Label();
-            this.txtPoste = new System.Windows.Forms.TextBox();
-            this.chkResterConnecte = new System.Windows.Forms.CheckBox();
-            this.btnSeConnecter = new System.Windows.Forms.Button();
-            this.carteNouveau = new System.Windows.Forms.Panel();
-            this.lblNouveau = new System.Windows.Forms.Label();
-            this.lblMateriel = new System.Windows.Forms.Label();
-            this.cboMateriel = new System.Windows.Forms.ComboBox();
-            this.lblDeclUrgence = new System.Windows.Forms.Label();
-            this.panelDeclUrgence = new System.Windows.Forms.Panel();
-            this.rbDeclFaible = new System.Windows.Forms.RadioButton();
-            this.rbDeclMoyen = new System.Windows.Forms.RadioButton();
-            this.rbDeclCritique = new System.Windows.Forms.RadioButton();
-            this.lblIncident = new System.Windows.Forms.Label();
-            this.txtIncident = new System.Windows.Forms.TextBox();
-            this.btnEnvoyer = new System.Windows.Forms.Button();
-            this.btnAfficher = new System.Windows.Forms.Button();
-            this.carteTickets = new System.Windows.Forms.Panel();
-            this.lblMesTickets = new System.Windows.Forms.Label();
-            this.lstTickets = new System.Windows.Forms.ListBox();
-            this.carteMateriel = new System.Windows.Forms.Panel();
-            this.lblGestion = new System.Windows.Forms.Label();
-            this.lblAjout = new System.Windows.Forms.Label();
-            this.lblProcesseur = new System.Windows.Forms.Label();
-            this.txtProcesseur = new System.Windows.Forms.TextBox();
-            this.lblDisque = new System.Windows.Forms.Label();
-            this.txtDisque = new System.Windows.Forms.TextBox();
-            this.lblLogiciels = new System.Windows.Forms.Label();
-            this.txtLogiciels = new System.Windows.Forms.TextBox();
-            this.lblEtatMateriel = new System.Windows.Forms.Label();
-            this.cboEtatMateriel = new System.Windows.Forms.ComboBox();
-            this.lblSuiviMateriel = new System.Windows.Forms.Label();
-            this.txtSuiviMateriel = new System.Windows.Forms.TextBox();
-            this.btnAjouterMateriel = new System.Windows.Forms.Button();
-            this.separateurMateriel = new System.Windows.Forms.Panel();
-            this.lblConsultation = new System.Windows.Forms.Label();
-            this.cboConsultMateriel = new System.Windows.Forms.ComboBox();
-            this.btnAfficherMateriel = new System.Windows.Forms.Button();
-            this.panelDetail = new System.Windows.Forms.Panel();
-            this.lblDetailProcesseur = new System.Windows.Forms.Label();
-            this.lblValeurProcesseur = new System.Windows.Forms.Label();
-            this.lblDetailDisque = new System.Windows.Forms.Label();
-            this.lblValeurDisque = new System.Windows.Forms.Label();
-            this.lblDetailLogiciels = new System.Windows.Forms.Label();
-            this.lblValeurLogiciels = new System.Windows.Forms.Label();
-            this.lblDetailEtat = new System.Windows.Forms.Label();
-            this.lblValeurEtat = new System.Windows.Forms.Label();
-            this.lblDetailSuivi = new System.Windows.Forms.Label();
-            this.lblValeurSuivi = new System.Windows.Forms.Label();
-            this.lblSuppression = new System.Windows.Forms.Label();
-            this.cboSupprMateriel = new System.Windows.Forms.ComboBox();
-            this.btnSupprimerMateriel = new System.Windows.Forms.Button();
-            this.carteIncidents = new System.Windows.Forms.Panel();
-            this.lblIncidents = new System.Windows.Forms.Label();
-            this.lstIncidents = new System.Windows.Forms.ListBox();
-            this.btnPrendreEnCharge = new System.Windows.Forms.Button();
-            this.carteTicket = new System.Windows.Forms.Panel();
-            this.lblTicketSelection = new System.Windows.Forms.Label();
-            this.lblEtatActuel = new System.Windows.Forms.Label();
-            this.lblEtat = new System.Windows.Forms.Label();
-            this.panelEtat = new System.Windows.Forms.Panel();
-            this.rbEnCours = new System.Windows.Forms.RadioButton();
-            this.rbResolu = new System.Windows.Forms.RadioButton();
-            this.rbCloture = new System.Windows.Forms.RadioButton();
-            this.lblUrgence = new System.Windows.Forms.Label();
-            this.panelUrgence = new System.Windows.Forms.Panel();
-            this.rbFaible = new System.Windows.Forms.RadioButton();
-            this.rbMoyen = new System.Windows.Forms.RadioButton();
-            this.rbCritique = new System.Windows.Forms.RadioButton();
-            this.lblSuivi = new System.Windows.Forms.Label();
-            this.txtSuivi = new System.Windows.Forms.TextBox();
-            this.btnEnregistrer = new System.Windows.Forms.Button();
-            this.cartePersonnel = new System.Windows.Forms.Panel();
-            this.lblType = new System.Windows.Forms.Label();
-            this.panelType = new System.Windows.Forms.Panel();
-            this.rbTechnicien = new System.Windows.Forms.RadioButton();
-            this.rbUtilisateur = new System.Windows.Forms.RadioButton();
-            this.lblPersonne = new System.Windows.Forms.Label();
-            this.cboPersonne = new System.Windows.Forms.ComboBox();
-            this.separateurPersonnel = new System.Windows.Forms.Panel();
-            this.lblNom = new System.Windows.Forms.Label();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.lblPrenom = new System.Windows.Forms.Label();
-            this.txtPrenom = new System.Windows.Forms.TextBox();
-            this.lblDateEmbauche = new System.Windows.Forms.Label();
-            this.dtpDateEmbauche = new System.Windows.Forms.DateTimePicker();
-            this.lblPostePersonne = new System.Windows.Forms.Label();
-            this.txtPostePersonne = new System.Windows.Forms.TextBox();
-            this.lblLoginPersonne = new System.Windows.Forms.Label();
-            this.txtLoginPersonne = new System.Windows.Forms.TextBox();
-            this.lblMdpPersonne = new System.Windows.Forms.Label();
-            this.txtMdpPersonne = new System.Windows.Forms.TextBox();
-            this.panelTechnicien = new System.Windows.Forms.Panel();
-            this.lblFormation = new System.Windows.Forms.Label();
-            this.txtFormation = new System.Windows.Forms.TextBox();
-            this.lblCompetence = new System.Windows.Forms.Label();
-            this.txtCompetence = new System.Windows.Forms.TextBox();
-            this.btnAjouterPersonne = new System.Windows.Forms.Button();
-            this.btnModifierPersonne = new System.Windows.Forms.Button();
-            this.btnSupprimerPersonne = new System.Windows.Forms.Button();
-            this.panelEntete.SuspendLayout();
-            this.tabMenu.SuspendLayout();
-            this.tabConnexion.SuspendLayout();
-            this.tabUtilisateur.SuspendLayout();
-            this.tabTechnicien.SuspendLayout();
-            this.tabResponsable.SuspendLayout();
-            this.carteConnexion.SuspendLayout();
-            this.carteNouveau.SuspendLayout();
-            this.panelDeclUrgence.SuspendLayout();
-            this.carteTickets.SuspendLayout();
-            this.carteMateriel.SuspendLayout();
-            this.panelDetail.SuspendLayout();
-            this.carteIncidents.SuspendLayout();
-            this.carteTicket.SuspendLayout();
-            this.panelEtat.SuspendLayout();
-            this.panelUrgence.SuspendLayout();
-            this.cartePersonnel.SuspendLayout();
-            this.panelType.SuspendLayout();
-            this.panelTechnicien.SuspendLayout();
-            this.SuspendLayout();
-            //
+            panelEntete = new Panel();
+            lblApplication = new Label();
+            lblUtilisateur = new Label();
+            btnDeconnexion = new Button();
+            tabMenu = new TabControl();
+            tabConnexion = new TabPage();
+            carteConnexion = new Panel();
+            lblTitre = new Label();
+            lblSousTitre = new Label();
+            lblLogin = new Label();
+            txtLogin = new TextBox();
+            lblMotDePasse = new Label();
+            txtMotDePasse = new TextBox();
+            lblPoste = new Label();
+            txtPoste = new TextBox();
+            chkResterConnecte = new CheckBox();
+            btnSeConnecter = new Button();
+            tabUtilisateur = new TabPage();
+            carteNouveau = new Panel();
+            lblNouveau = new Label();
+            lblMateriel = new Label();
+            cboMateriel = new ComboBox();
+            lblDeclUrgence = new Label();
+            panelDeclUrgence = new Panel();
+            rbDeclFaible = new RadioButton();
+            rbDeclMoyen = new RadioButton();
+            rbDeclCritique = new RadioButton();
+            lblIncident = new Label();
+            txtIncident = new TextBox();
+            btnEnvoyer = new Button();
+            btnAfficher = new Button();
+            carteTickets = new Panel();
+            lblMesTickets = new Label();
+            lstTickets = new ListBox();
+            tabTechnicien = new TabPage();
+            carteMateriel = new Panel();
+            lblGestion = new Label();
+            lblAjout = new Label();
+            lblProcesseur = new Label();
+            txtProcesseur = new TextBox();
+            lblDisque = new Label();
+            txtDisque = new TextBox();
+            lblLogiciels = new Label();
+            txtLogiciels = new TextBox();
+            lblEtatMateriel = new Label();
+            cboEtatMateriel = new ComboBox();
+            lblSuiviMateriel = new Label();
+            txtSuiviMateriel = new TextBox();
+            btnAjouterMateriel = new Button();
+            separateurMateriel = new Panel();
+            lblConsultation = new Label();
+            cboConsultMateriel = new ComboBox();
+            btnAfficherMateriel = new Button();
+            panelDetail = new Panel();
+            lblDetailProcesseur = new Label();
+            lblValeurProcesseur = new Label();
+            lblDetailDisque = new Label();
+            lblValeurDisque = new Label();
+            lblDetailLogiciels = new Label();
+            lblValeurLogiciels = new Label();
+            lblDetailEtat = new Label();
+            lblValeurEtat = new Label();
+            lblDetailSuivi = new Label();
+            lblValeurSuivi = new Label();
+            lblSuppression = new Label();
+            cboSupprMateriel = new ComboBox();
+            btnSupprimerMateriel = new Button();
+            carteIncidents = new Panel();
+            lblIncidents = new Label();
+            lstIncidents = new ListBox();
+            btnPrendreEnCharge = new Button();
+            carteTicket = new Panel();
+            lblTicketSelection = new Label();
+            lblEtatActuel = new Label();
+            lblEtat = new Label();
+            panelEtat = new Panel();
+            rbEnCours = new RadioButton();
+            rbResolu = new RadioButton();
+            rbCloture = new RadioButton();
+            lblUrgence = new Label();
+            panelUrgence = new Panel();
+            rbFaible = new RadioButton();
+            rbMoyen = new RadioButton();
+            rbCritique = new RadioButton();
+            lblSuivi = new Label();
+            txtSuivi = new TextBox();
+            btnEnregistrer = new Button();
+            tabResponsable = new TabPage();
+            cartePersonnel = new Panel();
+            lblType = new Label();
+            panelType = new Panel();
+            rbTechnicien = new RadioButton();
+            rbUtilisateur = new RadioButton();
+            lblPersonne = new Label();
+            cboPersonne = new ComboBox();
+            separateurPersonnel = new Panel();
+            lblNom = new Label();
+            txtNom = new TextBox();
+            lblPrenom = new Label();
+            txtPrenom = new TextBox();
+            lblDateEmbauche = new Label();
+            dtpDateEmbauche = new DateTimePicker();
+            lblPostePersonne = new Label();
+            txtPostePersonne = new TextBox();
+            lblLoginPersonne = new Label();
+            txtLoginPersonne = new TextBox();
+            lblMdpPersonne = new Label();
+            txtMdpPersonne = new TextBox();
+            panelTechnicien = new Panel();
+            lblFormation = new Label();
+            txtFormation = new TextBox();
+            lblCompetence = new Label();
+            txtCompetence = new TextBox();
+            btnAjouterPersonne = new Button();
+            btnModifierPersonne = new Button();
+            btnSupprimerPersonne = new Button();
+            panelEntete.SuspendLayout();
+            tabMenu.SuspendLayout();
+            tabConnexion.SuspendLayout();
+            carteConnexion.SuspendLayout();
+            tabUtilisateur.SuspendLayout();
+            carteNouveau.SuspendLayout();
+            panelDeclUrgence.SuspendLayout();
+            carteTickets.SuspendLayout();
+            tabTechnicien.SuspendLayout();
+            carteMateriel.SuspendLayout();
+            panelDetail.SuspendLayout();
+            carteIncidents.SuspendLayout();
+            carteTicket.SuspendLayout();
+            panelEtat.SuspendLayout();
+            panelUrgence.SuspendLayout();
+            tabResponsable.SuspendLayout();
+            cartePersonnel.SuspendLayout();
+            panelType.SuspendLayout();
+            panelTechnicien.SuspendLayout();
+            SuspendLayout();
+            // 
             // panelEntete
-            //
-            this.panelEntete.Controls.Add(this.lblApplication);
-            this.panelEntete.Controls.Add(this.lblUtilisateur);
-            this.panelEntete.Controls.Add(this.btnDeconnexion);
-            this.panelEntete.BackColor = System.Drawing.Color.White;
-            this.panelEntete.Location = new System.Drawing.Point(0, 0);
-            this.panelEntete.Name = "panelEntete";
-            this.panelEntete.Size = new System.Drawing.Size(1100, 56);
-            //
+            // 
+            panelEntete.BackColor = Color.White;
+            panelEntete.Controls.Add(lblApplication);
+            panelEntete.Controls.Add(lblUtilisateur);
+            panelEntete.Controls.Add(btnDeconnexion);
+            panelEntete.Location = new Point(0, 0);
+            panelEntete.Name = "panelEntete";
+            panelEntete.Size = new Size(1100, 56);
+            panelEntete.TabIndex = 0;
+            // 
             // lblApplication
-            //
-            this.lblApplication.AutoSize = true;
-            this.lblApplication.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblApplication.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblApplication.Location = new System.Drawing.Point(24, 16);
-            this.lblApplication.Name = "lblApplication";
-            this.lblApplication.Text = "Support informatique";
-            //
+            // 
+            lblApplication.AutoSize = true;
+            lblApplication.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblApplication.ForeColor = Color.FromArgb(31, 41, 55);
+            lblApplication.Location = new Point(24, 16);
+            lblApplication.Name = "lblApplication";
+            lblApplication.Size = new Size(218, 28);
+            lblApplication.TabIndex = 0;
+            lblApplication.Text = "Support informatique";
+            // 
             // lblUtilisateur
-            //
-            this.lblUtilisateur.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblUtilisateur.ForeColor = System.Drawing.Color.FromArgb(107, 114, 128);
-            this.lblUtilisateur.Location = new System.Drawing.Point(724, 16);
-            this.lblUtilisateur.Name = "lblUtilisateur";
-            this.lblUtilisateur.Size = new System.Drawing.Size(200, 24);
-            this.lblUtilisateur.Text = "Nom Prénom";
-            this.lblUtilisateur.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
+            lblUtilisateur.Font = new Font("Segoe UI", 10F);
+            lblUtilisateur.ForeColor = Color.FromArgb(107, 114, 128);
+            lblUtilisateur.Location = new Point(724, 16);
+            lblUtilisateur.Name = "lblUtilisateur";
+            lblUtilisateur.Size = new Size(200, 24);
+            lblUtilisateur.TabIndex = 1;
+            lblUtilisateur.Text = "Nom Prénom";
+            lblUtilisateur.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // btnDeconnexion
-            //
-            this.btnDeconnexion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(209, 213, 219);
-            this.btnDeconnexion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(243, 244, 246);
-            this.btnDeconnexion.BackColor = System.Drawing.Color.White;
-            this.btnDeconnexion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeconnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeconnexion.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnDeconnexion.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.btnDeconnexion.Location = new System.Drawing.Point(936, 12);
-            this.btnDeconnexion.Name = "btnDeconnexion";
-            this.btnDeconnexion.Size = new System.Drawing.Size(140, 32);
-            this.btnDeconnexion.TabIndex = 0;
-            this.btnDeconnexion.Text = "Se déconnecter";
-            this.btnDeconnexion.UseVisualStyleBackColor = false;
-            this.btnDeconnexion.Click += new System.EventHandler(this.btnDeconnexion_Click);
-            //
+            // 
+            btnDeconnexion.BackColor = Color.White;
+            btnDeconnexion.Cursor = Cursors.Hand;
+            btnDeconnexion.FlatAppearance.BorderColor = Color.FromArgb(209, 213, 219);
+            btnDeconnexion.FlatAppearance.MouseOverBackColor = Color.FromArgb(243, 244, 246);
+            btnDeconnexion.FlatStyle = FlatStyle.Flat;
+            btnDeconnexion.Font = new Font("Segoe UI Semibold", 10F);
+            btnDeconnexion.ForeColor = Color.FromArgb(31, 41, 55);
+            btnDeconnexion.Location = new Point(936, 12);
+            btnDeconnexion.Name = "btnDeconnexion";
+            btnDeconnexion.Size = new Size(140, 32);
+            btnDeconnexion.TabIndex = 0;
+            btnDeconnexion.Text = "Se déconnecter";
+            btnDeconnexion.UseVisualStyleBackColor = false;
+            btnDeconnexion.Click += btnDeconnexion_Click;
+            // 
             // tabMenu
-            //
-            this.tabMenu.Controls.Add(this.tabConnexion);
-            this.tabMenu.Controls.Add(this.tabUtilisateur);
-            this.tabMenu.Controls.Add(this.tabTechnicien);
-            this.tabMenu.Controls.Add(this.tabResponsable);
-            this.tabMenu.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.tabMenu.Location = new System.Drawing.Point(16, 72);
-            this.tabMenu.Name = "tabMenu";
-            this.tabMenu.Padding = new System.Drawing.Point(16, 6);
-            this.tabMenu.SelectedIndex = 0;
-            this.tabMenu.Size = new System.Drawing.Size(1068, 572);
-            this.tabMenu.TabIndex = 1;
-            //
+            // 
+            tabMenu.Controls.Add(tabConnexion);
+            tabMenu.Controls.Add(tabUtilisateur);
+            tabMenu.Controls.Add(tabTechnicien);
+            tabMenu.Controls.Add(tabResponsable);
+            tabMenu.Font = new Font("Segoe UI", 10F);
+            tabMenu.Location = new Point(16, 72);
+            tabMenu.Name = "tabMenu";
+            tabMenu.Padding = new Point(16, 6);
+            tabMenu.SelectedIndex = 0;
+            tabMenu.Size = new Size(1068, 572);
+            tabMenu.TabIndex = 1;
+            // 
             // tabConnexion
-            //
-            this.tabConnexion.Controls.Add(this.carteConnexion);
-            this.tabConnexion.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
-            this.tabConnexion.Location = new System.Drawing.Point(4, 34);
-            this.tabConnexion.Name = "tabConnexion";
-            this.tabConnexion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConnexion.Size = new System.Drawing.Size(1060, 534);
-            this.tabConnexion.TabIndex = 2;
-            this.tabConnexion.Text = "Connexion";
-            this.tabConnexion.UseVisualStyleBackColor = false;
-            //
-            // tabUtilisateur
-            //
-            this.tabUtilisateur.Controls.Add(this.carteNouveau);
-            this.tabUtilisateur.Controls.Add(this.carteTickets);
-            this.tabUtilisateur.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
-            this.tabUtilisateur.Location = new System.Drawing.Point(4, 34);
-            this.tabUtilisateur.Name = "tabUtilisateur";
-            this.tabUtilisateur.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUtilisateur.Size = new System.Drawing.Size(1060, 534);
-            this.tabUtilisateur.TabIndex = 3;
-            this.tabUtilisateur.Text = "Utilisateur";
-            this.tabUtilisateur.UseVisualStyleBackColor = false;
-            //
-            // tabTechnicien
-            //
-            this.tabTechnicien.Controls.Add(this.carteMateriel);
-            this.tabTechnicien.Controls.Add(this.carteIncidents);
-            this.tabTechnicien.Controls.Add(this.carteTicket);
-            this.tabTechnicien.AutoScroll = true;
-            this.tabTechnicien.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
-            this.tabTechnicien.Location = new System.Drawing.Point(4, 34);
-            this.tabTechnicien.Name = "tabTechnicien";
-            this.tabTechnicien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTechnicien.Size = new System.Drawing.Size(1060, 534);
-            this.tabTechnicien.TabIndex = 4;
-            this.tabTechnicien.Text = "Technicien";
-            this.tabTechnicien.UseVisualStyleBackColor = false;
-            //
-            // tabResponsable
-            //
-            this.tabResponsable.Controls.Add(this.cartePersonnel);
-            this.tabResponsable.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
-            this.tabResponsable.Location = new System.Drawing.Point(4, 34);
-            this.tabResponsable.Name = "tabResponsable";
-            this.tabResponsable.Padding = new System.Windows.Forms.Padding(3);
-            this.tabResponsable.Size = new System.Drawing.Size(1060, 534);
-            this.tabResponsable.TabIndex = 5;
-            this.tabResponsable.Text = "Responsable";
-            this.tabResponsable.UseVisualStyleBackColor = false;
-            //
+            // 
+            tabConnexion.BackColor = Color.FromArgb(243, 244, 246);
+            tabConnexion.Controls.Add(carteConnexion);
+            tabConnexion.Location = new Point(4, 38);
+            tabConnexion.Name = "tabConnexion";
+            tabConnexion.Padding = new Padding(3);
+            tabConnexion.Size = new Size(1060, 530);
+            tabConnexion.TabIndex = 2;
+            tabConnexion.Text = "Connexion";
+            // 
             // carteConnexion
-            //
-            this.carteConnexion.Controls.Add(this.lblTitre);
-            this.carteConnexion.Controls.Add(this.lblSousTitre);
-            this.carteConnexion.Controls.Add(this.lblLogin);
-            this.carteConnexion.Controls.Add(this.txtLogin);
-            this.carteConnexion.Controls.Add(this.lblMotDePasse);
-            this.carteConnexion.Controls.Add(this.txtMotDePasse);
-            this.carteConnexion.Controls.Add(this.lblPoste);
-            this.carteConnexion.Controls.Add(this.txtPoste);
-            this.carteConnexion.Controls.Add(this.chkResterConnecte);
-            this.carteConnexion.Controls.Add(this.btnSeConnecter);
-            this.carteConnexion.BackColor = System.Drawing.Color.White;
-            this.carteConnexion.Location = new System.Drawing.Point(350, 55);
-            this.carteConnexion.Name = "carteConnexion";
-            this.carteConnexion.Size = new System.Drawing.Size(360, 424);
-            //
+            // 
+            carteConnexion.BackColor = Color.White;
+            carteConnexion.Controls.Add(lblTitre);
+            carteConnexion.Controls.Add(lblSousTitre);
+            carteConnexion.Controls.Add(lblLogin);
+            carteConnexion.Controls.Add(txtLogin);
+            carteConnexion.Controls.Add(lblMotDePasse);
+            carteConnexion.Controls.Add(txtMotDePasse);
+            carteConnexion.Controls.Add(lblPoste);
+            carteConnexion.Controls.Add(txtPoste);
+            carteConnexion.Controls.Add(chkResterConnecte);
+            carteConnexion.Controls.Add(btnSeConnecter);
+            carteConnexion.Location = new Point(350, 55);
+            carteConnexion.Name = "carteConnexion";
+            carteConnexion.Size = new Size(360, 424);
+            carteConnexion.TabIndex = 0;
+            // 
             // lblTitre
-            //
-            this.lblTitre.AutoSize = true;
-            this.lblTitre.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.lblTitre.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblTitre.Location = new System.Drawing.Point(30, 30);
-            this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Text = "Connexion";
-            //
+            // 
+            lblTitre.AutoSize = true;
+            lblTitre.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblTitre.ForeColor = Color.FromArgb(31, 41, 55);
+            lblTitre.Location = new Point(30, 30);
+            lblTitre.Name = "lblTitre";
+            lblTitre.Size = new Size(193, 46);
+            lblTitre.TabIndex = 0;
+            lblTitre.Text = "Connexion";
+            // 
             // lblSousTitre
-            //
-            this.lblSousTitre.AutoSize = true;
-            this.lblSousTitre.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblSousTitre.ForeColor = System.Drawing.Color.FromArgb(107, 114, 128);
-            this.lblSousTitre.Location = new System.Drawing.Point(33, 74);
-            this.lblSousTitre.Name = "lblSousTitre";
-            this.lblSousTitre.Text = "Connectez-vous pour accéder à votre compte.";
-            //
+            // 
+            lblSousTitre.AutoSize = true;
+            lblSousTitre.Font = new Font("Segoe UI", 9.75F);
+            lblSousTitre.ForeColor = Color.FromArgb(107, 114, 128);
+            lblSousTitre.Location = new Point(33, 74);
+            lblSousTitre.Name = "lblSousTitre";
+            lblSousTitre.Size = new Size(363, 23);
+            lblSousTitre.TabIndex = 1;
+            lblSousTitre.Text = "Connectez-vous pour accéder à votre compte.";
+            // 
             // lblLogin
-            //
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblLogin.Location = new System.Drawing.Point(32, 120);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Text = "Login";
-            //
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblLogin.ForeColor = Color.FromArgb(31, 41, 55);
+            lblLogin.Location = new Point(32, 120);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(52, 23);
+            lblLogin.TabIndex = 2;
+            lblLogin.Text = "Login";
+            // 
             // txtLogin
-            //
-            this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLogin.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtLogin.Location = new System.Drawing.Point(32, 142);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(296, 26);
-            this.txtLogin.TabIndex = 0;
-            //
+            // 
+            txtLogin.BorderStyle = BorderStyle.FixedSingle;
+            txtLogin.Font = new Font("Segoe UI", 10.5F);
+            txtLogin.Location = new Point(32, 142);
+            txtLogin.Name = "txtLogin";
+            txtLogin.Size = new Size(296, 31);
+            txtLogin.TabIndex = 0;
+            // 
             // lblMotDePasse
-            //
-            this.lblMotDePasse.AutoSize = true;
-            this.lblMotDePasse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblMotDePasse.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblMotDePasse.Location = new System.Drawing.Point(32, 184);
-            this.lblMotDePasse.Name = "lblMotDePasse";
-            this.lblMotDePasse.Text = "Mot de passe";
-            //
+            // 
+            lblMotDePasse.AutoSize = true;
+            lblMotDePasse.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblMotDePasse.ForeColor = Color.FromArgb(31, 41, 55);
+            lblMotDePasse.Location = new Point(32, 184);
+            lblMotDePasse.Name = "lblMotDePasse";
+            lblMotDePasse.Size = new Size(113, 23);
+            lblMotDePasse.TabIndex = 3;
+            lblMotDePasse.Text = "Mot de passe";
+            // 
             // txtMotDePasse
-            //
-            this.txtMotDePasse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMotDePasse.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtMotDePasse.Location = new System.Drawing.Point(32, 206);
-            this.txtMotDePasse.Name = "txtMotDePasse";
-            this.txtMotDePasse.Size = new System.Drawing.Size(296, 26);
-            this.txtMotDePasse.TabIndex = 1;
-            this.txtMotDePasse.UseSystemPasswordChar = true;
-            //
+            // 
+            txtMotDePasse.BorderStyle = BorderStyle.FixedSingle;
+            txtMotDePasse.Font = new Font("Segoe UI", 10.5F);
+            txtMotDePasse.Location = new Point(32, 206);
+            txtMotDePasse.Name = "txtMotDePasse";
+            txtMotDePasse.Size = new Size(296, 31);
+            txtMotDePasse.TabIndex = 1;
+            txtMotDePasse.UseSystemPasswordChar = true;
+            // 
             // lblPoste
-            //
-            this.lblPoste.AutoSize = true;
-            this.lblPoste.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblPoste.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblPoste.Location = new System.Drawing.Point(32, 248);
-            this.lblPoste.Name = "lblPoste";
-            this.lblPoste.Text = "Poste";
-            //
+            // 
+            lblPoste.AutoSize = true;
+            lblPoste.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblPoste.ForeColor = Color.FromArgb(31, 41, 55);
+            lblPoste.Location = new Point(32, 248);
+            lblPoste.Name = "lblPoste";
+            lblPoste.Size = new Size(51, 23);
+            lblPoste.TabIndex = 4;
+            lblPoste.Text = "Poste";
+            // 
             // txtPoste
-            //
-            this.txtPoste.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPoste.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtPoste.Location = new System.Drawing.Point(32, 270);
-            this.txtPoste.Name = "txtPoste";
-            this.txtPoste.Size = new System.Drawing.Size(296, 26);
-            this.txtPoste.TabIndex = 2;
-            //
+            // 
+            txtPoste.BorderStyle = BorderStyle.FixedSingle;
+            txtPoste.Font = new Font("Segoe UI", 10.5F);
+            txtPoste.Location = new Point(32, 270);
+            txtPoste.Name = "txtPoste";
+            txtPoste.Size = new Size(296, 31);
+            txtPoste.TabIndex = 2;
+            // 
             // chkResterConnecte
-            //
-            this.chkResterConnecte.AutoSize = true;
-            this.chkResterConnecte.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.chkResterConnecte.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.chkResterConnecte.Location = new System.Drawing.Point(32, 312);
-            this.chkResterConnecte.Name = "chkResterConnecte";
-            this.chkResterConnecte.TabIndex = 3;
-            this.chkResterConnecte.Text = "Rester connecté";
-            //
+            // 
+            chkResterConnecte.AutoSize = true;
+            chkResterConnecte.Font = new Font("Segoe UI", 9.75F);
+            chkResterConnecte.ForeColor = Color.FromArgb(31, 41, 55);
+            chkResterConnecte.Location = new Point(32, 312);
+            chkResterConnecte.Name = "chkResterConnecte";
+            chkResterConnecte.Size = new Size(154, 27);
+            chkResterConnecte.TabIndex = 3;
+            chkResterConnecte.Text = "Rester connecté";
+            // 
             // btnSeConnecter
-            //
-            this.btnSeConnecter.FlatAppearance.BorderSize = 0;
-            this.btnSeConnecter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(27, 74, 184);
-            this.btnSeConnecter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(31, 88, 214);
-            this.btnSeConnecter.BackColor = System.Drawing.Color.FromArgb(46, 108, 240);
-            this.btnSeConnecter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeConnecter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeConnecter.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnSeConnecter.ForeColor = System.Drawing.Color.White;
-            this.btnSeConnecter.Location = new System.Drawing.Point(32, 352);
-            this.btnSeConnecter.Name = "btnSeConnecter";
-            this.btnSeConnecter.Size = new System.Drawing.Size(296, 40);
-            this.btnSeConnecter.TabIndex = 4;
-            this.btnSeConnecter.Text = "Se connecter";
-            this.btnSeConnecter.UseVisualStyleBackColor = false;
-            this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
-            //
+            // 
+            btnSeConnecter.BackColor = Color.FromArgb(46, 108, 240);
+            btnSeConnecter.Cursor = Cursors.Hand;
+            btnSeConnecter.FlatAppearance.BorderSize = 0;
+            btnSeConnecter.FlatAppearance.MouseDownBackColor = Color.FromArgb(27, 74, 184);
+            btnSeConnecter.FlatAppearance.MouseOverBackColor = Color.FromArgb(31, 88, 214);
+            btnSeConnecter.FlatStyle = FlatStyle.Flat;
+            btnSeConnecter.Font = new Font("Segoe UI Semibold", 10F);
+            btnSeConnecter.ForeColor = Color.White;
+            btnSeConnecter.Location = new Point(32, 352);
+            btnSeConnecter.Name = "btnSeConnecter";
+            btnSeConnecter.Size = new Size(296, 40);
+            btnSeConnecter.TabIndex = 4;
+            btnSeConnecter.Text = "Se connecter";
+            btnSeConnecter.UseVisualStyleBackColor = false;
+            btnSeConnecter.Click += btnSeConnecter_Click;
+            // 
+            // tabUtilisateur
+            // 
+            tabUtilisateur.BackColor = Color.FromArgb(243, 244, 246);
+            tabUtilisateur.Controls.Add(carteNouveau);
+            tabUtilisateur.Controls.Add(carteTickets);
+            tabUtilisateur.Location = new Point(4, 38);
+            tabUtilisateur.Name = "tabUtilisateur";
+            tabUtilisateur.Padding = new Padding(3);
+            tabUtilisateur.Size = new Size(1060, 530);
+            tabUtilisateur.TabIndex = 3;
+            tabUtilisateur.Text = "Utilisateur";
+            // 
             // carteNouveau
-            //
-            this.carteNouveau.Controls.Add(this.lblNouveau);
-            this.carteNouveau.Controls.Add(this.lblMateriel);
-            this.carteNouveau.Controls.Add(this.cboMateriel);
-            this.carteNouveau.Controls.Add(this.lblDeclUrgence);
-            this.carteNouveau.Controls.Add(this.panelDeclUrgence);
-            this.carteNouveau.Controls.Add(this.lblIncident);
-            this.carteNouveau.Controls.Add(this.txtIncident);
-            this.carteNouveau.Controls.Add(this.btnEnvoyer);
-            this.carteNouveau.Controls.Add(this.btnAfficher);
-            this.carteNouveau.BackColor = System.Drawing.Color.White;
-            this.carteNouveau.Location = new System.Drawing.Point(16, 16);
-            this.carteNouveau.Name = "carteNouveau";
-            this.carteNouveau.Size = new System.Drawing.Size(420, 456);
-            //
+            // 
+            carteNouveau.BackColor = Color.White;
+            carteNouveau.Controls.Add(lblNouveau);
+            carteNouveau.Controls.Add(lblMateriel);
+            carteNouveau.Controls.Add(cboMateriel);
+            carteNouveau.Controls.Add(lblDeclUrgence);
+            carteNouveau.Controls.Add(panelDeclUrgence);
+            carteNouveau.Controls.Add(lblIncident);
+            carteNouveau.Controls.Add(txtIncident);
+            carteNouveau.Controls.Add(btnEnvoyer);
+            carteNouveau.Controls.Add(btnAfficher);
+            carteNouveau.Location = new Point(16, 16);
+            carteNouveau.Name = "carteNouveau";
+            carteNouveau.Size = new Size(420, 456);
+            carteNouveau.TabIndex = 0;
+            // 
             // lblNouveau
-            //
-            this.lblNouveau.AutoSize = true;
-            this.lblNouveau.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblNouveau.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblNouveau.Location = new System.Drawing.Point(22, 20);
-            this.lblNouveau.Name = "lblNouveau";
-            this.lblNouveau.Text = "Nouveau ticket";
-            //
+            // 
+            lblNouveau.AutoSize = true;
+            lblNouveau.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblNouveau.ForeColor = Color.FromArgb(31, 41, 55);
+            lblNouveau.Location = new Point(22, 20);
+            lblNouveau.Name = "lblNouveau";
+            lblNouveau.Size = new Size(187, 32);
+            lblNouveau.TabIndex = 0;
+            lblNouveau.Text = "Nouveau ticket";
+            // 
             // lblMateriel
-            //
-            this.lblMateriel.AutoSize = true;
-            this.lblMateriel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblMateriel.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblMateriel.Location = new System.Drawing.Point(24, 68);
-            this.lblMateriel.Name = "lblMateriel";
-            this.lblMateriel.Text = "Matériel concerné";
-            //
+            // 
+            lblMateriel.AutoSize = true;
+            lblMateriel.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblMateriel.ForeColor = Color.FromArgb(31, 41, 55);
+            lblMateriel.Location = new Point(24, 68);
+            lblMateriel.Name = "lblMateriel";
+            lblMateriel.Size = new Size(148, 23);
+            lblMateriel.TabIndex = 1;
+            lblMateriel.Text = "Matériel concerné";
+            // 
             // cboMateriel
-            //
-            this.cboMateriel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMateriel.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.cboMateriel.Location = new System.Drawing.Point(24, 90);
-            this.cboMateriel.Name = "cboMateriel";
-            this.cboMateriel.Size = new System.Drawing.Size(372, 27);
-            this.cboMateriel.TabIndex = 6;
-            //
+            // 
+            cboMateriel.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboMateriel.Font = new Font("Segoe UI", 10.5F);
+            cboMateriel.Location = new Point(24, 90);
+            cboMateriel.Name = "cboMateriel";
+            cboMateriel.Size = new Size(372, 31);
+            cboMateriel.TabIndex = 6;
+            // 
             // lblDeclUrgence
-            //
-            this.lblDeclUrgence.AutoSize = true;
-            this.lblDeclUrgence.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblDeclUrgence.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblDeclUrgence.Location = new System.Drawing.Point(24, 132);
-            this.lblDeclUrgence.Name = "lblDeclUrgence";
-            this.lblDeclUrgence.Text = "Niveau d'urgence";
-            //
+            // 
+            lblDeclUrgence.AutoSize = true;
+            lblDeclUrgence.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblDeclUrgence.ForeColor = Color.FromArgb(31, 41, 55);
+            lblDeclUrgence.Location = new Point(24, 132);
+            lblDeclUrgence.Name = "lblDeclUrgence";
+            lblDeclUrgence.Size = new Size(145, 23);
+            lblDeclUrgence.TabIndex = 7;
+            lblDeclUrgence.Text = "Niveau d'urgence";
+            // 
             // panelDeclUrgence
-            //
-            this.panelDeclUrgence.Controls.Add(this.rbDeclFaible);
-            this.panelDeclUrgence.Controls.Add(this.rbDeclMoyen);
-            this.panelDeclUrgence.Controls.Add(this.rbDeclCritique);
-            this.panelDeclUrgence.Location = new System.Drawing.Point(24, 154);
-            this.panelDeclUrgence.Name = "panelDeclUrgence";
-            this.panelDeclUrgence.Size = new System.Drawing.Size(372, 28);
-            this.panelDeclUrgence.TabIndex = 7;
-            //
+            // 
+            panelDeclUrgence.Controls.Add(rbDeclFaible);
+            panelDeclUrgence.Controls.Add(rbDeclMoyen);
+            panelDeclUrgence.Controls.Add(rbDeclCritique);
+            panelDeclUrgence.Location = new Point(24, 154);
+            panelDeclUrgence.Name = "panelDeclUrgence";
+            panelDeclUrgence.Size = new Size(372, 28);
+            panelDeclUrgence.TabIndex = 7;
+            // 
             // rbDeclFaible
-            //
-            this.rbDeclFaible.AutoSize = true;
-            this.rbDeclFaible.Checked = true;
-            this.rbDeclFaible.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbDeclFaible.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.rbDeclFaible.Location = new System.Drawing.Point(0, 3);
-            this.rbDeclFaible.Name = "rbDeclFaible";
-            this.rbDeclFaible.TabStop = true;
-            this.rbDeclFaible.Text = "Faible";
-            //
+            // 
+            rbDeclFaible.AutoSize = true;
+            rbDeclFaible.Checked = true;
+            rbDeclFaible.Font = new Font("Segoe UI", 10F);
+            rbDeclFaible.ForeColor = Color.FromArgb(31, 41, 55);
+            rbDeclFaible.Location = new Point(0, 3);
+            rbDeclFaible.Name = "rbDeclFaible";
+            rbDeclFaible.Size = new Size(74, 27);
+            rbDeclFaible.TabIndex = 0;
+            rbDeclFaible.TabStop = true;
+            rbDeclFaible.Text = "Faible";
+            // 
             // rbDeclMoyen
-            //
-            this.rbDeclMoyen.AutoSize = true;
-            this.rbDeclMoyen.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbDeclMoyen.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.rbDeclMoyen.Location = new System.Drawing.Point(110, 3);
-            this.rbDeclMoyen.Name = "rbDeclMoyen";
-            this.rbDeclMoyen.Text = "Moyen";
-            //
+            // 
+            rbDeclMoyen.AutoSize = true;
+            rbDeclMoyen.Font = new Font("Segoe UI", 10F);
+            rbDeclMoyen.ForeColor = Color.FromArgb(31, 41, 55);
+            rbDeclMoyen.Location = new Point(110, 3);
+            rbDeclMoyen.Name = "rbDeclMoyen";
+            rbDeclMoyen.Size = new Size(83, 27);
+            rbDeclMoyen.TabIndex = 1;
+            rbDeclMoyen.Text = "Moyen";
+            // 
             // rbDeclCritique
-            //
-            this.rbDeclCritique.AutoSize = true;
-            this.rbDeclCritique.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbDeclCritique.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.rbDeclCritique.Location = new System.Drawing.Point(220, 3);
-            this.rbDeclCritique.Name = "rbDeclCritique";
-            this.rbDeclCritique.Text = "Critique";
-            //
+            // 
+            rbDeclCritique.AutoSize = true;
+            rbDeclCritique.Font = new Font("Segoe UI", 10F);
+            rbDeclCritique.ForeColor = Color.FromArgb(31, 41, 55);
+            rbDeclCritique.Location = new Point(220, 3);
+            rbDeclCritique.Name = "rbDeclCritique";
+            rbDeclCritique.Size = new Size(91, 27);
+            rbDeclCritique.TabIndex = 2;
+            rbDeclCritique.Text = "Critique";
+            // 
             // lblIncident
-            //
-            this.lblIncident.AutoSize = true;
-            this.lblIncident.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblIncident.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblIncident.Location = new System.Drawing.Point(24, 196);
-            this.lblIncident.Name = "lblIncident";
-            this.lblIncident.Text = "Description de l'incident";
-            //
+            // 
+            lblIncident.AutoSize = true;
+            lblIncident.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblIncident.ForeColor = Color.FromArgb(31, 41, 55);
+            lblIncident.Location = new Point(24, 196);
+            lblIncident.Name = "lblIncident";
+            lblIncident.Size = new Size(194, 23);
+            lblIncident.TabIndex = 8;
+            lblIncident.Text = "Description de l'incident";
+            // 
             // txtIncident
-            //
-            this.txtIncident.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIncident.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtIncident.Location = new System.Drawing.Point(24, 218);
-            this.txtIncident.Multiline = true;
-            this.txtIncident.Name = "txtIncident";
-            this.txtIncident.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtIncident.Size = new System.Drawing.Size(372, 150);
-            this.txtIncident.TabIndex = 8;
-            //
+            // 
+            txtIncident.BorderStyle = BorderStyle.FixedSingle;
+            txtIncident.Font = new Font("Segoe UI", 10.5F);
+            txtIncident.Location = new Point(24, 218);
+            txtIncident.Multiline = true;
+            txtIncident.Name = "txtIncident";
+            txtIncident.ScrollBars = ScrollBars.Vertical;
+            txtIncident.Size = new Size(372, 150);
+            txtIncident.TabIndex = 8;
+            // 
             // btnEnvoyer
-            //
-            this.btnEnvoyer.FlatAppearance.BorderSize = 0;
-            this.btnEnvoyer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(27, 74, 184);
-            this.btnEnvoyer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(31, 88, 214);
-            this.btnEnvoyer.BackColor = System.Drawing.Color.FromArgb(46, 108, 240);
-            this.btnEnvoyer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnvoyer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnvoyer.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnEnvoyer.ForeColor = System.Drawing.Color.White;
-            this.btnEnvoyer.Location = new System.Drawing.Point(24, 392);
-            this.btnEnvoyer.Name = "btnEnvoyer";
-            this.btnEnvoyer.Size = new System.Drawing.Size(140, 38);
-            this.btnEnvoyer.TabIndex = 9;
-            this.btnEnvoyer.Text = "Envoyer";
-            this.btnEnvoyer.UseVisualStyleBackColor = false;
-            this.btnEnvoyer.Click += new System.EventHandler(this.btnEnvoyer_Click);
-            //
+            // 
+            btnEnvoyer.BackColor = Color.FromArgb(46, 108, 240);
+            btnEnvoyer.Cursor = Cursors.Hand;
+            btnEnvoyer.FlatAppearance.BorderSize = 0;
+            btnEnvoyer.FlatAppearance.MouseDownBackColor = Color.FromArgb(27, 74, 184);
+            btnEnvoyer.FlatAppearance.MouseOverBackColor = Color.FromArgb(31, 88, 214);
+            btnEnvoyer.FlatStyle = FlatStyle.Flat;
+            btnEnvoyer.Font = new Font("Segoe UI Semibold", 10F);
+            btnEnvoyer.ForeColor = Color.White;
+            btnEnvoyer.Location = new Point(24, 392);
+            btnEnvoyer.Name = "btnEnvoyer";
+            btnEnvoyer.Size = new Size(140, 38);
+            btnEnvoyer.TabIndex = 9;
+            btnEnvoyer.Text = "Envoyer";
+            btnEnvoyer.UseVisualStyleBackColor = false;
+            btnEnvoyer.Click += btnEnvoyer_Click;
+            // 
             // btnAfficher
-            //
-            this.btnAfficher.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(209, 213, 219);
-            this.btnAfficher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(243, 244, 246);
-            this.btnAfficher.BackColor = System.Drawing.Color.White;
-            this.btnAfficher.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAfficher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAfficher.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnAfficher.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.btnAfficher.Location = new System.Drawing.Point(176, 392);
-            this.btnAfficher.Name = "btnAfficher";
-            this.btnAfficher.Size = new System.Drawing.Size(180, 38);
-            this.btnAfficher.TabIndex = 10;
-            this.btnAfficher.Text = "Afficher mes tickets";
-            this.btnAfficher.UseVisualStyleBackColor = false;
-            this.btnAfficher.Click += new System.EventHandler(this.btnAfficher_Click);
-            //
+            // 
+            btnAfficher.BackColor = Color.White;
+            btnAfficher.Cursor = Cursors.Hand;
+            btnAfficher.FlatAppearance.BorderColor = Color.FromArgb(209, 213, 219);
+            btnAfficher.FlatAppearance.MouseOverBackColor = Color.FromArgb(243, 244, 246);
+            btnAfficher.FlatStyle = FlatStyle.Flat;
+            btnAfficher.Font = new Font("Segoe UI Semibold", 10F);
+            btnAfficher.ForeColor = Color.FromArgb(31, 41, 55);
+            btnAfficher.Location = new Point(176, 392);
+            btnAfficher.Name = "btnAfficher";
+            btnAfficher.Size = new Size(180, 38);
+            btnAfficher.TabIndex = 10;
+            btnAfficher.Text = "Afficher mes tickets";
+            btnAfficher.UseVisualStyleBackColor = false;
+            btnAfficher.Click += btnAfficher_Click;
+            // 
             // carteTickets
-            //
-            this.carteTickets.Controls.Add(this.lblMesTickets);
-            this.carteTickets.Controls.Add(this.lstTickets);
-            this.carteTickets.BackColor = System.Drawing.Color.White;
-            this.carteTickets.Location = new System.Drawing.Point(452, 16);
-            this.carteTickets.Name = "carteTickets";
-            this.carteTickets.Size = new System.Drawing.Size(592, 456);
-            //
+            // 
+            carteTickets.BackColor = Color.White;
+            carteTickets.Controls.Add(lblMesTickets);
+            carteTickets.Controls.Add(lstTickets);
+            carteTickets.Location = new Point(452, 16);
+            carteTickets.Name = "carteTickets";
+            carteTickets.Size = new Size(592, 456);
+            carteTickets.TabIndex = 1;
+            // 
             // lblMesTickets
-            //
-            this.lblMesTickets.AutoSize = true;
-            this.lblMesTickets.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblMesTickets.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblMesTickets.Location = new System.Drawing.Point(22, 20);
-            this.lblMesTickets.Name = "lblMesTickets";
-            this.lblMesTickets.Text = "Mes tickets";
-            //
+            // 
+            lblMesTickets.AutoSize = true;
+            lblMesTickets.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblMesTickets.ForeColor = Color.FromArgb(31, 41, 55);
+            lblMesTickets.Location = new Point(22, 20);
+            lblMesTickets.Name = "lblMesTickets";
+            lblMesTickets.Size = new Size(142, 32);
+            lblMesTickets.TabIndex = 0;
+            lblMesTickets.Text = "Mes tickets";
+            // 
             // lstTickets
-            //
-            this.lstTickets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lstTickets.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.lstTickets.IntegralHeight = false;
-            this.lstTickets.Location = new System.Drawing.Point(24, 64);
-            this.lstTickets.Name = "lstTickets";
-            this.lstTickets.Size = new System.Drawing.Size(544, 368);
-            this.lstTickets.TabIndex = 11;
-            //
+            // 
+            lstTickets.BorderStyle = BorderStyle.FixedSingle;
+            lstTickets.Font = new Font("Segoe UI", 10.5F);
+            lstTickets.IntegralHeight = false;
+            lstTickets.ItemHeight = 23;
+            lstTickets.Location = new Point(24, 64);
+            lstTickets.Name = "lstTickets";
+            lstTickets.Size = new Size(544, 368);
+            lstTickets.TabIndex = 11;
+            // 
+            // tabTechnicien
+            // 
+            tabTechnicien.AutoScroll = true;
+            tabTechnicien.BackColor = Color.FromArgb(243, 244, 246);
+            tabTechnicien.Controls.Add(carteMateriel);
+            tabTechnicien.Controls.Add(carteIncidents);
+            tabTechnicien.Controls.Add(carteTicket);
+            tabTechnicien.Location = new Point(4, 38);
+            tabTechnicien.Name = "tabTechnicien";
+            tabTechnicien.Padding = new Padding(3);
+            tabTechnicien.Size = new Size(1060, 530);
+            tabTechnicien.TabIndex = 4;
+            tabTechnicien.Text = "Technicien";
+            // 
             // carteMateriel
-            //
-            this.carteMateriel.Controls.Add(this.lblGestion);
-            this.carteMateriel.Controls.Add(this.lblAjout);
-            this.carteMateriel.Controls.Add(this.lblProcesseur);
-            this.carteMateriel.Controls.Add(this.txtProcesseur);
-            this.carteMateriel.Controls.Add(this.lblDisque);
-            this.carteMateriel.Controls.Add(this.txtDisque);
-            this.carteMateriel.Controls.Add(this.lblLogiciels);
-            this.carteMateriel.Controls.Add(this.txtLogiciels);
-            this.carteMateriel.Controls.Add(this.lblEtatMateriel);
-            this.carteMateriel.Controls.Add(this.cboEtatMateriel);
-            this.carteMateriel.Controls.Add(this.lblSuiviMateriel);
-            this.carteMateriel.Controls.Add(this.txtSuiviMateriel);
-            this.carteMateriel.Controls.Add(this.btnAjouterMateriel);
-            this.carteMateriel.Controls.Add(this.separateurMateriel);
-            this.carteMateriel.Controls.Add(this.lblConsultation);
-            this.carteMateriel.Controls.Add(this.cboConsultMateriel);
-            this.carteMateriel.Controls.Add(this.btnAfficherMateriel);
-            this.carteMateriel.Controls.Add(this.panelDetail);
-            this.carteMateriel.Controls.Add(this.lblSuppression);
-            this.carteMateriel.Controls.Add(this.cboSupprMateriel);
-            this.carteMateriel.Controls.Add(this.btnSupprimerMateriel);
-            this.carteMateriel.BackColor = System.Drawing.Color.White;
-            this.carteMateriel.Location = new System.Drawing.Point(16, 16);
-            this.carteMateriel.Name = "carteMateriel";
-            this.carteMateriel.Size = new System.Drawing.Size(1012, 340);
-            //
+            // 
+            carteMateriel.BackColor = Color.White;
+            carteMateriel.Controls.Add(lblGestion);
+            carteMateriel.Controls.Add(lblAjout);
+            carteMateriel.Controls.Add(lblProcesseur);
+            carteMateriel.Controls.Add(txtProcesseur);
+            carteMateriel.Controls.Add(lblDisque);
+            carteMateriel.Controls.Add(txtDisque);
+            carteMateriel.Controls.Add(lblLogiciels);
+            carteMateriel.Controls.Add(txtLogiciels);
+            carteMateriel.Controls.Add(lblEtatMateriel);
+            carteMateriel.Controls.Add(cboEtatMateriel);
+            carteMateriel.Controls.Add(lblSuiviMateriel);
+            carteMateriel.Controls.Add(txtSuiviMateriel);
+            carteMateriel.Controls.Add(btnAjouterMateriel);
+            carteMateriel.Controls.Add(separateurMateriel);
+            carteMateriel.Controls.Add(lblConsultation);
+            carteMateriel.Controls.Add(cboConsultMateriel);
+            carteMateriel.Controls.Add(btnAfficherMateriel);
+            carteMateriel.Controls.Add(panelDetail);
+            carteMateriel.Controls.Add(lblSuppression);
+            carteMateriel.Controls.Add(cboSupprMateriel);
+            carteMateriel.Controls.Add(btnSupprimerMateriel);
+            carteMateriel.Location = new Point(16, 16);
+            carteMateriel.Name = "carteMateriel";
+            carteMateriel.Size = new Size(1012, 340);
+            carteMateriel.TabIndex = 0;
+            // 
             // lblGestion
-            //
-            this.lblGestion.AutoSize = true;
-            this.lblGestion.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblGestion.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblGestion.Location = new System.Drawing.Point(22, 20);
-            this.lblGestion.Name = "lblGestion";
-            this.lblGestion.Text = "Gestion du matériel";
-            //
+            // 
+            lblGestion.AutoSize = true;
+            lblGestion.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblGestion.ForeColor = Color.FromArgb(31, 41, 55);
+            lblGestion.Location = new Point(22, 20);
+            lblGestion.Name = "lblGestion";
+            lblGestion.Size = new Size(239, 32);
+            lblGestion.TabIndex = 0;
+            lblGestion.Text = "Gestion du matériel";
+            // 
             // lblAjout
-            //
-            this.lblAjout.AutoSize = true;
-            this.lblAjout.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblAjout.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblAjout.Location = new System.Drawing.Point(24, 64);
-            this.lblAjout.Name = "lblAjout";
-            this.lblAjout.Text = "Ajouter un nouveau matériel";
-            //
+            // 
+            lblAjout.AutoSize = true;
+            lblAjout.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblAjout.ForeColor = Color.FromArgb(31, 41, 55);
+            lblAjout.Location = new Point(24, 64);
+            lblAjout.Name = "lblAjout";
+            lblAjout.Size = new Size(268, 25);
+            lblAjout.TabIndex = 1;
+            lblAjout.Text = "Ajouter un nouveau matériel";
+            // 
             // lblProcesseur
-            //
-            this.lblProcesseur.AutoSize = true;
-            this.lblProcesseur.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblProcesseur.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblProcesseur.Location = new System.Drawing.Point(24, 100);
-            this.lblProcesseur.Name = "lblProcesseur";
-            this.lblProcesseur.Text = "Processeur";
-            //
+            // 
+            lblProcesseur.AutoSize = true;
+            lblProcesseur.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblProcesseur.ForeColor = Color.FromArgb(31, 41, 55);
+            lblProcesseur.Location = new Point(24, 100);
+            lblProcesseur.Name = "lblProcesseur";
+            lblProcesseur.Size = new Size(92, 23);
+            lblProcesseur.TabIndex = 2;
+            lblProcesseur.Text = "Processeur";
+            // 
             // txtProcesseur
-            //
-            this.txtProcesseur.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtProcesseur.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtProcesseur.Location = new System.Drawing.Point(24, 122);
-            this.txtProcesseur.Name = "txtProcesseur";
-            this.txtProcesseur.Size = new System.Drawing.Size(156, 26);
-            this.txtProcesseur.TabIndex = 12;
-            //
+            // 
+            txtProcesseur.BorderStyle = BorderStyle.FixedSingle;
+            txtProcesseur.Font = new Font("Segoe UI", 10.5F);
+            txtProcesseur.Location = new Point(24, 122);
+            txtProcesseur.Name = "txtProcesseur";
+            txtProcesseur.Size = new Size(156, 31);
+            txtProcesseur.TabIndex = 12;
+            // 
             // lblDisque
-            //
-            this.lblDisque.AutoSize = true;
-            this.lblDisque.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblDisque.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblDisque.Location = new System.Drawing.Point(196, 100);
-            this.lblDisque.Name = "lblDisque";
-            this.lblDisque.Text = "Disque";
-            //
+            // 
+            lblDisque.AutoSize = true;
+            lblDisque.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblDisque.ForeColor = Color.FromArgb(31, 41, 55);
+            lblDisque.Location = new Point(196, 100);
+            lblDisque.Name = "lblDisque";
+            lblDisque.Size = new Size(62, 23);
+            lblDisque.TabIndex = 13;
+            lblDisque.Text = "Disque";
+            // 
             // txtDisque
-            //
-            this.txtDisque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDisque.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtDisque.Location = new System.Drawing.Point(196, 122);
-            this.txtDisque.Name = "txtDisque";
-            this.txtDisque.Size = new System.Drawing.Size(156, 26);
-            this.txtDisque.TabIndex = 13;
-            //
+            // 
+            txtDisque.BorderStyle = BorderStyle.FixedSingle;
+            txtDisque.Font = new Font("Segoe UI", 10.5F);
+            txtDisque.Location = new Point(196, 122);
+            txtDisque.Name = "txtDisque";
+            txtDisque.Size = new Size(156, 31);
+            txtDisque.TabIndex = 13;
+            // 
             // lblLogiciels
-            //
-            this.lblLogiciels.AutoSize = true;
-            this.lblLogiciels.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblLogiciels.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblLogiciels.Location = new System.Drawing.Point(24, 164);
-            this.lblLogiciels.Name = "lblLogiciels";
-            this.lblLogiciels.Text = "Logiciels";
-            //
+            // 
+            lblLogiciels.AutoSize = true;
+            lblLogiciels.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblLogiciels.ForeColor = Color.FromArgb(31, 41, 55);
+            lblLogiciels.Location = new Point(24, 164);
+            lblLogiciels.Name = "lblLogiciels";
+            lblLogiciels.Size = new Size(74, 23);
+            lblLogiciels.TabIndex = 14;
+            lblLogiciels.Text = "Logiciels";
+            // 
             // txtLogiciels
-            //
-            this.txtLogiciels.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLogiciels.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtLogiciels.Location = new System.Drawing.Point(24, 186);
-            this.txtLogiciels.Name = "txtLogiciels";
-            this.txtLogiciels.Size = new System.Drawing.Size(156, 26);
-            this.txtLogiciels.TabIndex = 14;
-            //
+            // 
+            txtLogiciels.BorderStyle = BorderStyle.FixedSingle;
+            txtLogiciels.Font = new Font("Segoe UI", 10.5F);
+            txtLogiciels.Location = new Point(24, 186);
+            txtLogiciels.Name = "txtLogiciels";
+            txtLogiciels.Size = new Size(156, 31);
+            txtLogiciels.TabIndex = 14;
+            // 
             // lblEtatMateriel
-            //
-            this.lblEtatMateriel.AutoSize = true;
-            this.lblEtatMateriel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblEtatMateriel.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblEtatMateriel.Location = new System.Drawing.Point(196, 164);
-            this.lblEtatMateriel.Name = "lblEtatMateriel";
-            this.lblEtatMateriel.Text = "État";
-            //
+            // 
+            lblEtatMateriel.AutoSize = true;
+            lblEtatMateriel.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblEtatMateriel.ForeColor = Color.FromArgb(31, 41, 55);
+            lblEtatMateriel.Location = new Point(196, 164);
+            lblEtatMateriel.Name = "lblEtatMateriel";
+            lblEtatMateriel.Size = new Size(40, 23);
+            lblEtatMateriel.TabIndex = 15;
+            lblEtatMateriel.Text = "État";
+            // 
             // cboEtatMateriel
-            //
-            this.cboEtatMateriel.Items.AddRange(new object[] {
-            "En service",
-            "En panne",
-            "Hors service"});
-            this.cboEtatMateriel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEtatMateriel.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.cboEtatMateriel.Location = new System.Drawing.Point(196, 186);
-            this.cboEtatMateriel.Name = "cboEtatMateriel";
-            this.cboEtatMateriel.Size = new System.Drawing.Size(156, 27);
-            this.cboEtatMateriel.TabIndex = 15;
-            //
+            // 
+            cboEtatMateriel.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEtatMateriel.Font = new Font("Segoe UI", 10.5F);
+            cboEtatMateriel.Items.AddRange(new object[] { "En service", "En panne", "Hors service" });
+            cboEtatMateriel.Location = new Point(196, 186);
+            cboEtatMateriel.Name = "cboEtatMateriel";
+            cboEtatMateriel.Size = new Size(156, 31);
+            cboEtatMateriel.TabIndex = 15;
+            // 
             // lblSuiviMateriel
-            //
-            this.lblSuiviMateriel.AutoSize = true;
-            this.lblSuiviMateriel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblSuiviMateriel.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblSuiviMateriel.Location = new System.Drawing.Point(24, 228);
-            this.lblSuiviMateriel.Name = "lblSuiviMateriel";
-            this.lblSuiviMateriel.Text = "Suivi";
-            //
+            // 
+            lblSuiviMateriel.AutoSize = true;
+            lblSuiviMateriel.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblSuiviMateriel.ForeColor = Color.FromArgb(31, 41, 55);
+            lblSuiviMateriel.Location = new Point(24, 228);
+            lblSuiviMateriel.Name = "lblSuiviMateriel";
+            lblSuiviMateriel.Size = new Size(46, 23);
+            lblSuiviMateriel.TabIndex = 16;
+            lblSuiviMateriel.Text = "Suivi";
+            // 
             // txtSuiviMateriel
-            //
-            this.txtSuiviMateriel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSuiviMateriel.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtSuiviMateriel.Location = new System.Drawing.Point(24, 250);
-            this.txtSuiviMateriel.Name = "txtSuiviMateriel";
-            this.txtSuiviMateriel.Size = new System.Drawing.Size(328, 26);
-            this.txtSuiviMateriel.TabIndex = 16;
-            //
+            // 
+            txtSuiviMateriel.BorderStyle = BorderStyle.FixedSingle;
+            txtSuiviMateriel.Font = new Font("Segoe UI", 10.5F);
+            txtSuiviMateriel.Location = new Point(24, 250);
+            txtSuiviMateriel.Name = "txtSuiviMateriel";
+            txtSuiviMateriel.Size = new Size(328, 31);
+            txtSuiviMateriel.TabIndex = 16;
+            // 
             // btnAjouterMateriel
-            //
-            this.btnAjouterMateriel.FlatAppearance.BorderSize = 0;
-            this.btnAjouterMateriel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(27, 74, 184);
-            this.btnAjouterMateriel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(31, 88, 214);
-            this.btnAjouterMateriel.BackColor = System.Drawing.Color.FromArgb(46, 108, 240);
-            this.btnAjouterMateriel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAjouterMateriel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjouterMateriel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnAjouterMateriel.ForeColor = System.Drawing.Color.White;
-            this.btnAjouterMateriel.Location = new System.Drawing.Point(24, 290);
-            this.btnAjouterMateriel.Name = "btnAjouterMateriel";
-            this.btnAjouterMateriel.Size = new System.Drawing.Size(140, 38);
-            this.btnAjouterMateriel.TabIndex = 17;
-            this.btnAjouterMateriel.Text = "Ajouter";
-            this.btnAjouterMateriel.UseVisualStyleBackColor = false;
-            this.btnAjouterMateriel.Click += new System.EventHandler(this.btnAjouterMateriel_Click);
-            //
+            // 
+            btnAjouterMateriel.BackColor = Color.FromArgb(46, 108, 240);
+            btnAjouterMateriel.Cursor = Cursors.Hand;
+            btnAjouterMateriel.FlatAppearance.BorderSize = 0;
+            btnAjouterMateriel.FlatAppearance.MouseDownBackColor = Color.FromArgb(27, 74, 184);
+            btnAjouterMateriel.FlatAppearance.MouseOverBackColor = Color.FromArgb(31, 88, 214);
+            btnAjouterMateriel.FlatStyle = FlatStyle.Flat;
+            btnAjouterMateriel.Font = new Font("Segoe UI Semibold", 10F);
+            btnAjouterMateriel.ForeColor = Color.White;
+            btnAjouterMateriel.Location = new Point(24, 290);
+            btnAjouterMateriel.Name = "btnAjouterMateriel";
+            btnAjouterMateriel.Size = new Size(140, 38);
+            btnAjouterMateriel.TabIndex = 17;
+            btnAjouterMateriel.Text = "Ajouter";
+            btnAjouterMateriel.UseVisualStyleBackColor = false;
+            btnAjouterMateriel.Click += btnAjouterMateriel_Click;
+            // 
             // separateurMateriel
-            //
-            this.separateurMateriel.BackColor = System.Drawing.Color.FromArgb(229, 231, 235);
-            this.separateurMateriel.Location = new System.Drawing.Point(376, 64);
-            this.separateurMateriel.Name = "separateurMateriel";
-            this.separateurMateriel.Size = new System.Drawing.Size(1, 256);
-            //
+            // 
+            separateurMateriel.BackColor = Color.FromArgb(229, 231, 235);
+            separateurMateriel.Location = new Point(376, 64);
+            separateurMateriel.Name = "separateurMateriel";
+            separateurMateriel.Size = new Size(1, 256);
+            separateurMateriel.TabIndex = 18;
+            // 
             // lblConsultation
-            //
-            this.lblConsultation.AutoSize = true;
-            this.lblConsultation.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblConsultation.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblConsultation.Location = new System.Drawing.Point(400, 64);
-            this.lblConsultation.Name = "lblConsultation";
-            this.lblConsultation.Text = "Consultation d'un matériel";
-            //
+            // 
+            lblConsultation.AutoSize = true;
+            lblConsultation.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblConsultation.ForeColor = Color.FromArgb(31, 41, 55);
+            lblConsultation.Location = new Point(400, 64);
+            lblConsultation.Name = "lblConsultation";
+            lblConsultation.Size = new Size(250, 25);
+            lblConsultation.TabIndex = 19;
+            lblConsultation.Text = "Consultation d'un matériel";
+            // 
             // cboConsultMateriel
-            //
-            this.cboConsultMateriel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboConsultMateriel.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.cboConsultMateriel.Location = new System.Drawing.Point(400, 100);
-            this.cboConsultMateriel.Name = "cboConsultMateriel";
-            this.cboConsultMateriel.Size = new System.Drawing.Size(460, 27);
-            this.cboConsultMateriel.TabIndex = 18;
-            //
+            // 
+            cboConsultMateriel.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboConsultMateriel.Font = new Font("Segoe UI", 10.5F);
+            cboConsultMateriel.Location = new Point(400, 100);
+            cboConsultMateriel.Name = "cboConsultMateriel";
+            cboConsultMateriel.Size = new Size(460, 31);
+            cboConsultMateriel.TabIndex = 18;
+            // 
             // btnAfficherMateriel
-            //
-            this.btnAfficherMateriel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(209, 213, 219);
-            this.btnAfficherMateriel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(243, 244, 246);
-            this.btnAfficherMateriel.BackColor = System.Drawing.Color.White;
-            this.btnAfficherMateriel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAfficherMateriel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAfficherMateriel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnAfficherMateriel.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.btnAfficherMateriel.Location = new System.Drawing.Point(872, 96);
-            this.btnAfficherMateriel.Name = "btnAfficherMateriel";
-            this.btnAfficherMateriel.Size = new System.Drawing.Size(116, 34);
-            this.btnAfficherMateriel.TabIndex = 19;
-            this.btnAfficherMateriel.Text = "Afficher";
-            this.btnAfficherMateriel.UseVisualStyleBackColor = false;
-            this.btnAfficherMateriel.Click += new System.EventHandler(this.btnAfficherMateriel_Click);
-            //
+            // 
+            btnAfficherMateriel.BackColor = Color.White;
+            btnAfficherMateriel.Cursor = Cursors.Hand;
+            btnAfficherMateriel.FlatAppearance.BorderColor = Color.FromArgb(209, 213, 219);
+            btnAfficherMateriel.FlatAppearance.MouseOverBackColor = Color.FromArgb(243, 244, 246);
+            btnAfficherMateriel.FlatStyle = FlatStyle.Flat;
+            btnAfficherMateriel.Font = new Font("Segoe UI Semibold", 10F);
+            btnAfficherMateriel.ForeColor = Color.FromArgb(31, 41, 55);
+            btnAfficherMateriel.Location = new Point(872, 96);
+            btnAfficherMateriel.Name = "btnAfficherMateriel";
+            btnAfficherMateriel.Size = new Size(116, 34);
+            btnAfficherMateriel.TabIndex = 19;
+            btnAfficherMateriel.Text = "Afficher";
+            btnAfficherMateriel.UseVisualStyleBackColor = false;
+            btnAfficherMateriel.Click += btnAfficherMateriel_Click;
+            // 
             // panelDetail
-            //
-            this.panelDetail.Controls.Add(this.lblDetailProcesseur);
-            this.panelDetail.Controls.Add(this.lblValeurProcesseur);
-            this.panelDetail.Controls.Add(this.lblDetailDisque);
-            this.panelDetail.Controls.Add(this.lblValeurDisque);
-            this.panelDetail.Controls.Add(this.lblDetailLogiciels);
-            this.panelDetail.Controls.Add(this.lblValeurLogiciels);
-            this.panelDetail.Controls.Add(this.lblDetailEtat);
-            this.panelDetail.Controls.Add(this.lblValeurEtat);
-            this.panelDetail.Controls.Add(this.lblDetailSuivi);
-            this.panelDetail.Controls.Add(this.lblValeurSuivi);
-            this.panelDetail.BackColor = System.Drawing.Color.FromArgb(248, 249, 251);
-            this.panelDetail.Location = new System.Drawing.Point(400, 142);
-            this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(588, 64);
-            //
+            // 
+            panelDetail.BackColor = Color.FromArgb(248, 249, 251);
+            panelDetail.Controls.Add(lblDetailProcesseur);
+            panelDetail.Controls.Add(lblValeurProcesseur);
+            panelDetail.Controls.Add(lblDetailDisque);
+            panelDetail.Controls.Add(lblValeurDisque);
+            panelDetail.Controls.Add(lblDetailLogiciels);
+            panelDetail.Controls.Add(lblValeurLogiciels);
+            panelDetail.Controls.Add(lblDetailEtat);
+            panelDetail.Controls.Add(lblValeurEtat);
+            panelDetail.Controls.Add(lblDetailSuivi);
+            panelDetail.Controls.Add(lblValeurSuivi);
+            panelDetail.Location = new Point(400, 142);
+            panelDetail.Name = "panelDetail";
+            panelDetail.Size = new Size(588, 64);
+            panelDetail.TabIndex = 20;
+            // 
             // lblDetailProcesseur
-            //
-            this.lblDetailProcesseur.AutoSize = true;
-            this.lblDetailProcesseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblDetailProcesseur.ForeColor = System.Drawing.Color.FromArgb(107, 114, 128);
-            this.lblDetailProcesseur.Location = new System.Drawing.Point(16, 10);
-            this.lblDetailProcesseur.Name = "lblDetailProcesseur";
-            this.lblDetailProcesseur.Text = "Processeur";
-            //
+            // 
+            lblDetailProcesseur.AutoSize = true;
+            lblDetailProcesseur.Font = new Font("Segoe UI", 9F);
+            lblDetailProcesseur.ForeColor = Color.FromArgb(107, 114, 128);
+            lblDetailProcesseur.Location = new Point(16, 10);
+            lblDetailProcesseur.Name = "lblDetailProcesseur";
+            lblDetailProcesseur.Size = new Size(79, 20);
+            lblDetailProcesseur.TabIndex = 0;
+            lblDetailProcesseur.Text = "Processeur";
+            // 
             // lblValeurProcesseur
-            //
-            this.lblValeurProcesseur.AutoSize = true;
-            this.lblValeurProcesseur.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F);
-            this.lblValeurProcesseur.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblValeurProcesseur.Location = new System.Drawing.Point(16, 30);
-            this.lblValeurProcesseur.Name = "lblValeurProcesseur";
-            this.lblValeurProcesseur.Text = "-";
-            //
+            // 
+            lblValeurProcesseur.AutoSize = true;
+            lblValeurProcesseur.Font = new Font("Segoe UI Semibold", 10.5F);
+            lblValeurProcesseur.ForeColor = Color.FromArgb(31, 41, 55);
+            lblValeurProcesseur.Location = new Point(16, 30);
+            lblValeurProcesseur.Name = "lblValeurProcesseur";
+            lblValeurProcesseur.Size = new Size(19, 25);
+            lblValeurProcesseur.TabIndex = 1;
+            lblValeurProcesseur.Text = "-";
+            // 
             // lblDetailDisque
-            //
-            this.lblDetailDisque.AutoSize = true;
-            this.lblDetailDisque.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblDetailDisque.ForeColor = System.Drawing.Color.FromArgb(107, 114, 128);
-            this.lblDetailDisque.Location = new System.Drawing.Point(134, 10);
-            this.lblDetailDisque.Name = "lblDetailDisque";
-            this.lblDetailDisque.Text = "Disque";
-            //
+            // 
+            lblDetailDisque.AutoSize = true;
+            lblDetailDisque.Font = new Font("Segoe UI", 9F);
+            lblDetailDisque.ForeColor = Color.FromArgb(107, 114, 128);
+            lblDetailDisque.Location = new Point(134, 10);
+            lblDetailDisque.Name = "lblDetailDisque";
+            lblDetailDisque.Size = new Size(55, 20);
+            lblDetailDisque.TabIndex = 2;
+            lblDetailDisque.Text = "Disque";
+            // 
             // lblValeurDisque
-            //
-            this.lblValeurDisque.AutoSize = true;
-            this.lblValeurDisque.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F);
-            this.lblValeurDisque.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblValeurDisque.Location = new System.Drawing.Point(134, 30);
-            this.lblValeurDisque.Name = "lblValeurDisque";
-            this.lblValeurDisque.Text = "-";
-            //
+            // 
+            lblValeurDisque.AutoSize = true;
+            lblValeurDisque.Font = new Font("Segoe UI Semibold", 10.5F);
+            lblValeurDisque.ForeColor = Color.FromArgb(31, 41, 55);
+            lblValeurDisque.Location = new Point(134, 30);
+            lblValeurDisque.Name = "lblValeurDisque";
+            lblValeurDisque.Size = new Size(19, 25);
+            lblValeurDisque.TabIndex = 3;
+            lblValeurDisque.Text = "-";
+            // 
             // lblDetailLogiciels
-            //
-            this.lblDetailLogiciels.AutoSize = true;
-            this.lblDetailLogiciels.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblDetailLogiciels.ForeColor = System.Drawing.Color.FromArgb(107, 114, 128);
-            this.lblDetailLogiciels.Location = new System.Drawing.Point(252, 10);
-            this.lblDetailLogiciels.Name = "lblDetailLogiciels";
-            this.lblDetailLogiciels.Text = "Logiciels";
-            //
+            // 
+            lblDetailLogiciels.AutoSize = true;
+            lblDetailLogiciels.Font = new Font("Segoe UI", 9F);
+            lblDetailLogiciels.ForeColor = Color.FromArgb(107, 114, 128);
+            lblDetailLogiciels.Location = new Point(252, 10);
+            lblDetailLogiciels.Name = "lblDetailLogiciels";
+            lblDetailLogiciels.Size = new Size(67, 20);
+            lblDetailLogiciels.TabIndex = 4;
+            lblDetailLogiciels.Text = "Logiciels";
+            // 
             // lblValeurLogiciels
-            //
-            this.lblValeurLogiciels.AutoSize = true;
-            this.lblValeurLogiciels.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F);
-            this.lblValeurLogiciels.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblValeurLogiciels.Location = new System.Drawing.Point(252, 30);
-            this.lblValeurLogiciels.Name = "lblValeurLogiciels";
-            this.lblValeurLogiciels.Text = "-";
-            //
+            // 
+            lblValeurLogiciels.AutoSize = true;
+            lblValeurLogiciels.Font = new Font("Segoe UI Semibold", 10.5F);
+            lblValeurLogiciels.ForeColor = Color.FromArgb(31, 41, 55);
+            lblValeurLogiciels.Location = new Point(252, 30);
+            lblValeurLogiciels.Name = "lblValeurLogiciels";
+            lblValeurLogiciels.Size = new Size(19, 25);
+            lblValeurLogiciels.TabIndex = 5;
+            lblValeurLogiciels.Text = "-";
+            // 
             // lblDetailEtat
-            //
-            this.lblDetailEtat.AutoSize = true;
-            this.lblDetailEtat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblDetailEtat.ForeColor = System.Drawing.Color.FromArgb(107, 114, 128);
-            this.lblDetailEtat.Location = new System.Drawing.Point(370, 10);
-            this.lblDetailEtat.Name = "lblDetailEtat";
-            this.lblDetailEtat.Text = "État";
-            //
+            // 
+            lblDetailEtat.AutoSize = true;
+            lblDetailEtat.Font = new Font("Segoe UI", 9F);
+            lblDetailEtat.ForeColor = Color.FromArgb(107, 114, 128);
+            lblDetailEtat.Location = new Point(370, 10);
+            lblDetailEtat.Name = "lblDetailEtat";
+            lblDetailEtat.Size = new Size(35, 20);
+            lblDetailEtat.TabIndex = 6;
+            lblDetailEtat.Text = "État";
+            // 
             // lblValeurEtat
-            //
-            this.lblValeurEtat.AutoSize = true;
-            this.lblValeurEtat.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F);
-            this.lblValeurEtat.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblValeurEtat.Location = new System.Drawing.Point(370, 30);
-            this.lblValeurEtat.Name = "lblValeurEtat";
-            this.lblValeurEtat.Text = "-";
-            //
+            // 
+            lblValeurEtat.AutoSize = true;
+            lblValeurEtat.Font = new Font("Segoe UI Semibold", 10.5F);
+            lblValeurEtat.ForeColor = Color.FromArgb(31, 41, 55);
+            lblValeurEtat.Location = new Point(370, 30);
+            lblValeurEtat.Name = "lblValeurEtat";
+            lblValeurEtat.Size = new Size(19, 25);
+            lblValeurEtat.TabIndex = 7;
+            lblValeurEtat.Text = "-";
+            // 
             // lblDetailSuivi
-            //
-            this.lblDetailSuivi.AutoSize = true;
-            this.lblDetailSuivi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblDetailSuivi.ForeColor = System.Drawing.Color.FromArgb(107, 114, 128);
-            this.lblDetailSuivi.Location = new System.Drawing.Point(488, 10);
-            this.lblDetailSuivi.Name = "lblDetailSuivi";
-            this.lblDetailSuivi.Text = "Suivi";
-            //
+            // 
+            lblDetailSuivi.AutoSize = true;
+            lblDetailSuivi.Font = new Font("Segoe UI", 9F);
+            lblDetailSuivi.ForeColor = Color.FromArgb(107, 114, 128);
+            lblDetailSuivi.Location = new Point(488, 10);
+            lblDetailSuivi.Name = "lblDetailSuivi";
+            lblDetailSuivi.Size = new Size(40, 20);
+            lblDetailSuivi.TabIndex = 8;
+            lblDetailSuivi.Text = "Suivi";
+            // 
             // lblValeurSuivi
-            //
-            this.lblValeurSuivi.AutoSize = true;
-            this.lblValeurSuivi.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F);
-            this.lblValeurSuivi.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblValeurSuivi.Location = new System.Drawing.Point(488, 30);
-            this.lblValeurSuivi.Name = "lblValeurSuivi";
-            this.lblValeurSuivi.Text = "-";
-            //
+            // 
+            lblValeurSuivi.AutoSize = true;
+            lblValeurSuivi.Font = new Font("Segoe UI Semibold", 10.5F);
+            lblValeurSuivi.ForeColor = Color.FromArgb(31, 41, 55);
+            lblValeurSuivi.Location = new Point(488, 30);
+            lblValeurSuivi.Name = "lblValeurSuivi";
+            lblValeurSuivi.Size = new Size(19, 25);
+            lblValeurSuivi.TabIndex = 9;
+            lblValeurSuivi.Text = "-";
+            // 
             // lblSuppression
-            //
-            this.lblSuppression.AutoSize = true;
-            this.lblSuppression.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblSuppression.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblSuppression.Location = new System.Drawing.Point(400, 226);
-            this.lblSuppression.Name = "lblSuppression";
-            this.lblSuppression.Text = "Suppression d'un matériel";
-            //
+            // 
+            lblSuppression.AutoSize = true;
+            lblSuppression.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblSuppression.ForeColor = Color.FromArgb(31, 41, 55);
+            lblSuppression.Location = new Point(400, 226);
+            lblSuppression.Name = "lblSuppression";
+            lblSuppression.Size = new Size(246, 25);
+            lblSuppression.TabIndex = 21;
+            lblSuppression.Text = "Suppression d'un matériel";
+            // 
             // cboSupprMateriel
-            //
-            this.cboSupprMateriel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSupprMateriel.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.cboSupprMateriel.Location = new System.Drawing.Point(400, 262);
-            this.cboSupprMateriel.Name = "cboSupprMateriel";
-            this.cboSupprMateriel.Size = new System.Drawing.Size(460, 27);
-            this.cboSupprMateriel.TabIndex = 20;
-            //
+            // 
+            cboSupprMateriel.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboSupprMateriel.Font = new Font("Segoe UI", 10.5F);
+            cboSupprMateriel.Location = new Point(400, 262);
+            cboSupprMateriel.Name = "cboSupprMateriel";
+            cboSupprMateriel.Size = new Size(460, 31);
+            cboSupprMateriel.TabIndex = 20;
+            // 
             // btnSupprimerMateriel
-            //
-            this.btnSupprimerMateriel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(220, 38, 38);
-            this.btnSupprimerMateriel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(254, 242, 242);
-            this.btnSupprimerMateriel.BackColor = System.Drawing.Color.White;
-            this.btnSupprimerMateriel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerMateriel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupprimerMateriel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnSupprimerMateriel.ForeColor = System.Drawing.Color.FromArgb(185, 28, 28);
-            this.btnSupprimerMateriel.Location = new System.Drawing.Point(872, 258);
-            this.btnSupprimerMateriel.Name = "btnSupprimerMateriel";
-            this.btnSupprimerMateriel.Size = new System.Drawing.Size(116, 34);
-            this.btnSupprimerMateriel.TabIndex = 21;
-            this.btnSupprimerMateriel.Text = "Supprimer";
-            this.btnSupprimerMateriel.UseVisualStyleBackColor = false;
-            this.btnSupprimerMateriel.Click += new System.EventHandler(this.btnSupprimerMateriel_Click);
-            //
+            // 
+            btnSupprimerMateriel.BackColor = Color.White;
+            btnSupprimerMateriel.Cursor = Cursors.Hand;
+            btnSupprimerMateriel.FlatAppearance.BorderColor = Color.FromArgb(220, 38, 38);
+            btnSupprimerMateriel.FlatAppearance.MouseOverBackColor = Color.FromArgb(254, 242, 242);
+            btnSupprimerMateriel.FlatStyle = FlatStyle.Flat;
+            btnSupprimerMateriel.Font = new Font("Segoe UI Semibold", 10F);
+            btnSupprimerMateriel.ForeColor = Color.FromArgb(185, 28, 28);
+            btnSupprimerMateriel.Location = new Point(872, 258);
+            btnSupprimerMateriel.Name = "btnSupprimerMateriel";
+            btnSupprimerMateriel.Size = new Size(116, 34);
+            btnSupprimerMateriel.TabIndex = 21;
+            btnSupprimerMateriel.Text = "Supprimer";
+            btnSupprimerMateriel.UseVisualStyleBackColor = false;
+            btnSupprimerMateriel.Click += btnSupprimerMateriel_Click;
+            // 
             // carteIncidents
-            //
-            this.carteIncidents.Controls.Add(this.lblIncidents);
-            this.carteIncidents.Controls.Add(this.lstIncidents);
-            this.carteIncidents.Controls.Add(this.btnPrendreEnCharge);
-            this.carteIncidents.BackColor = System.Drawing.Color.White;
-            this.carteIncidents.Location = new System.Drawing.Point(16, 372);
-            this.carteIncidents.Name = "carteIncidents";
-            this.carteIncidents.Size = new System.Drawing.Size(420, 332);
-            //
+            // 
+            carteIncidents.BackColor = Color.White;
+            carteIncidents.Controls.Add(lblIncidents);
+            carteIncidents.Controls.Add(lstIncidents);
+            carteIncidents.Controls.Add(btnPrendreEnCharge);
+            carteIncidents.Location = new Point(16, 372);
+            carteIncidents.Name = "carteIncidents";
+            carteIncidents.Size = new Size(420, 332);
+            carteIncidents.TabIndex = 1;
+            // 
             // lblIncidents
-            //
-            this.lblIncidents.AutoSize = true;
-            this.lblIncidents.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblIncidents.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblIncidents.Location = new System.Drawing.Point(22, 20);
-            this.lblIncidents.Name = "lblIncidents";
-            this.lblIncidents.Text = "Incidents";
-            //
+            // 
+            lblIncidents.AutoSize = true;
+            lblIncidents.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblIncidents.ForeColor = Color.FromArgb(31, 41, 55);
+            lblIncidents.Location = new Point(22, 20);
+            lblIncidents.Name = "lblIncidents";
+            lblIncidents.Size = new Size(119, 32);
+            lblIncidents.TabIndex = 0;
+            lblIncidents.Text = "Incidents";
+            // 
             // lstIncidents
-            //
-            this.lstIncidents.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lstIncidents.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.lstIncidents.IntegralHeight = false;
-            this.lstIncidents.Location = new System.Drawing.Point(24, 60);
-            this.lstIncidents.Name = "lstIncidents";
-            this.lstIncidents.Size = new System.Drawing.Size(372, 200);
-            this.lstIncidents.TabIndex = 22;
-            this.lstIncidents.SelectedIndexChanged += new System.EventHandler(this.lstIncidents_SelectedIndexChanged);
-            //
+            // 
+            lstIncidents.BorderStyle = BorderStyle.FixedSingle;
+            lstIncidents.Font = new Font("Segoe UI", 10.5F);
+            lstIncidents.IntegralHeight = false;
+            lstIncidents.ItemHeight = 23;
+            lstIncidents.Location = new Point(24, 60);
+            lstIncidents.Name = "lstIncidents";
+            lstIncidents.Size = new Size(372, 200);
+            lstIncidents.TabIndex = 22;
+            lstIncidents.SelectedIndexChanged += lstIncidents_SelectedIndexChanged;
+            // 
             // btnPrendreEnCharge
-            //
-            this.btnPrendreEnCharge.FlatAppearance.BorderSize = 0;
-            this.btnPrendreEnCharge.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(27, 74, 184);
-            this.btnPrendreEnCharge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(31, 88, 214);
-            this.btnPrendreEnCharge.BackColor = System.Drawing.Color.FromArgb(46, 108, 240);
-            this.btnPrendreEnCharge.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrendreEnCharge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrendreEnCharge.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnPrendreEnCharge.ForeColor = System.Drawing.Color.White;
-            this.btnPrendreEnCharge.Location = new System.Drawing.Point(24, 276);
-            this.btnPrendreEnCharge.Name = "btnPrendreEnCharge";
-            this.btnPrendreEnCharge.Size = new System.Drawing.Size(180, 38);
-            this.btnPrendreEnCharge.TabIndex = 23;
-            this.btnPrendreEnCharge.Text = "Prendre en charge";
-            this.btnPrendreEnCharge.UseVisualStyleBackColor = false;
-            this.btnPrendreEnCharge.Click += new System.EventHandler(this.btnPrendreEnCharge_Click);
-            //
+            // 
+            btnPrendreEnCharge.BackColor = Color.FromArgb(46, 108, 240);
+            btnPrendreEnCharge.Cursor = Cursors.Hand;
+            btnPrendreEnCharge.FlatAppearance.BorderSize = 0;
+            btnPrendreEnCharge.FlatAppearance.MouseDownBackColor = Color.FromArgb(27, 74, 184);
+            btnPrendreEnCharge.FlatAppearance.MouseOverBackColor = Color.FromArgb(31, 88, 214);
+            btnPrendreEnCharge.FlatStyle = FlatStyle.Flat;
+            btnPrendreEnCharge.Font = new Font("Segoe UI Semibold", 10F);
+            btnPrendreEnCharge.ForeColor = Color.White;
+            btnPrendreEnCharge.Location = new Point(24, 276);
+            btnPrendreEnCharge.Name = "btnPrendreEnCharge";
+            btnPrendreEnCharge.Size = new Size(180, 38);
+            btnPrendreEnCharge.TabIndex = 23;
+            btnPrendreEnCharge.Text = "Prendre en charge";
+            btnPrendreEnCharge.UseVisualStyleBackColor = false;
+            btnPrendreEnCharge.Click += btnPrendreEnCharge_Click;
+            // 
             // carteTicket
-            //
-            this.carteTicket.Controls.Add(this.lblTicketSelection);
-            this.carteTicket.Controls.Add(this.lblEtatActuel);
-            this.carteTicket.Controls.Add(this.lblEtat);
-            this.carteTicket.Controls.Add(this.panelEtat);
-            this.carteTicket.Controls.Add(this.lblUrgence);
-            this.carteTicket.Controls.Add(this.panelUrgence);
-            this.carteTicket.Controls.Add(this.lblSuivi);
-            this.carteTicket.Controls.Add(this.txtSuivi);
-            this.carteTicket.Controls.Add(this.btnEnregistrer);
-            this.carteTicket.BackColor = System.Drawing.Color.White;
-            this.carteTicket.Location = new System.Drawing.Point(452, 372);
-            this.carteTicket.Name = "carteTicket";
-            this.carteTicket.Size = new System.Drawing.Size(576, 332);
-            //
+            // 
+            carteTicket.BackColor = Color.White;
+            carteTicket.Controls.Add(lblTicketSelection);
+            carteTicket.Controls.Add(lblEtatActuel);
+            carteTicket.Controls.Add(lblEtat);
+            carteTicket.Controls.Add(panelEtat);
+            carteTicket.Controls.Add(lblUrgence);
+            carteTicket.Controls.Add(panelUrgence);
+            carteTicket.Controls.Add(lblSuivi);
+            carteTicket.Controls.Add(txtSuivi);
+            carteTicket.Controls.Add(btnEnregistrer);
+            carteTicket.Location = new Point(452, 372);
+            carteTicket.Name = "carteTicket";
+            carteTicket.Size = new Size(576, 332);
+            carteTicket.TabIndex = 2;
+            // 
             // lblTicketSelection
-            //
-            this.lblTicketSelection.AutoSize = true;
-            this.lblTicketSelection.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.lblTicketSelection.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblTicketSelection.Location = new System.Drawing.Point(22, 20);
-            this.lblTicketSelection.Name = "lblTicketSelection";
-            this.lblTicketSelection.Text = "Ticket sélectionné";
-            //
+            // 
+            lblTicketSelection.AutoSize = true;
+            lblTicketSelection.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblTicketSelection.ForeColor = Color.FromArgb(31, 41, 55);
+            lblTicketSelection.Location = new Point(22, 20);
+            lblTicketSelection.Name = "lblTicketSelection";
+            lblTicketSelection.Size = new Size(199, 30);
+            lblTicketSelection.TabIndex = 0;
+            lblTicketSelection.Text = "Ticket sélectionné";
+            // 
             // lblEtatActuel
-            //
-            this.lblEtatActuel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblEtatActuel.ForeColor = System.Drawing.Color.FromArgb(107, 114, 128);
-            this.lblEtatActuel.Location = new System.Drawing.Point(328, 22);
-            this.lblEtatActuel.Name = "lblEtatActuel";
-            this.lblEtatActuel.Size = new System.Drawing.Size(224, 24);
-            this.lblEtatActuel.Text = "État actuel : -";
-            this.lblEtatActuel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
+            lblEtatActuel.Font = new Font("Segoe UI", 10F);
+            lblEtatActuel.ForeColor = Color.FromArgb(107, 114, 128);
+            lblEtatActuel.Location = new Point(328, 22);
+            lblEtatActuel.Name = "lblEtatActuel";
+            lblEtatActuel.Size = new Size(224, 24);
+            lblEtatActuel.TabIndex = 1;
+            lblEtatActuel.Text = "État actuel : -";
+            lblEtatActuel.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // lblEtat
-            //
-            this.lblEtat.AutoSize = true;
-            this.lblEtat.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblEtat.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblEtat.Location = new System.Drawing.Point(24, 64);
-            this.lblEtat.Name = "lblEtat";
-            this.lblEtat.Text = "État";
-            //
+            // 
+            lblEtat.AutoSize = true;
+            lblEtat.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblEtat.ForeColor = Color.FromArgb(31, 41, 55);
+            lblEtat.Location = new Point(24, 64);
+            lblEtat.Name = "lblEtat";
+            lblEtat.Size = new Size(40, 23);
+            lblEtat.TabIndex = 2;
+            lblEtat.Text = "État";
+            // 
             // panelEtat
-            //
-            this.panelEtat.Controls.Add(this.rbEnCours);
-            this.panelEtat.Controls.Add(this.rbResolu);
-            this.panelEtat.Controls.Add(this.rbCloture);
-            this.panelEtat.Location = new System.Drawing.Point(24, 86);
-            this.panelEtat.Name = "panelEtat";
-            this.panelEtat.Size = new System.Drawing.Size(528, 28);
-            this.panelEtat.TabIndex = 24;
-            //
+            // 
+            panelEtat.Controls.Add(rbEnCours);
+            panelEtat.Controls.Add(rbResolu);
+            panelEtat.Controls.Add(rbCloture);
+            panelEtat.Location = new Point(24, 86);
+            panelEtat.Name = "panelEtat";
+            panelEtat.Size = new Size(528, 28);
+            panelEtat.TabIndex = 24;
+            // 
             // rbEnCours
-            //
-            this.rbEnCours.AutoSize = true;
-            this.rbEnCours.Checked = true;
-            this.rbEnCours.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbEnCours.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.rbEnCours.Location = new System.Drawing.Point(0, 3);
-            this.rbEnCours.Name = "rbEnCours";
-            this.rbEnCours.TabStop = true;
-            this.rbEnCours.Text = "En cours";
-            //
+            // 
+            rbEnCours.AutoSize = true;
+            rbEnCours.Checked = true;
+            rbEnCours.Font = new Font("Segoe UI", 10F);
+            rbEnCours.ForeColor = Color.FromArgb(31, 41, 55);
+            rbEnCours.Location = new Point(0, 3);
+            rbEnCours.Name = "rbEnCours";
+            rbEnCours.Size = new Size(96, 27);
+            rbEnCours.TabIndex = 0;
+            rbEnCours.TabStop = true;
+            rbEnCours.Text = "En cours";
+            // 
             // rbResolu
-            //
-            this.rbResolu.AutoSize = true;
-            this.rbResolu.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbResolu.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.rbResolu.Location = new System.Drawing.Point(110, 3);
-            this.rbResolu.Name = "rbResolu";
-            this.rbResolu.Text = "Résolu";
-            //
+            // 
+            rbResolu.AutoSize = true;
+            rbResolu.Font = new Font("Segoe UI", 10F);
+            rbResolu.ForeColor = Color.FromArgb(31, 41, 55);
+            rbResolu.Location = new Point(110, 3);
+            rbResolu.Name = "rbResolu";
+            rbResolu.Size = new Size(81, 27);
+            rbResolu.TabIndex = 1;
+            rbResolu.Text = "Résolu";
+            // 
             // rbCloture
-            //
-            this.rbCloture.AutoSize = true;
-            this.rbCloture.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbCloture.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.rbCloture.Location = new System.Drawing.Point(220, 3);
-            this.rbCloture.Name = "rbCloture";
-            this.rbCloture.Text = "Clôturé";
-            //
+            // 
+            rbCloture.AutoSize = true;
+            rbCloture.Font = new Font("Segoe UI", 10F);
+            rbCloture.ForeColor = Color.FromArgb(31, 41, 55);
+            rbCloture.Location = new Point(220, 3);
+            rbCloture.Name = "rbCloture";
+            rbCloture.Size = new Size(87, 27);
+            rbCloture.TabIndex = 2;
+            rbCloture.Text = "Clôturé";
+            // 
             // lblUrgence
-            //
-            this.lblUrgence.AutoSize = true;
-            this.lblUrgence.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblUrgence.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblUrgence.Location = new System.Drawing.Point(24, 122);
-            this.lblUrgence.Name = "lblUrgence";
-            this.lblUrgence.Text = "Niveau d'urgence";
-            //
+            // 
+            lblUrgence.AutoSize = true;
+            lblUrgence.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblUrgence.ForeColor = Color.FromArgb(31, 41, 55);
+            lblUrgence.Location = new Point(24, 122);
+            lblUrgence.Name = "lblUrgence";
+            lblUrgence.Size = new Size(145, 23);
+            lblUrgence.TabIndex = 25;
+            lblUrgence.Text = "Niveau d'urgence";
+            // 
             // panelUrgence
-            //
-            this.panelUrgence.Controls.Add(this.rbFaible);
-            this.panelUrgence.Controls.Add(this.rbMoyen);
-            this.panelUrgence.Controls.Add(this.rbCritique);
-            this.panelUrgence.Location = new System.Drawing.Point(24, 144);
-            this.panelUrgence.Name = "panelUrgence";
-            this.panelUrgence.Size = new System.Drawing.Size(528, 28);
-            this.panelUrgence.TabIndex = 25;
-            //
+            // 
+            panelUrgence.Controls.Add(rbFaible);
+            panelUrgence.Controls.Add(rbMoyen);
+            panelUrgence.Controls.Add(rbCritique);
+            panelUrgence.Location = new Point(24, 144);
+            panelUrgence.Name = "panelUrgence";
+            panelUrgence.Size = new Size(528, 28);
+            panelUrgence.TabIndex = 25;
+            // 
             // rbFaible
-            //
-            this.rbFaible.AutoSize = true;
-            this.rbFaible.Checked = true;
-            this.rbFaible.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbFaible.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.rbFaible.Location = new System.Drawing.Point(0, 3);
-            this.rbFaible.Name = "rbFaible";
-            this.rbFaible.TabStop = true;
-            this.rbFaible.Text = "Faible";
-            //
+            // 
+            rbFaible.AutoSize = true;
+            rbFaible.Checked = true;
+            rbFaible.Font = new Font("Segoe UI", 10F);
+            rbFaible.ForeColor = Color.FromArgb(31, 41, 55);
+            rbFaible.Location = new Point(0, 3);
+            rbFaible.Name = "rbFaible";
+            rbFaible.Size = new Size(74, 27);
+            rbFaible.TabIndex = 0;
+            rbFaible.TabStop = true;
+            rbFaible.Text = "Faible";
+            // 
             // rbMoyen
-            //
-            this.rbMoyen.AutoSize = true;
-            this.rbMoyen.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbMoyen.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.rbMoyen.Location = new System.Drawing.Point(110, 3);
-            this.rbMoyen.Name = "rbMoyen";
-            this.rbMoyen.Text = "Moyen";
-            //
+            // 
+            rbMoyen.AutoSize = true;
+            rbMoyen.Font = new Font("Segoe UI", 10F);
+            rbMoyen.ForeColor = Color.FromArgb(31, 41, 55);
+            rbMoyen.Location = new Point(110, 3);
+            rbMoyen.Name = "rbMoyen";
+            rbMoyen.Size = new Size(83, 27);
+            rbMoyen.TabIndex = 1;
+            rbMoyen.Text = "Moyen";
+            // 
             // rbCritique
-            //
-            this.rbCritique.AutoSize = true;
-            this.rbCritique.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbCritique.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.rbCritique.Location = new System.Drawing.Point(220, 3);
-            this.rbCritique.Name = "rbCritique";
-            this.rbCritique.Text = "Critique";
-            //
+            // 
+            rbCritique.AutoSize = true;
+            rbCritique.Font = new Font("Segoe UI", 10F);
+            rbCritique.ForeColor = Color.FromArgb(31, 41, 55);
+            rbCritique.Location = new Point(220, 3);
+            rbCritique.Name = "rbCritique";
+            rbCritique.Size = new Size(91, 27);
+            rbCritique.TabIndex = 2;
+            rbCritique.Text = "Critique";
+            // 
             // lblSuivi
-            //
-            this.lblSuivi.AutoSize = true;
-            this.lblSuivi.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblSuivi.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblSuivi.Location = new System.Drawing.Point(24, 180);
-            this.lblSuivi.Name = "lblSuivi";
-            this.lblSuivi.Text = "Suivi (travail effectué)";
-            //
+            // 
+            lblSuivi.AutoSize = true;
+            lblSuivi.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblSuivi.ForeColor = Color.FromArgb(31, 41, 55);
+            lblSuivi.Location = new Point(24, 180);
+            lblSuivi.Name = "lblSuivi";
+            lblSuivi.Size = new Size(178, 23);
+            lblSuivi.TabIndex = 26;
+            lblSuivi.Text = "Suivi (travail effectué)";
+            // 
             // txtSuivi
-            //
-            this.txtSuivi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSuivi.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtSuivi.Location = new System.Drawing.Point(24, 202);
-            this.txtSuivi.Multiline = true;
-            this.txtSuivi.Name = "txtSuivi";
-            this.txtSuivi.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtSuivi.Size = new System.Drawing.Size(528, 72);
-            this.txtSuivi.TabIndex = 26;
-            //
+            // 
+            txtSuivi.BorderStyle = BorderStyle.FixedSingle;
+            txtSuivi.Font = new Font("Segoe UI", 10.5F);
+            txtSuivi.Location = new Point(24, 202);
+            txtSuivi.Multiline = true;
+            txtSuivi.Name = "txtSuivi";
+            txtSuivi.ScrollBars = ScrollBars.Vertical;
+            txtSuivi.Size = new Size(528, 72);
+            txtSuivi.TabIndex = 26;
+            // 
             // btnEnregistrer
-            //
-            this.btnEnregistrer.FlatAppearance.BorderSize = 0;
-            this.btnEnregistrer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(27, 74, 184);
-            this.btnEnregistrer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(31, 88, 214);
-            this.btnEnregistrer.BackColor = System.Drawing.Color.FromArgb(46, 108, 240);
-            this.btnEnregistrer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnregistrer.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnEnregistrer.ForeColor = System.Drawing.Color.White;
-            this.btnEnregistrer.Location = new System.Drawing.Point(24, 286);
-            this.btnEnregistrer.Name = "btnEnregistrer";
-            this.btnEnregistrer.Size = new System.Drawing.Size(150, 38);
-            this.btnEnregistrer.TabIndex = 27;
-            this.btnEnregistrer.Text = "Enregistrer";
-            this.btnEnregistrer.UseVisualStyleBackColor = false;
-            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
-            //
+            // 
+            btnEnregistrer.BackColor = Color.FromArgb(46, 108, 240);
+            btnEnregistrer.Cursor = Cursors.Hand;
+            btnEnregistrer.FlatAppearance.BorderSize = 0;
+            btnEnregistrer.FlatAppearance.MouseDownBackColor = Color.FromArgb(27, 74, 184);
+            btnEnregistrer.FlatAppearance.MouseOverBackColor = Color.FromArgb(31, 88, 214);
+            btnEnregistrer.FlatStyle = FlatStyle.Flat;
+            btnEnregistrer.Font = new Font("Segoe UI Semibold", 10F);
+            btnEnregistrer.ForeColor = Color.White;
+            btnEnregistrer.Location = new Point(24, 286);
+            btnEnregistrer.Name = "btnEnregistrer";
+            btnEnregistrer.Size = new Size(150, 38);
+            btnEnregistrer.TabIndex = 27;
+            btnEnregistrer.Text = "Enregistrer";
+            btnEnregistrer.UseVisualStyleBackColor = false;
+            btnEnregistrer.Click += btnEnregistrer_Click;
+            // 
+            // tabResponsable
+            // 
+            tabResponsable.BackColor = Color.FromArgb(243, 244, 246);
+            tabResponsable.Controls.Add(cartePersonnel);
+            tabResponsable.Location = new Point(4, 38);
+            tabResponsable.Name = "tabResponsable";
+            tabResponsable.Padding = new Padding(3);
+            tabResponsable.Size = new Size(1060, 530);
+            tabResponsable.TabIndex = 5;
+            tabResponsable.Text = "Responsable";
+            // 
             // cartePersonnel
-            //
-            this.cartePersonnel.Controls.Add(this.lblType);
-            this.cartePersonnel.Controls.Add(this.panelType);
-            this.cartePersonnel.Controls.Add(this.lblPersonne);
-            this.cartePersonnel.Controls.Add(this.cboPersonne);
-            this.cartePersonnel.Controls.Add(this.separateurPersonnel);
-            this.cartePersonnel.Controls.Add(this.lblNom);
-            this.cartePersonnel.Controls.Add(this.txtNom);
-            this.cartePersonnel.Controls.Add(this.lblPrenom);
-            this.cartePersonnel.Controls.Add(this.txtPrenom);
-            this.cartePersonnel.Controls.Add(this.lblDateEmbauche);
-            this.cartePersonnel.Controls.Add(this.dtpDateEmbauche);
-            this.cartePersonnel.Controls.Add(this.lblPostePersonne);
-            this.cartePersonnel.Controls.Add(this.txtPostePersonne);
-            this.cartePersonnel.Controls.Add(this.lblLoginPersonne);
-            this.cartePersonnel.Controls.Add(this.txtLoginPersonne);
-            this.cartePersonnel.Controls.Add(this.lblMdpPersonne);
-            this.cartePersonnel.Controls.Add(this.txtMdpPersonne);
-            this.cartePersonnel.Controls.Add(this.panelTechnicien);
-            this.cartePersonnel.Controls.Add(this.btnAjouterPersonne);
-            this.cartePersonnel.Controls.Add(this.btnModifierPersonne);
-            this.cartePersonnel.Controls.Add(this.btnSupprimerPersonne);
-            this.cartePersonnel.BackColor = System.Drawing.Color.White;
-            this.cartePersonnel.Location = new System.Drawing.Point(16, 16);
-            this.cartePersonnel.Name = "cartePersonnel";
-            this.cartePersonnel.Size = new System.Drawing.Size(772, 492);
-            //
+            // 
+            cartePersonnel.BackColor = Color.White;
+            cartePersonnel.Controls.Add(lblType);
+            cartePersonnel.Controls.Add(panelType);
+            cartePersonnel.Controls.Add(lblPersonne);
+            cartePersonnel.Controls.Add(cboPersonne);
+            cartePersonnel.Controls.Add(separateurPersonnel);
+            cartePersonnel.Controls.Add(lblNom);
+            cartePersonnel.Controls.Add(txtNom);
+            cartePersonnel.Controls.Add(lblPrenom);
+            cartePersonnel.Controls.Add(txtPrenom);
+            cartePersonnel.Controls.Add(lblDateEmbauche);
+            cartePersonnel.Controls.Add(dtpDateEmbauche);
+            cartePersonnel.Controls.Add(lblPostePersonne);
+            cartePersonnel.Controls.Add(txtPostePersonne);
+            cartePersonnel.Controls.Add(lblLoginPersonne);
+            cartePersonnel.Controls.Add(txtLoginPersonne);
+            cartePersonnel.Controls.Add(lblMdpPersonne);
+            cartePersonnel.Controls.Add(txtMdpPersonne);
+            cartePersonnel.Controls.Add(panelTechnicien);
+            cartePersonnel.Controls.Add(btnAjouterPersonne);
+            cartePersonnel.Controls.Add(btnModifierPersonne);
+            cartePersonnel.Controls.Add(btnSupprimerPersonne);
+            cartePersonnel.Location = new Point(16, 16);
+            cartePersonnel.Name = "cartePersonnel";
+            cartePersonnel.Size = new Size(772, 492);
+            cartePersonnel.TabIndex = 0;
+            // 
             // lblType
-            //
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblType.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblType.Location = new System.Drawing.Point(24, 20);
-            this.lblType.Name = "lblType";
-            this.lblType.Text = "Type de compte";
-            //
+            // 
+            lblType.AutoSize = true;
+            lblType.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblType.ForeColor = Color.FromArgb(31, 41, 55);
+            lblType.Location = new Point(24, 20);
+            lblType.Name = "lblType";
+            lblType.Size = new Size(133, 23);
+            lblType.TabIndex = 0;
+            lblType.Text = "Type de compte";
+            // 
             // panelType
-            //
-            this.panelType.Controls.Add(this.rbTechnicien);
-            this.panelType.Controls.Add(this.rbUtilisateur);
-            this.panelType.Location = new System.Drawing.Point(24, 42);
-            this.panelType.Name = "panelType";
-            this.panelType.Size = new System.Drawing.Size(260, 28);
-            this.panelType.TabIndex = 28;
-            //
+            // 
+            panelType.Controls.Add(rbTechnicien);
+            panelType.Controls.Add(rbUtilisateur);
+            panelType.Location = new Point(24, 42);
+            panelType.Name = "panelType";
+            panelType.Size = new Size(260, 28);
+            panelType.TabIndex = 28;
+            // 
             // rbTechnicien
-            //
-            this.rbTechnicien.AutoSize = true;
-            this.rbTechnicien.Checked = true;
-            this.rbTechnicien.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbTechnicien.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.rbTechnicien.Location = new System.Drawing.Point(0, 3);
-            this.rbTechnicien.Name = "rbTechnicien";
-            this.rbTechnicien.TabStop = true;
-            this.rbTechnicien.Text = "Technicien";
-            this.rbTechnicien.CheckedChanged += new System.EventHandler(this.rbTechnicien_CheckedChanged);
-            //
+            // 
+            rbTechnicien.AutoSize = true;
+            rbTechnicien.Checked = true;
+            rbTechnicien.Font = new Font("Segoe UI", 10F);
+            rbTechnicien.ForeColor = Color.FromArgb(31, 41, 55);
+            rbTechnicien.Location = new Point(0, 3);
+            rbTechnicien.Name = "rbTechnicien";
+            rbTechnicien.Size = new Size(110, 27);
+            rbTechnicien.TabIndex = 0;
+            rbTechnicien.TabStop = true;
+            rbTechnicien.Text = "Technicien";
+            rbTechnicien.CheckedChanged += rbTechnicien_CheckedChanged;
+            // 
             // rbUtilisateur
-            //
-            this.rbUtilisateur.AutoSize = true;
-            this.rbUtilisateur.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbUtilisateur.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.rbUtilisateur.Location = new System.Drawing.Point(110, 3);
-            this.rbUtilisateur.Name = "rbUtilisateur";
-            this.rbUtilisateur.Text = "Utilisateur";
-            //
+            // 
+            rbUtilisateur.AutoSize = true;
+            rbUtilisateur.Font = new Font("Segoe UI", 10F);
+            rbUtilisateur.ForeColor = Color.FromArgb(31, 41, 55);
+            rbUtilisateur.Location = new Point(110, 3);
+            rbUtilisateur.Name = "rbUtilisateur";
+            rbUtilisateur.Size = new Size(108, 27);
+            rbUtilisateur.TabIndex = 1;
+            rbUtilisateur.Text = "Utilisateur";
+            // 
             // lblPersonne
-            //
-            this.lblPersonne.AutoSize = true;
-            this.lblPersonne.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblPersonne.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblPersonne.Location = new System.Drawing.Point(300, 20);
-            this.lblPersonne.Name = "lblPersonne";
-            this.lblPersonne.Text = "Personne à modifier ou supprimer";
-            //
+            // 
+            lblPersonne.AutoSize = true;
+            lblPersonne.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblPersonne.ForeColor = Color.FromArgb(31, 41, 55);
+            lblPersonne.Location = new Point(300, 20);
+            lblPersonne.Name = "lblPersonne";
+            lblPersonne.Size = new Size(270, 23);
+            lblPersonne.TabIndex = 29;
+            lblPersonne.Text = "Personne à modifier ou supprimer";
+            // 
             // cboPersonne
-            //
-            this.cboPersonne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPersonne.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.cboPersonne.Location = new System.Drawing.Point(300, 42);
-            this.cboPersonne.Name = "cboPersonne";
-            this.cboPersonne.Size = new System.Drawing.Size(448, 27);
-            this.cboPersonne.TabIndex = 29;
-            this.cboPersonne.SelectedIndexChanged += new System.EventHandler(this.cboPersonne_SelectedIndexChanged);
-            //
+            // 
+            cboPersonne.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPersonne.Font = new Font("Segoe UI", 10.5F);
+            cboPersonne.Location = new Point(300, 42);
+            cboPersonne.Name = "cboPersonne";
+            cboPersonne.Size = new Size(448, 31);
+            cboPersonne.TabIndex = 29;
+            cboPersonne.SelectedIndexChanged += cboPersonne_SelectedIndexChanged;
+            // 
             // separateurPersonnel
-            //
-            this.separateurPersonnel.BackColor = System.Drawing.Color.FromArgb(229, 231, 235);
-            this.separateurPersonnel.Location = new System.Drawing.Point(24, 88);
-            this.separateurPersonnel.Name = "separateurPersonnel";
-            this.separateurPersonnel.Size = new System.Drawing.Size(724, 1);
-            //
+            // 
+            separateurPersonnel.BackColor = Color.FromArgb(229, 231, 235);
+            separateurPersonnel.Location = new Point(24, 88);
+            separateurPersonnel.Name = "separateurPersonnel";
+            separateurPersonnel.Size = new Size(724, 1);
+            separateurPersonnel.TabIndex = 30;
+            // 
             // lblNom
-            //
-            this.lblNom.AutoSize = true;
-            this.lblNom.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblNom.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblNom.Location = new System.Drawing.Point(24, 108);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Text = "Nom";
-            //
+            // 
+            lblNom.AutoSize = true;
+            lblNom.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblNom.ForeColor = Color.FromArgb(31, 41, 55);
+            lblNom.Location = new Point(24, 108);
+            lblNom.Name = "lblNom";
+            lblNom.Size = new Size(48, 23);
+            lblNom.TabIndex = 31;
+            lblNom.Text = "Nom";
+            // 
             // txtNom
-            //
-            this.txtNom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNom.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtNom.Location = new System.Drawing.Point(24, 130);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(356, 26);
-            this.txtNom.TabIndex = 30;
-            //
+            // 
+            txtNom.BorderStyle = BorderStyle.FixedSingle;
+            txtNom.Font = new Font("Segoe UI", 10.5F);
+            txtNom.Location = new Point(24, 130);
+            txtNom.Name = "txtNom";
+            txtNom.Size = new Size(356, 31);
+            txtNom.TabIndex = 30;
+            // 
             // lblPrenom
-            //
-            this.lblPrenom.AutoSize = true;
-            this.lblPrenom.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblPrenom.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblPrenom.Location = new System.Drawing.Point(392, 108);
-            this.lblPrenom.Name = "lblPrenom";
-            this.lblPrenom.Text = "Prénom";
-            //
+            // 
+            lblPrenom.AutoSize = true;
+            lblPrenom.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblPrenom.ForeColor = Color.FromArgb(31, 41, 55);
+            lblPrenom.Location = new Point(392, 108);
+            lblPrenom.Name = "lblPrenom";
+            lblPrenom.Size = new Size(70, 23);
+            lblPrenom.TabIndex = 32;
+            lblPrenom.Text = "Prénom";
+            // 
             // txtPrenom
-            //
-            this.txtPrenom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrenom.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtPrenom.Location = new System.Drawing.Point(392, 130);
-            this.txtPrenom.Name = "txtPrenom";
-            this.txtPrenom.Size = new System.Drawing.Size(356, 26);
-            this.txtPrenom.TabIndex = 31;
-            //
+            // 
+            txtPrenom.BorderStyle = BorderStyle.FixedSingle;
+            txtPrenom.Font = new Font("Segoe UI", 10.5F);
+            txtPrenom.Location = new Point(392, 130);
+            txtPrenom.Name = "txtPrenom";
+            txtPrenom.Size = new Size(356, 31);
+            txtPrenom.TabIndex = 31;
+            // 
             // lblDateEmbauche
-            //
-            this.lblDateEmbauche.AutoSize = true;
-            this.lblDateEmbauche.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblDateEmbauche.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblDateEmbauche.Location = new System.Drawing.Point(24, 172);
-            this.lblDateEmbauche.Name = "lblDateEmbauche";
-            this.lblDateEmbauche.Text = "Date d'embauche";
-            //
+            // 
+            lblDateEmbauche.AutoSize = true;
+            lblDateEmbauche.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblDateEmbauche.ForeColor = Color.FromArgb(31, 41, 55);
+            lblDateEmbauche.Location = new Point(24, 172);
+            lblDateEmbauche.Name = "lblDateEmbauche";
+            lblDateEmbauche.Size = new Size(145, 23);
+            lblDateEmbauche.TabIndex = 33;
+            lblDateEmbauche.Text = "Date d'embauche";
+            // 
             // dtpDateEmbauche
-            //
-            this.dtpDateEmbauche.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dtpDateEmbauche.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateEmbauche.Location = new System.Drawing.Point(24, 194);
-            this.dtpDateEmbauche.Name = "dtpDateEmbauche";
-            this.dtpDateEmbauche.Size = new System.Drawing.Size(356, 26);
-            this.dtpDateEmbauche.TabIndex = 32;
-            //
+            // 
+            dtpDateEmbauche.Font = new Font("Segoe UI", 10.5F);
+            dtpDateEmbauche.Format = DateTimePickerFormat.Short;
+            dtpDateEmbauche.Location = new Point(24, 194);
+            dtpDateEmbauche.Name = "dtpDateEmbauche";
+            dtpDateEmbauche.Size = new Size(356, 31);
+            dtpDateEmbauche.TabIndex = 32;
+            // 
             // lblPostePersonne
-            //
-            this.lblPostePersonne.AutoSize = true;
-            this.lblPostePersonne.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblPostePersonne.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblPostePersonne.Location = new System.Drawing.Point(392, 172);
-            this.lblPostePersonne.Name = "lblPostePersonne";
-            this.lblPostePersonne.Text = "Poste";
-            //
+            // 
+            lblPostePersonne.AutoSize = true;
+            lblPostePersonne.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblPostePersonne.ForeColor = Color.FromArgb(31, 41, 55);
+            lblPostePersonne.Location = new Point(392, 172);
+            lblPostePersonne.Name = "lblPostePersonne";
+            lblPostePersonne.Size = new Size(51, 23);
+            lblPostePersonne.TabIndex = 34;
+            lblPostePersonne.Text = "Poste";
+            // 
             // txtPostePersonne
-            //
-            this.txtPostePersonne.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPostePersonne.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtPostePersonne.Location = new System.Drawing.Point(392, 194);
-            this.txtPostePersonne.Name = "txtPostePersonne";
-            this.txtPostePersonne.Size = new System.Drawing.Size(356, 26);
-            this.txtPostePersonne.TabIndex = 33;
-            //
+            // 
+            txtPostePersonne.BorderStyle = BorderStyle.FixedSingle;
+            txtPostePersonne.Font = new Font("Segoe UI", 10.5F);
+            txtPostePersonne.Location = new Point(392, 194);
+            txtPostePersonne.Name = "txtPostePersonne";
+            txtPostePersonne.Size = new Size(356, 31);
+            txtPostePersonne.TabIndex = 33;
+            // 
             // lblLoginPersonne
-            //
-            this.lblLoginPersonne.AutoSize = true;
-            this.lblLoginPersonne.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblLoginPersonne.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblLoginPersonne.Location = new System.Drawing.Point(24, 236);
-            this.lblLoginPersonne.Name = "lblLoginPersonne";
-            this.lblLoginPersonne.Text = "Login";
-            //
+            // 
+            lblLoginPersonne.AutoSize = true;
+            lblLoginPersonne.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblLoginPersonne.ForeColor = Color.FromArgb(31, 41, 55);
+            lblLoginPersonne.Location = new Point(24, 236);
+            lblLoginPersonne.Name = "lblLoginPersonne";
+            lblLoginPersonne.Size = new Size(52, 23);
+            lblLoginPersonne.TabIndex = 35;
+            lblLoginPersonne.Text = "Login";
+            // 
             // txtLoginPersonne
-            //
-            this.txtLoginPersonne.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLoginPersonne.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtLoginPersonne.Location = new System.Drawing.Point(24, 258);
-            this.txtLoginPersonne.Name = "txtLoginPersonne";
-            this.txtLoginPersonne.Size = new System.Drawing.Size(356, 26);
-            this.txtLoginPersonne.TabIndex = 34;
-            //
+            // 
+            txtLoginPersonne.BorderStyle = BorderStyle.FixedSingle;
+            txtLoginPersonne.Font = new Font("Segoe UI", 10.5F);
+            txtLoginPersonne.Location = new Point(24, 258);
+            txtLoginPersonne.Name = "txtLoginPersonne";
+            txtLoginPersonne.Size = new Size(356, 31);
+            txtLoginPersonne.TabIndex = 34;
+            // 
             // lblMdpPersonne
-            //
-            this.lblMdpPersonne.AutoSize = true;
-            this.lblMdpPersonne.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblMdpPersonne.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblMdpPersonne.Location = new System.Drawing.Point(392, 236);
-            this.lblMdpPersonne.Name = "lblMdpPersonne";
-            this.lblMdpPersonne.Text = "Mot de passe";
-            //
+            // 
+            lblMdpPersonne.AutoSize = true;
+            lblMdpPersonne.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblMdpPersonne.ForeColor = Color.FromArgb(31, 41, 55);
+            lblMdpPersonne.Location = new Point(392, 236);
+            lblMdpPersonne.Name = "lblMdpPersonne";
+            lblMdpPersonne.Size = new Size(113, 23);
+            lblMdpPersonne.TabIndex = 36;
+            lblMdpPersonne.Text = "Mot de passe";
+            // 
             // txtMdpPersonne
-            //
-            this.txtMdpPersonne.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMdpPersonne.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtMdpPersonne.Location = new System.Drawing.Point(392, 258);
-            this.txtMdpPersonne.Name = "txtMdpPersonne";
-            this.txtMdpPersonne.Size = new System.Drawing.Size(356, 26);
-            this.txtMdpPersonne.TabIndex = 35;
-            this.txtMdpPersonne.UseSystemPasswordChar = true;
-            //
+            // 
+            txtMdpPersonne.BorderStyle = BorderStyle.FixedSingle;
+            txtMdpPersonne.Font = new Font("Segoe UI", 10.5F);
+            txtMdpPersonne.Location = new Point(392, 258);
+            txtMdpPersonne.Name = "txtMdpPersonne";
+            txtMdpPersonne.Size = new Size(356, 31);
+            txtMdpPersonne.TabIndex = 35;
+            txtMdpPersonne.UseSystemPasswordChar = true;
+            // 
             // panelTechnicien
-            //
-            this.panelTechnicien.Controls.Add(this.lblFormation);
-            this.panelTechnicien.Controls.Add(this.txtFormation);
-            this.panelTechnicien.Controls.Add(this.lblCompetence);
-            this.panelTechnicien.Controls.Add(this.txtCompetence);
-            this.panelTechnicien.BackColor = System.Drawing.Color.FromArgb(248, 249, 251);
-            this.panelTechnicien.Location = new System.Drawing.Point(24, 304);
-            this.panelTechnicien.Name = "panelTechnicien";
-            this.panelTechnicien.Size = new System.Drawing.Size(724, 96);
-            //
+            // 
+            panelTechnicien.BackColor = Color.FromArgb(248, 249, 251);
+            panelTechnicien.Controls.Add(lblFormation);
+            panelTechnicien.Controls.Add(txtFormation);
+            panelTechnicien.Controls.Add(lblCompetence);
+            panelTechnicien.Controls.Add(txtCompetence);
+            panelTechnicien.Location = new Point(24, 304);
+            panelTechnicien.Name = "panelTechnicien";
+            panelTechnicien.Size = new Size(724, 96);
+            panelTechnicien.TabIndex = 37;
+            // 
             // lblFormation
-            //
-            this.lblFormation.AutoSize = true;
-            this.lblFormation.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblFormation.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblFormation.Location = new System.Drawing.Point(16, 12);
-            this.lblFormation.Name = "lblFormation";
-            this.lblFormation.Text = "Formation";
-            //
+            // 
+            lblFormation.AutoSize = true;
+            lblFormation.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblFormation.ForeColor = Color.FromArgb(31, 41, 55);
+            lblFormation.Location = new Point(16, 12);
+            lblFormation.Name = "lblFormation";
+            lblFormation.Size = new Size(89, 23);
+            lblFormation.TabIndex = 0;
+            lblFormation.Text = "Formation";
+            // 
             // txtFormation
-            //
-            this.txtFormation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFormation.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtFormation.Location = new System.Drawing.Point(16, 34);
-            this.txtFormation.Name = "txtFormation";
-            this.txtFormation.Size = new System.Drawing.Size(336, 26);
-            this.txtFormation.TabIndex = 36;
-            //
+            // 
+            txtFormation.BorderStyle = BorderStyle.FixedSingle;
+            txtFormation.Font = new Font("Segoe UI", 10.5F);
+            txtFormation.Location = new Point(16, 34);
+            txtFormation.Name = "txtFormation";
+            txtFormation.Size = new Size(336, 31);
+            txtFormation.TabIndex = 36;
+            // 
             // lblCompetence
-            //
-            this.lblCompetence.AutoSize = true;
-            this.lblCompetence.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblCompetence.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.lblCompetence.Location = new System.Drawing.Point(372, 12);
-            this.lblCompetence.Name = "lblCompetence";
-            this.lblCompetence.Text = "Compétence";
-            //
+            // 
+            lblCompetence.AutoSize = true;
+            lblCompetence.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblCompetence.ForeColor = Color.FromArgb(31, 41, 55);
+            lblCompetence.Location = new Point(372, 12);
+            lblCompetence.Name = "lblCompetence";
+            lblCompetence.Size = new Size(107, 23);
+            lblCompetence.TabIndex = 37;
+            lblCompetence.Text = "Compétence";
+            // 
             // txtCompetence
-            //
-            this.txtCompetence.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCompetence.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.txtCompetence.Location = new System.Drawing.Point(372, 34);
-            this.txtCompetence.Name = "txtCompetence";
-            this.txtCompetence.Size = new System.Drawing.Size(336, 26);
-            this.txtCompetence.TabIndex = 37;
-            //
+            // 
+            txtCompetence.BorderStyle = BorderStyle.FixedSingle;
+            txtCompetence.Font = new Font("Segoe UI", 10.5F);
+            txtCompetence.Location = new Point(372, 34);
+            txtCompetence.Name = "txtCompetence";
+            txtCompetence.Size = new Size(336, 31);
+            txtCompetence.TabIndex = 37;
+            // 
             // btnAjouterPersonne
-            //
-            this.btnAjouterPersonne.FlatAppearance.BorderSize = 0;
-            this.btnAjouterPersonne.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(27, 74, 184);
-            this.btnAjouterPersonne.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(31, 88, 214);
-            this.btnAjouterPersonne.BackColor = System.Drawing.Color.FromArgb(46, 108, 240);
-            this.btnAjouterPersonne.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAjouterPersonne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjouterPersonne.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnAjouterPersonne.ForeColor = System.Drawing.Color.White;
-            this.btnAjouterPersonne.Location = new System.Drawing.Point(24, 424);
-            this.btnAjouterPersonne.Name = "btnAjouterPersonne";
-            this.btnAjouterPersonne.Size = new System.Drawing.Size(120, 40);
-            this.btnAjouterPersonne.TabIndex = 38;
-            this.btnAjouterPersonne.Text = "Ajouter";
-            this.btnAjouterPersonne.UseVisualStyleBackColor = false;
-            this.btnAjouterPersonne.Click += new System.EventHandler(this.btnAjouterPersonne_Click);
-            //
+            // 
+            btnAjouterPersonne.BackColor = Color.FromArgb(46, 108, 240);
+            btnAjouterPersonne.Cursor = Cursors.Hand;
+            btnAjouterPersonne.FlatAppearance.BorderSize = 0;
+            btnAjouterPersonne.FlatAppearance.MouseDownBackColor = Color.FromArgb(27, 74, 184);
+            btnAjouterPersonne.FlatAppearance.MouseOverBackColor = Color.FromArgb(31, 88, 214);
+            btnAjouterPersonne.FlatStyle = FlatStyle.Flat;
+            btnAjouterPersonne.Font = new Font("Segoe UI Semibold", 10F);
+            btnAjouterPersonne.ForeColor = Color.White;
+            btnAjouterPersonne.Location = new Point(24, 424);
+            btnAjouterPersonne.Name = "btnAjouterPersonne";
+            btnAjouterPersonne.Size = new Size(120, 40);
+            btnAjouterPersonne.TabIndex = 38;
+            btnAjouterPersonne.Text = "Ajouter";
+            btnAjouterPersonne.UseVisualStyleBackColor = false;
+            btnAjouterPersonne.Click += btnAjouterPersonne_Click;
+            // 
             // btnModifierPersonne
-            //
-            this.btnModifierPersonne.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(209, 213, 219);
-            this.btnModifierPersonne.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(243, 244, 246);
-            this.btnModifierPersonne.BackColor = System.Drawing.Color.White;
-            this.btnModifierPersonne.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModifierPersonne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifierPersonne.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnModifierPersonne.ForeColor = System.Drawing.Color.FromArgb(31, 41, 55);
-            this.btnModifierPersonne.Location = new System.Drawing.Point(156, 424);
-            this.btnModifierPersonne.Name = "btnModifierPersonne";
-            this.btnModifierPersonne.Size = new System.Drawing.Size(120, 40);
-            this.btnModifierPersonne.TabIndex = 39;
-            this.btnModifierPersonne.Text = "Modifier";
-            this.btnModifierPersonne.UseVisualStyleBackColor = false;
-            this.btnModifierPersonne.Click += new System.EventHandler(this.btnModifierPersonne_Click);
-            //
+            // 
+            btnModifierPersonne.BackColor = Color.White;
+            btnModifierPersonne.Cursor = Cursors.Hand;
+            btnModifierPersonne.FlatAppearance.BorderColor = Color.FromArgb(209, 213, 219);
+            btnModifierPersonne.FlatAppearance.MouseOverBackColor = Color.FromArgb(243, 244, 246);
+            btnModifierPersonne.FlatStyle = FlatStyle.Flat;
+            btnModifierPersonne.Font = new Font("Segoe UI Semibold", 10F);
+            btnModifierPersonne.ForeColor = Color.FromArgb(31, 41, 55);
+            btnModifierPersonne.Location = new Point(156, 424);
+            btnModifierPersonne.Name = "btnModifierPersonne";
+            btnModifierPersonne.Size = new Size(120, 40);
+            btnModifierPersonne.TabIndex = 39;
+            btnModifierPersonne.Text = "Modifier";
+            btnModifierPersonne.UseVisualStyleBackColor = false;
+            btnModifierPersonne.Click += btnModifierPersonne_Click;
+            // 
             // btnSupprimerPersonne
-            //
-            this.btnSupprimerPersonne.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(220, 38, 38);
-            this.btnSupprimerPersonne.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(254, 242, 242);
-            this.btnSupprimerPersonne.BackColor = System.Drawing.Color.White;
-            this.btnSupprimerPersonne.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerPersonne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupprimerPersonne.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnSupprimerPersonne.ForeColor = System.Drawing.Color.FromArgb(185, 28, 28);
-            this.btnSupprimerPersonne.Location = new System.Drawing.Point(288, 424);
-            this.btnSupprimerPersonne.Name = "btnSupprimerPersonne";
-            this.btnSupprimerPersonne.Size = new System.Drawing.Size(120, 40);
-            this.btnSupprimerPersonne.TabIndex = 40;
-            this.btnSupprimerPersonne.Text = "Supprimer";
-            this.btnSupprimerPersonne.UseVisualStyleBackColor = false;
-            this.btnSupprimerPersonne.Click += new System.EventHandler(this.btnSupprimerPersonne_Click);
-            //
+            // 
+            btnSupprimerPersonne.BackColor = Color.White;
+            btnSupprimerPersonne.Cursor = Cursors.Hand;
+            btnSupprimerPersonne.FlatAppearance.BorderColor = Color.FromArgb(220, 38, 38);
+            btnSupprimerPersonne.FlatAppearance.MouseOverBackColor = Color.FromArgb(254, 242, 242);
+            btnSupprimerPersonne.FlatStyle = FlatStyle.Flat;
+            btnSupprimerPersonne.Font = new Font("Segoe UI Semibold", 10F);
+            btnSupprimerPersonne.ForeColor = Color.FromArgb(185, 28, 28);
+            btnSupprimerPersonne.Location = new Point(288, 424);
+            btnSupprimerPersonne.Name = "btnSupprimerPersonne";
+            btnSupprimerPersonne.Size = new Size(120, 40);
+            btnSupprimerPersonne.TabIndex = 40;
+            btnSupprimerPersonne.Text = "Supprimer";
+            btnSupprimerPersonne.UseVisualStyleBackColor = false;
+            btnSupprimerPersonne.Click += btnSupprimerPersonne_Click;
+            // 
             // FormPrincipal
-            //
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
-            this.ClientSize = new System.Drawing.Size(1100, 660);
-            this.Controls.Add(this.panelEntete);
-            this.Controls.Add(this.tabMenu);
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "FormPrincipal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Support informatique";
-            this.Load += new System.EventHandler(this.FormPrincipal_Load);
-            this.panelTechnicien.ResumeLayout(false);
-            this.panelTechnicien.PerformLayout();
-            this.panelType.ResumeLayout(false);
-            this.panelType.PerformLayout();
-            this.cartePersonnel.ResumeLayout(false);
-            this.cartePersonnel.PerformLayout();
-            this.panelUrgence.ResumeLayout(false);
-            this.panelUrgence.PerformLayout();
-            this.panelEtat.ResumeLayout(false);
-            this.panelEtat.PerformLayout();
-            this.carteTicket.ResumeLayout(false);
-            this.carteTicket.PerformLayout();
-            this.carteIncidents.ResumeLayout(false);
-            this.carteIncidents.PerformLayout();
-            this.panelDetail.ResumeLayout(false);
-            this.panelDetail.PerformLayout();
-            this.carteMateriel.ResumeLayout(false);
-            this.carteMateriel.PerformLayout();
-            this.carteTickets.ResumeLayout(false);
-            this.carteTickets.PerformLayout();
-            this.panelDeclUrgence.ResumeLayout(false);
-            this.panelDeclUrgence.PerformLayout();
-            this.carteNouveau.ResumeLayout(false);
-            this.carteNouveau.PerformLayout();
-            this.carteConnexion.ResumeLayout(false);
-            this.carteConnexion.PerformLayout();
-            this.tabResponsable.ResumeLayout(false);
-            this.tabTechnicien.ResumeLayout(false);
-            this.tabUtilisateur.ResumeLayout(false);
-            this.tabConnexion.ResumeLayout(false);
-            this.tabMenu.ResumeLayout(false);
-            this.panelEntete.ResumeLayout(false);
-            this.panelEntete.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(243, 244, 246);
+            ClientSize = new Size(1248, 834);
+            Controls.Add(panelEntete);
+            Controls.Add(tabMenu);
+            Font = new Font("Segoe UI", 9.75F);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "FormPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Support informatique";
+            Load += FormPrincipal_Load;
+            panelEntete.ResumeLayout(false);
+            panelEntete.PerformLayout();
+            tabMenu.ResumeLayout(false);
+            tabConnexion.ResumeLayout(false);
+            carteConnexion.ResumeLayout(false);
+            carteConnexion.PerformLayout();
+            tabUtilisateur.ResumeLayout(false);
+            carteNouveau.ResumeLayout(false);
+            carteNouveau.PerformLayout();
+            panelDeclUrgence.ResumeLayout(false);
+            panelDeclUrgence.PerformLayout();
+            carteTickets.ResumeLayout(false);
+            carteTickets.PerformLayout();
+            tabTechnicien.ResumeLayout(false);
+            carteMateriel.ResumeLayout(false);
+            carteMateriel.PerformLayout();
+            panelDetail.ResumeLayout(false);
+            panelDetail.PerformLayout();
+            carteIncidents.ResumeLayout(false);
+            carteIncidents.PerformLayout();
+            carteTicket.ResumeLayout(false);
+            carteTicket.PerformLayout();
+            panelEtat.ResumeLayout(false);
+            panelEtat.PerformLayout();
+            panelUrgence.ResumeLayout(false);
+            panelUrgence.PerformLayout();
+            tabResponsable.ResumeLayout(false);
+            cartePersonnel.ResumeLayout(false);
+            cartePersonnel.PerformLayout();
+            panelType.ResumeLayout(false);
+            panelType.PerformLayout();
+            panelTechnicien.ResumeLayout(false);
+            panelTechnicien.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

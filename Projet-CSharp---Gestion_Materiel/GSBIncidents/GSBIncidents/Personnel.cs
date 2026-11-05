@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Mysql.Data.MySqlClient;
+
 
 namespace GSBIncidents
 {
@@ -16,10 +16,21 @@ namespace GSBIncidents
         public String Fonction;
         public String Login;
         public String MDP;
-        public String Poste;
+       public string Poste;
 
+<<<<<<< Updated upstream
         public Personnel( int Id_personnel, String nom, String prenom, int date_embauche, String fonction, String login, String mdp, String poste)
 
+=======
+        //<<<<<<< HEAD
+    //    public Personnel(int id, String nom, String prenom, int date_embauche, String fonction, String login, String mdp, String poste)
+        {
+
+        }
+//=======
+        public Personnel( int Id_personnel, String nom, String prenom, int date_embauche, String fonction, String login, String mdp, String poste)
+//>>>>>>> da59d1966362755e5dd918db4620ce0708921a6f
+>>>>>>> Stashed changes
         {
             this.Id_personnel = Id_personnel;
             this.Nom = nom;

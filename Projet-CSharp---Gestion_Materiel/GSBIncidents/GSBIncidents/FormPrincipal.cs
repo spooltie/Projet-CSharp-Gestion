@@ -1,4 +1,6 @@
-﻿namespace GSBIncidents
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace GSBIncidents
 {
     public partial class FormPrincipal : Form
     {
@@ -9,9 +11,8 @@
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            tabMenu.TabPages[1].Hide();
-            tabMenu.TabPages[2].Hide();
-            tabMenu.TabPages[3].Hide();
+            //tabMenu.TabPages.Remove(TableIndex1);
+   
         }
 
         #region Entête

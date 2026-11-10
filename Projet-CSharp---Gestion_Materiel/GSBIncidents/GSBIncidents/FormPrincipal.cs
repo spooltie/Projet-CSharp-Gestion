@@ -15,20 +15,31 @@ namespace GSBIncidents
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+
+            tabMenu.TabPages.Remove(tabUtilisateur);
+            tabMenu.TabPages.Remove(tabResponsable);
+            tabMenu.TabPages.Remove(tabTechnicien);
+
             //L'utilisateur qui se connecte n'a accès qu'à la page de connexion, les autres sont masqué via les lignes ci-dessous.
-            carteNouveau.Enabled= false;
-            carteTickets.Enabled = false;
-            carteMateriel.Enabled = false;
-            carteIncidents.Enabled = false;
-            carteTicket.Enabled = false;
-            cartePersonnel.Enabled = false;
-   
+            //carteNouveau.Enabled= false;
+            //carteTickets.Enabled = false;
+            //carteMateriel.Enabled = false;
+            //carteIncidents.Enabled = false;
+            //carteTicket.Enabled = false;
+            //cartePersonnel.Enabled = false;
+
         }
 
         #region Entête
 
         private void btnDeconnexion_Click(object sender, EventArgs e)
         {
+            tabMenu.TabPages.Remove(tabResponsable);
+            tabMenu.TabPages.Remove(tabUtilisateur);
+            tabMenu.TabPages.Remove(tabTechnicien);
+            tabMenu.TabPages.Add(tabConnexion);
+            tabMenu.SelectedTab = tabConnexion;
+
 
         }
 
@@ -71,33 +82,22 @@ namespace GSBIncidents
 
             if (poste == "technicien")
             {
-                carteNouveau.Enabled = false;
-                carteTickets.Enabled = false;
-                carteMateriel.Enabled = true;
-                carteIncidents.Enabled = true;
-                carteTicket.Enabled = true;
+                tabMenu.TabPages.Add(tabTechnicien);
                 tabMenu.SelectedTab = tabTechnicien;
-
             }
             else if (poste == "utilisateur")
             {
-                carteNouveau.Enabled = true;
-                carteTickets.Enabled = true;
-                carteMateriel.Enabled = false;
-                carteIncidents.Enabled = false;
-                carteTicket.Enabled = false;
-                cartePersonnel.Enabled = false;
+                tabMenu.TabPages.Add(tabUtilisateur);
                 tabMenu.SelectedTab = tabUtilisateur;
+
+
             }
             else if (poste == "responsable")
             {
-                carteNouveau.Enabled = false;
-                carteTickets.Enabled = false;
-                carteMateriel.Enabled = false;
-                carteIncidents.Enabled = false;
-                carteTicket.Enabled = false;
-                cartePersonnel.Enabled = true;
+                tabMenu.TabPages.Add(tabResponsable);
                 tabMenu.SelectedTab = tabResponsable;
+
+
             }
             else
             {
@@ -110,7 +110,9 @@ namespace GSBIncidents
             txtLogin.Clear();
             txtMotDePasse.Clear();
             cboPoste.SelectedIndex = -1;
+            tabMenu.TabPages.Remove(tabConnexion);
         }
+
 
         #endregion
 

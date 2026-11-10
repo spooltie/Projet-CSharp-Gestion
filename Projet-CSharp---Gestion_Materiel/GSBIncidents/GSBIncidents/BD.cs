@@ -12,7 +12,7 @@ namespace GSBIncidents
     {
         private static MySqlConnection Connexion()
         {
-            MySqlConnection conn = new MySqlConnection("Server=192.168.1.111;Port=8889;Database=projetgestion;Uid=admin;Password=1234");
+            MySqlConnection conn = new MySqlConnection("Server=192.168.1.10;Port=8889;Database=projetgestion;Uid=admin;Password=1234");
             conn.Open();
             return conn;
         }

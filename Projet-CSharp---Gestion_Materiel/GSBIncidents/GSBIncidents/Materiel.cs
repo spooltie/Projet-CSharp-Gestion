@@ -17,12 +17,21 @@ namespace GSBIncidents
         
         public Materiel(int id_Materiel, string processus, string disque, string logiciel, string suivis, string etat)
         {
+<<<<<<< HEAD
             this.id_Materiel = id_Materiel;
             this.processus = processus;
             this.disque = disque;
             this.logiciel = logiciel;
             this.suivis = suivis;
             this.etat = etat;
+=======
+            this.id_materiel = Id_materiel;
+            this.processus = Processus;
+            this.disque = Disque;
+            this.logiciel = Logiciel;
+            this.suivis = Suivis;
+            this.etat = Etat;
+>>>>>>> 0a72b73fe316d2bde87ea451b6608a44bcae3d8b
         }
 
     }

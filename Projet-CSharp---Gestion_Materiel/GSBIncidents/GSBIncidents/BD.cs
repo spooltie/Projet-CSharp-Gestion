@@ -36,6 +36,7 @@ namespace GSBIncidents
 
             cmd.ExecuteNonQuery();
             conn.Close();
+
         }
 
         /// AJOUTER UN RESPONSABLE 
@@ -55,10 +56,11 @@ namespace GSBIncidents
             cmd.CommandText = reqSql;
 
             cmd.Parameters.AddWithValue("@Id_Responsable", unResponsable.id_Responsable);
-          
+
 
             cmd.ExecuteNonQuery();
             conn.Close();
+
         }
 
         /// AJOUTER UN MATERIEL 
@@ -77,15 +79,16 @@ namespace GSBIncidents
 
             cmd.CommandText = reqSql;
 
-            cmd.Parameters.AddWithValue("@Id_Materiel", unMateriel.id_Materiel);
-            cmd.Parameters.AddWithValue("@Processus", unMateriel.processus);
-            cmd.Parameters.AddWithValue("@Disque", unMateriel.disque);
-            cmd.Parameters.AddWithValue("@Logiciel", unMateriel.logiciel);
-            cmd.Parameters.AddWithValue("@Suivis", unMateriel.suivis);
-            cmd.Parameters.AddWithValue("@Etat", unMateriel.etat);
+            cmd.Parameters.AddWithValue("@Id_Materiel", unMateriel.Id_materiel);
+            cmd.Parameters.AddWithValue("@Processus", unMateriel.Processus);
+            cmd.Parameters.AddWithValue("@Disque", unMateriel.Disque);
+            cmd.Parameters.AddWithValue("@Logiciel", unMateriel.Logiciel);
+            cmd.Parameters.AddWithValue("@Suivis", unMateriel.Suivis);
+            cmd.Parameters.AddWithValue("@Etat", unMateriel.Etat);
 
             cmd.ExecuteNonQuery();
             conn.Close();
+
         }
 
         /// AJOUTER UN TICKET 
@@ -110,6 +113,153 @@ namespace GSBIncidents
             cmd.Parameters.AddWithValue("@Suivi", unTicket.suivi);
             cmd.Parameters.AddWithValue("@Niveau_urgence", unTicket.niveau_Urgence);
 
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        /// AJOUTER UN UTILISATEUR 
+        /// <summary>
+        /// <param name="unUtilisateur"></param>
+        public static void AjouteUtilisateur(Utilisateur unUtilisateur)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "INSERT INTO Utilisateur (Id_user)"
+                   + "VALUES (@Id_user)";
+
+            cmd.CommandText = reqSql;
+
+            cmd.Parameters.AddWithValue("@Id_Responsable", unUtilisateur.Id_user);
+
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        /// AJOUTER UN TECHNICIEN 
+        /// <summary>
+        /// <param name="unTechnicien"></param>
+        public static void AjouteTechnicien(Technicien unTechnicien)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "INSERT INTO Technicien (id_tech, formation, competence)"
+                   + "VALUES (@id_tech, @formation, @competence)";
+
+            cmd.CommandText = reqSql;
+
+            cmd.Parameters.AddWithValue("@id_tech", unTechnicien.id_tech);
+            cmd.Parameters.AddWithValue("@formation", unTechnicien.formation);
+            cmd.Parameters.AddWithValue("@competence", unTechnicien.competence);
+
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        /// SUPPRESSION MATERIEL 
+        /// <summary>
+        /// <param name="unMateriel"></param>
+        public static void DeleteMateriel(Materiel unMateriel)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "DELETE FROM MATERIEL WHERE id_materiel = @id_materiel";
+
+            cmd.CommandText = reqSql;
+            cmd.Parameters.AddWithValue("@id_materiel", unMateriel.id_materiel);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        /// SUPPRESSION UTILISATEUR 
+        /// <summary>
+        /// <param name="unUtilsateur"></param>
+        public static void DeleteUtlisateur(Utilisateur unUtilisateur)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "DELETE FROM Utilisateur WHERE id_user = @id_user";
+
+            cmd.CommandText = reqSql;
+            cmd.Parameters.AddWithValue("@id_user", unUtilisateur.Id_user);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        /// SUPPRESSION TECHNICIEN 
+        /// <summary>
+        /// <param name="unTechnicien"></param>
+        public static void DeleteTechnicien(Technicien unTechnicien)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "DELETE FROM Technicien WHERE id_tech = @id_tech";
+
+            cmd.CommandText = reqSql;
+            cmd.Parameters.AddWithValue("@id_tech", unTechnicien.id_tech);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        public static void UpdateUtilisateur(Utilisateur unUtilisateur)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "UPDATE Utilisateur SET nom_user WHERE id_user = @id_user";
+
+            cmd.CommandText = reqSql;
+            cmd.Parameters.AddWithValue("@id_user", unUtilisateur.Id_user);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void UpdateTechnicien(Technicien unTechnicien)
+        {
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database= babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            string reqSql;
+
+            reqSql = "UPDATE Technicien SET nom_tech WHERE id_tech = @id_tech";
+
+            cmd.CommandText = reqSql;
+            cmd.Parameters.AddWithValue("@id_tech", unTechnicien.id_tech);
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -118,4 +268,5 @@ namespace GSBIncidents
 
 
     }
+
 }

@@ -12,14 +12,14 @@ namespace GSBIncidents
         public int id_Personnel;
         public string nom;
         public string prenom;
-        public int date_Embauche;
+        public DateTime date_Embauche;
         public string fonction;
         public string login;
         public string MDP;
        public string poste;
 
 
-        public Personnel( int id_Personnel, string nom, string prenom, int date_embauche, string fonction, string login, string mdp, string poste)
+        public Personnel( int id_Personnel, string nom, string prenom, DateTime date_embauche, string fonction, string login, string mdp, string poste)
 
         {
             this.id_Personnel = id_Personnel;

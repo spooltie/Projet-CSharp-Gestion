@@ -12,7 +12,7 @@ namespace GSBIncidents
     {
         private static MySqlConnection Connexion()
         {
-            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database=babe5484_projetgestion;Uid=babe5484_admin;Password=ZVAx0hLGr");
+            MySqlConnection conn = new MySqlConnection("Server=192.168.1.111;Port=8889;Database=projetgestion;Uid=admin;Password=1234");
             conn.Open();
             return conn;
         }
@@ -223,7 +223,37 @@ namespace GSBIncidents
             conn.Close();
         }
 
+        public static Personnel SeConnecter(string login, string MDP)
+        {
+            Personnel personne = null;
+            MySqlConnection conn = Connexion();
 
+            string reqSql = "SELECT * FROM Personnel WHERE Login = @login AND MDP = @mdp";
+            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
+            cmd.Parameters.AddWithValue("@login", login);
+            cmd.Parameters.AddWithValue("@mdp", MDP);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = Convert.ToInt32(reader["Id_Personnel"]);
+                string nom = reader["Nom"].ToString();
+                string prenom = reader["Prenom"].ToString();
+                DateTime dateEmbauche = Convert.ToDateTime(reader["Date_Embauche"]);
+                string fonction = reader["Fonction"].ToString();
+                string loginBD = reader["Login"].ToString();
+                string mdpBD = reader["MDP"].ToString();
+                string poste = reader["Poste"].ToString();
+
+                personne = new Personnel(id, nom, prenom, dateEmbauche, fonction, loginBD, mdpBD, poste);
+            }
+
+            reader.Close();
+            conn.Close();
+
+            return personne;
+        }
 
     }
 

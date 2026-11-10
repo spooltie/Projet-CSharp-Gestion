@@ -4,9 +4,13 @@ namespace GSBIncidents
 {
     public partial class FormPrincipal : Form
     {
+
+        private Personnel personneConnecte;
         public FormPrincipal()
         {
+
             InitializeComponent();
+            
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
@@ -34,7 +38,57 @@ namespace GSBIncidents
 
         private void btnSeConnecter_Click(object sender, EventArgs e)
         {
+            string login = txtLogin.Text;
+            string password = txtMotDePasse.Text;
 
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Veuillez remplir tout les champs !");
+                return;
+            }
+
+            personneConnecte = BD.SeConnecter(login, password);
+            if (personneConnecte == null)
+            {
+                MessageBox.Show("Identifiant ou mot de passe incorrect !");
+                return;
+            }
+            if (personneConnecte.fonction == "Technicien")
+            {
+                carteNouveau.Enabled = false;
+                carteTickets.Enabled = false;
+                carteMateriel.Enabled = true;
+                carteIncidents.Enabled = true;
+                carteTicket.Enabled = true;
+
+            }
+            else if (personneConnecte.fonction == "Utilisateur")
+            {
+                carteNouveau.Enabled = true;
+                carteTickets.Enabled = true;
+                carteMateriel.Enabled = false;
+                carteIncidents.Enabled = false;
+                carteTicket.Enabled = false;
+                cartePersonnel.Enabled = false;
+            }
+            else if (personneConnecte.fonction == "Responsable")
+            {
+                carteNouveau.Enabled = false;
+                carteTickets.Enabled = false;
+                carteMateriel.Enabled = false;
+                carteIncidents.Enabled = false;
+                carteTicket.Enabled = false;
+                cartePersonnel.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Fonction non reconnue !"+ personneConnecte.poste);
+                return;
+
+            }
+            lblUtilisateur.Text = "Connecté :" + personneConnecte.prenom + " " + personneConnecte.nom;
+            txtLogin.Clear();
+            txtMotDePasse.Clear();
         }
 
         #endregion

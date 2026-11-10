@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Mysql.Data.MySqlClient;
 
 namespace GSBIncidents
 {
     internal class Responsable
     {
-        public int id_responsable;
+        public int id_Responsable;
 
-        public Responsable (int id_responsable)
+        public Responsable (int id_Responsable)
         {
-            this.id_responsable = id_responsable;
+            this.id_Responsable = id_Responsable;
         }
     }
 }

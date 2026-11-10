@@ -9,37 +9,27 @@ namespace GSBIncidents
 {
     internal class Personnel
     {
-        public int Id_personnel;
-        public String Nom;
-        public String Prenom;
-        public int Date_Embauche;
-        public String Fonction;
-        public String Login;
-        public String MDP;
-       public string Poste;
+        public int id_Personnel;
+        public string nom;
+        public string prenom;
+        public int date_Embauche;
+        public string fonction;
+        public string login;
+        public string MDP;
+       public string poste;
 
-<<<<<<< Updated upstream
-        public Personnel( int Id_personnel, String nom, String prenom, int date_embauche, String fonction, String login, String mdp, String poste)
 
-=======
-        //<<<<<<< HEAD
-    //    public Personnel(int id, String nom, String prenom, int date_embauche, String fonction, String login, String mdp, String poste)
+        public Personnel( int id_Personnel, string nom, string prenom, int date_embauche, string fonction, string login, string mdp, string poste)
+
         {
-
-        }
-//=======
-        public Personnel( int Id_personnel, String nom, String prenom, int date_embauche, String fonction, String login, String mdp, String poste)
-//>>>>>>> da59d1966362755e5dd918db4620ce0708921a6f
->>>>>>> Stashed changes
-        {
-            this.Id_personnel = Id_personnel;
-            this.Nom = nom;
-            this.Prenom = prenom;
-            this.Date_Embauche = date_embauche;
-            this.Fonction = fonction;
-            this.Login = login;
+            this.id_Personnel = id_Personnel;
+            this.nom = nom;
+            this.prenom = prenom;
+            this.date_Embauche = date_embauche;
+            this.fonction = fonction;
+            this.login = login;
             this.MDP = mdp;
-            this.Poste = poste;
+            this.poste = poste;
         }
 
        

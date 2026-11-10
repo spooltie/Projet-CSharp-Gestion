@@ -8,10 +8,10 @@ namespace GSBIncidents
 {
     internal class Utilisateur
     {
-        public int Id_user;
-        public Utilisateur(int Id_user)
+        public int id_User;
+        public Utilisateur(int id_User)
         {
-            this.Id_user = Id_user;
+            this.id_User = id_User;
         }
     }
 }

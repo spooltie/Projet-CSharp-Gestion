@@ -26,13 +26,13 @@ namespace GSBIncidents
 
             cmd.CommandText = reqSql;
 
-            cmd.Parameters.AddWithValue("@Id_Personnel", unPersonnel.Id_personnel);
-            cmd.Parameters.AddWithValue("@nom", unPersonnel.Nom);
-            cmd.Parameters.AddWithValue("@Prenom", unPersonnel.Prenom);
-            cmd.Parameters.AddWithValue("@Date_Embauche", unPersonnel.Date_Embauche);
-            cmd.Parameters.AddWithValue("@Login", unPersonnel.Login);
+            cmd.Parameters.AddWithValue("@Id_Personnel", unPersonnel.id_Personnel);
+            cmd.Parameters.AddWithValue("@nom", unPersonnel.nom);
+            cmd.Parameters.AddWithValue("@Prenom", unPersonnel.prenom);
+            cmd.Parameters.AddWithValue("@Date_Embauche", unPersonnel.date_Embauche);
+            cmd.Parameters.AddWithValue("@Login", unPersonnel.login);
             cmd.Parameters.AddWithValue("@MDP", unPersonnel.MDP);
-            cmd.Parameters.AddWithValue("@Poste", unPersonnel.Poste);
+            cmd.Parameters.AddWithValue("@Poste", unPersonnel.poste);
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -54,7 +54,7 @@ namespace GSBIncidents
 
             cmd.CommandText = reqSql;
 
-            cmd.Parameters.AddWithValue("@Id_Responsable", unResponsable.id_responsable);
+            cmd.Parameters.AddWithValue("@Id_Responsable", unResponsable.id_Responsable);
           
 
             cmd.ExecuteNonQuery();
@@ -77,12 +77,12 @@ namespace GSBIncidents
 
             cmd.CommandText = reqSql;
 
-            cmd.Parameters.AddWithValue("@Id_Materiel", unMateriel.Id_materiel);
-            cmd.Parameters.AddWithValue("@Processus", unMateriel.Processus);
-            cmd.Parameters.AddWithValue("@Disque", unMateriel.Disque);
-            cmd.Parameters.AddWithValue("@Logiciel", unMateriel.Logiciel);
-            cmd.Parameters.AddWithValue("@Suivis", unMateriel.Suivis);
-            cmd.Parameters.AddWithValue("@Etat", unMateriel.Etat);
+            cmd.Parameters.AddWithValue("@Id_Materiel", unMateriel.id_Materiel);
+            cmd.Parameters.AddWithValue("@Processus", unMateriel.processus);
+            cmd.Parameters.AddWithValue("@Disque", unMateriel.disque);
+            cmd.Parameters.AddWithValue("@Logiciel", unMateriel.logiciel);
+            cmd.Parameters.AddWithValue("@Suivis", unMateriel.suivis);
+            cmd.Parameters.AddWithValue("@Etat", unMateriel.etat);
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -104,11 +104,11 @@ namespace GSBIncidents
 
             cmd.CommandText = reqSql;
 
-            cmd.Parameters.AddWithValue("@Id_Ticket", unTicket.ID_ticket);
-            cmd.Parameters.AddWithValue("@Incident", unTicket.Incident);
-            cmd.Parameters.AddWithValue("@Etat", unTicket.Etat);
-            cmd.Parameters.AddWithValue("@Suivi", unTicket.Suivi);
-            cmd.Parameters.AddWithValue("@Niveau_urgence", unTicket.Niveau_urgence);
+            cmd.Parameters.AddWithValue("@Id_Ticket", unTicket.id_Ticket);
+            cmd.Parameters.AddWithValue("@Incident", unTicket.incident);
+            cmd.Parameters.AddWithValue("@Etat", unTicket.etat);
+            cmd.Parameters.AddWithValue("@Suivi", unTicket.suivi);
+            cmd.Parameters.AddWithValue("@Niveau_urgence", unTicket.niveau_Urgence);
 
 
             cmd.ExecuteNonQuery();

@@ -8,19 +8,19 @@ namespace GSBIncidents
 {
     internal class Ticket
     {
-        public int ID_ticket;
-        public String Incident;
-        public String Etat;
-        public String Niveau_urgence;
-        public String Suivi;
+        public int id_Ticket;
+        public string incident;
+        public string etat;
+        public string niveau_Urgence;
+        public string suivi;
 
-        public Ticket(int ID_ticket, string Incident, string Etat, string Niveau_urgence, string Suivi)
+        public Ticket(int id_Ticket, string incident, string etat, string niveau_Urgence, string suivi)
         {
-            this.ID_ticket = ID_ticket;
-            this.Incident = Incident;
-            this.Etat = Etat;
-            this.Niveau_urgence = Niveau_urgence;
-            this.Suivi = Suivi;
+            this.id_Ticket = id_Ticket;
+            this.incident = incident;
+            this.etat = etat;
+            this.niveau_Urgence = niveau_Urgence;
+            this.suivi = suivi;
         }
     }
 }

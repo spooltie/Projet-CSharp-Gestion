@@ -8,16 +8,16 @@ namespace GSBIncidents
 {
     internal class Technicien
     {
-        public int id_tech;
-        public String formation;
-        public String competence;
+        public int id_Tech;
+        public string formation;
+        public string competence;
 
         
-        public Technicien(String Id_tech, String Formation, String Competence)
+        public Technicien(int id_Tech, string Formation, string Competence)
         {
-            this.Id_materiel = Id_tech;
-            this.Processus = Formation;
-            this.Disque = Competence;
+            this.id_Tech = id_Tech;
+            this.formation = Formation;
+            this.competence = Competence;
 
         }
 

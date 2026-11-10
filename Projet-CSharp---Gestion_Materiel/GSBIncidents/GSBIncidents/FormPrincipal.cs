@@ -11,7 +11,13 @@ namespace GSBIncidents
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            //tabMenu.TabPages.Remove(TableIndex1);
+            //L'utilisateur qui se connecte n'a accès qu'à la page de connexion, les autres sont masqué via les lignes ci-dessous.
+            carteNouveau.Enabled= false;
+            carteTickets.Enabled = false;
+            carteMateriel.Enabled = false;
+            carteIncidents.Enabled = false;
+            carteTicket.Enabled = false;
+            cartePersonnel.Enabled = false;
    
         }
 
@@ -82,6 +88,7 @@ namespace GSBIncidents
         #endregion
 
         #region Onglet Responsable
+        // Sur les boutons radios il faudra ajouter une méthode pour afficher ou non les textBox Formation et Compétence
 
         private void rbTechnicien_CheckedChanged(object sender, EventArgs e)
         {

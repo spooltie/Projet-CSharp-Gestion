@@ -45,11 +45,6 @@
             lblNouveau = new Label();
             lblMateriel = new Label();
             cboMateriel = new ComboBox();
-            lblDeclUrgence = new Label();
-            panelDeclUrgence = new Panel();
-            rbDeclFaible = new RadioButton();
-            rbDeclMoyen = new RadioButton();
-            rbDeclCritique = new RadioButton();
             lblIncident = new Label();
             txtIncident = new TextBox();
             btnEnvoyer = new Button();
@@ -145,7 +140,6 @@
             carteConnexion.SuspendLayout();
             tabUtilisateur.SuspendLayout();
             carteNouveau.SuspendLayout();
-            panelDeclUrgence.SuspendLayout();
             carteTickets.SuspendLayout();
             tabTechnicien.SuspendLayout();
             carteMateriel.SuspendLayout();
@@ -178,7 +172,7 @@
             lblApplication.ForeColor = Color.FromArgb(31, 41, 55);
             lblApplication.Location = new Point(24, 16);
             lblApplication.Name = "lblApplication";
-            lblApplication.Size = new Size(218, 28);
+            lblApplication.Size = new Size(348, 45);
             lblApplication.TabIndex = 0;
             lblApplication.Text = "Support informatique";
             // 
@@ -228,10 +222,10 @@
             // 
             tabConnexion.BackColor = Color.FromArgb(243, 244, 246);
             tabConnexion.Controls.Add(carteConnexion);
-            tabConnexion.Location = new Point(4, 38);
+            tabConnexion.Location = new Point(8, 55);
             tabConnexion.Name = "tabConnexion";
             tabConnexion.Padding = new Padding(3);
-            tabConnexion.Size = new Size(1060, 530);
+            tabConnexion.Size = new Size(1052, 509);
             tabConnexion.TabIndex = 2;
             tabConnexion.Text = "Connexion";
             // 
@@ -260,7 +254,7 @@
             lblTitre.ForeColor = Color.FromArgb(31, 41, 55);
             lblTitre.Location = new Point(30, 30);
             lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(193, 46);
+            lblTitre.Size = new Size(303, 72);
             lblTitre.TabIndex = 0;
             lblTitre.Text = "Connexion";
             // 
@@ -271,7 +265,7 @@
             lblSousTitre.ForeColor = Color.FromArgb(107, 114, 128);
             lblSousTitre.Location = new Point(33, 74);
             lblSousTitre.Name = "lblSousTitre";
-            lblSousTitre.Size = new Size(363, 23);
+            lblSousTitre.Size = new Size(543, 36);
             lblSousTitre.TabIndex = 1;
             lblSousTitre.Text = "Connectez-vous pour accéder à votre compte.";
             // 
@@ -282,7 +276,7 @@
             lblLogin.ForeColor = Color.FromArgb(31, 41, 55);
             lblLogin.Location = new Point(32, 120);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(52, 23);
+            lblLogin.Size = new Size(82, 36);
             lblLogin.TabIndex = 2;
             lblLogin.Text = "Login";
             // 
@@ -292,7 +286,7 @@
             txtLogin.Font = new Font("Segoe UI", 10.5F);
             txtLogin.Location = new Point(32, 142);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(296, 31);
+            txtLogin.Size = new Size(296, 45);
             txtLogin.TabIndex = 0;
             // 
             // lblMotDePasse
@@ -302,7 +296,7 @@
             lblMotDePasse.ForeColor = Color.FromArgb(31, 41, 55);
             lblMotDePasse.Location = new Point(32, 184);
             lblMotDePasse.Name = "lblMotDePasse";
-            lblMotDePasse.Size = new Size(113, 23);
+            lblMotDePasse.Size = new Size(174, 36);
             lblMotDePasse.TabIndex = 3;
             lblMotDePasse.Text = "Mot de passe";
             // 
@@ -312,7 +306,7 @@
             txtMotDePasse.Font = new Font("Segoe UI", 10.5F);
             txtMotDePasse.Location = new Point(32, 206);
             txtMotDePasse.Name = "txtMotDePasse";
-            txtMotDePasse.Size = new Size(296, 31);
+            txtMotDePasse.Size = new Size(296, 45);
             txtMotDePasse.TabIndex = 1;
             txtMotDePasse.UseSystemPasswordChar = true;
             // 
@@ -323,7 +317,7 @@
             lblPoste.ForeColor = Color.FromArgb(31, 41, 55);
             lblPoste.Location = new Point(32, 248);
             lblPoste.Name = "lblPoste";
-            lblPoste.Size = new Size(51, 23);
+            lblPoste.Size = new Size(79, 36);
             lblPoste.TabIndex = 4;
             lblPoste.Text = "Poste";
             // 
@@ -333,7 +327,7 @@
             txtPoste.Font = new Font("Segoe UI", 10.5F);
             txtPoste.Location = new Point(32, 270);
             txtPoste.Name = "txtPoste";
-            txtPoste.Size = new Size(296, 31);
+            txtPoste.Size = new Size(296, 45);
             txtPoste.TabIndex = 2;
             // 
             // chkResterConnecte
@@ -343,7 +337,7 @@
             chkResterConnecte.ForeColor = Color.FromArgb(31, 41, 55);
             chkResterConnecte.Location = new Point(32, 312);
             chkResterConnecte.Name = "chkResterConnecte";
-            chkResterConnecte.Size = new Size(154, 27);
+            chkResterConnecte.Size = new Size(232, 40);
             chkResterConnecte.TabIndex = 3;
             chkResterConnecte.Text = "Rester connecté";
             // 
@@ -370,10 +364,10 @@
             tabUtilisateur.BackColor = Color.FromArgb(243, 244, 246);
             tabUtilisateur.Controls.Add(carteNouveau);
             tabUtilisateur.Controls.Add(carteTickets);
-            tabUtilisateur.Location = new Point(4, 38);
+            tabUtilisateur.Location = new Point(8, 55);
             tabUtilisateur.Name = "tabUtilisateur";
             tabUtilisateur.Padding = new Padding(3);
-            tabUtilisateur.Size = new Size(1060, 530);
+            tabUtilisateur.Size = new Size(1052, 509);
             tabUtilisateur.TabIndex = 3;
             tabUtilisateur.Text = "Utilisateur";
             // 
@@ -383,8 +377,6 @@
             carteNouveau.Controls.Add(lblNouveau);
             carteNouveau.Controls.Add(lblMateriel);
             carteNouveau.Controls.Add(cboMateriel);
-            carteNouveau.Controls.Add(lblDeclUrgence);
-            carteNouveau.Controls.Add(panelDeclUrgence);
             carteNouveau.Controls.Add(lblIncident);
             carteNouveau.Controls.Add(txtIncident);
             carteNouveau.Controls.Add(btnEnvoyer);
@@ -401,7 +393,7 @@
             lblNouveau.ForeColor = Color.FromArgb(31, 41, 55);
             lblNouveau.Location = new Point(22, 20);
             lblNouveau.Name = "lblNouveau";
-            lblNouveau.Size = new Size(187, 32);
+            lblNouveau.Size = new Size(293, 51);
             lblNouveau.TabIndex = 0;
             lblNouveau.Text = "Nouveau ticket";
             // 
@@ -412,7 +404,7 @@
             lblMateriel.ForeColor = Color.FromArgb(31, 41, 55);
             lblMateriel.Location = new Point(24, 68);
             lblMateriel.Name = "lblMateriel";
-            lblMateriel.Size = new Size(148, 23);
+            lblMateriel.Size = new Size(229, 36);
             lblMateriel.TabIndex = 1;
             lblMateriel.Text = "Matériel concerné";
             // 
@@ -422,64 +414,8 @@
             cboMateriel.Font = new Font("Segoe UI", 10.5F);
             cboMateriel.Location = new Point(24, 90);
             cboMateriel.Name = "cboMateriel";
-            cboMateriel.Size = new Size(372, 31);
+            cboMateriel.Size = new Size(372, 46);
             cboMateriel.TabIndex = 6;
-            // 
-            // lblDeclUrgence
-            // 
-            lblDeclUrgence.AutoSize = true;
-            lblDeclUrgence.Font = new Font("Segoe UI Semibold", 9.75F);
-            lblDeclUrgence.ForeColor = Color.FromArgb(31, 41, 55);
-            lblDeclUrgence.Location = new Point(24, 132);
-            lblDeclUrgence.Name = "lblDeclUrgence";
-            lblDeclUrgence.Size = new Size(145, 23);
-            lblDeclUrgence.TabIndex = 7;
-            lblDeclUrgence.Text = "Niveau d'urgence";
-            // 
-            // panelDeclUrgence
-            // 
-            panelDeclUrgence.Controls.Add(rbDeclFaible);
-            panelDeclUrgence.Controls.Add(rbDeclMoyen);
-            panelDeclUrgence.Controls.Add(rbDeclCritique);
-            panelDeclUrgence.Location = new Point(24, 154);
-            panelDeclUrgence.Name = "panelDeclUrgence";
-            panelDeclUrgence.Size = new Size(372, 28);
-            panelDeclUrgence.TabIndex = 7;
-            // 
-            // rbDeclFaible
-            // 
-            rbDeclFaible.AutoSize = true;
-            rbDeclFaible.Checked = true;
-            rbDeclFaible.Font = new Font("Segoe UI", 10F);
-            rbDeclFaible.ForeColor = Color.FromArgb(31, 41, 55);
-            rbDeclFaible.Location = new Point(0, 3);
-            rbDeclFaible.Name = "rbDeclFaible";
-            rbDeclFaible.Size = new Size(74, 27);
-            rbDeclFaible.TabIndex = 0;
-            rbDeclFaible.TabStop = true;
-            rbDeclFaible.Text = "Faible";
-            // 
-            // rbDeclMoyen
-            // 
-            rbDeclMoyen.AutoSize = true;
-            rbDeclMoyen.Font = new Font("Segoe UI", 10F);
-            rbDeclMoyen.ForeColor = Color.FromArgb(31, 41, 55);
-            rbDeclMoyen.Location = new Point(110, 3);
-            rbDeclMoyen.Name = "rbDeclMoyen";
-            rbDeclMoyen.Size = new Size(83, 27);
-            rbDeclMoyen.TabIndex = 1;
-            rbDeclMoyen.Text = "Moyen";
-            // 
-            // rbDeclCritique
-            // 
-            rbDeclCritique.AutoSize = true;
-            rbDeclCritique.Font = new Font("Segoe UI", 10F);
-            rbDeclCritique.ForeColor = Color.FromArgb(31, 41, 55);
-            rbDeclCritique.Location = new Point(220, 3);
-            rbDeclCritique.Name = "rbDeclCritique";
-            rbDeclCritique.Size = new Size(91, 27);
-            rbDeclCritique.TabIndex = 2;
-            rbDeclCritique.Text = "Critique";
             // 
             // lblIncident
             // 
@@ -488,7 +424,7 @@
             lblIncident.ForeColor = Color.FromArgb(31, 41, 55);
             lblIncident.Location = new Point(24, 196);
             lblIncident.Name = "lblIncident";
-            lblIncident.Size = new Size(194, 23);
+            lblIncident.Size = new Size(304, 36);
             lblIncident.TabIndex = 8;
             lblIncident.Text = "Description de l'incident";
             // 
@@ -555,7 +491,7 @@
             lblMesTickets.ForeColor = Color.FromArgb(31, 41, 55);
             lblMesTickets.Location = new Point(22, 20);
             lblMesTickets.Name = "lblMesTickets";
-            lblMesTickets.Size = new Size(142, 32);
+            lblMesTickets.Size = new Size(223, 51);
             lblMesTickets.TabIndex = 0;
             lblMesTickets.Text = "Mes tickets";
             // 
@@ -564,7 +500,7 @@
             lstTickets.BorderStyle = BorderStyle.FixedSingle;
             lstTickets.Font = new Font("Segoe UI", 10.5F);
             lstTickets.IntegralHeight = false;
-            lstTickets.ItemHeight = 23;
+            lstTickets.ItemHeight = 38;
             lstTickets.Location = new Point(24, 64);
             lstTickets.Name = "lstTickets";
             lstTickets.Size = new Size(544, 368);
@@ -577,10 +513,10 @@
             tabTechnicien.Controls.Add(carteMateriel);
             tabTechnicien.Controls.Add(carteIncidents);
             tabTechnicien.Controls.Add(carteTicket);
-            tabTechnicien.Location = new Point(4, 38);
+            tabTechnicien.Location = new Point(8, 55);
             tabTechnicien.Name = "tabTechnicien";
             tabTechnicien.Padding = new Padding(3);
-            tabTechnicien.Size = new Size(1060, 530);
+            tabTechnicien.Size = new Size(1052, 509);
             tabTechnicien.TabIndex = 4;
             tabTechnicien.Text = "Technicien";
             // 
@@ -620,7 +556,7 @@
             lblGestion.ForeColor = Color.FromArgb(31, 41, 55);
             lblGestion.Location = new Point(22, 20);
             lblGestion.Name = "lblGestion";
-            lblGestion.Size = new Size(239, 32);
+            lblGestion.Size = new Size(375, 51);
             lblGestion.TabIndex = 0;
             lblGestion.Text = "Gestion du matériel";
             // 
@@ -631,7 +567,7 @@
             lblAjout.ForeColor = Color.FromArgb(31, 41, 55);
             lblAjout.Location = new Point(24, 64);
             lblAjout.Name = "lblAjout";
-            lblAjout.Size = new Size(268, 25);
+            lblAjout.Size = new Size(421, 41);
             lblAjout.TabIndex = 1;
             lblAjout.Text = "Ajouter un nouveau matériel";
             // 
@@ -642,7 +578,7 @@
             lblProcesseur.ForeColor = Color.FromArgb(31, 41, 55);
             lblProcesseur.Location = new Point(24, 100);
             lblProcesseur.Name = "lblProcesseur";
-            lblProcesseur.Size = new Size(92, 23);
+            lblProcesseur.Size = new Size(143, 36);
             lblProcesseur.TabIndex = 2;
             lblProcesseur.Text = "Processeur";
             // 
@@ -652,7 +588,7 @@
             txtProcesseur.Font = new Font("Segoe UI", 10.5F);
             txtProcesseur.Location = new Point(24, 122);
             txtProcesseur.Name = "txtProcesseur";
-            txtProcesseur.Size = new Size(156, 31);
+            txtProcesseur.Size = new Size(156, 45);
             txtProcesseur.TabIndex = 12;
             // 
             // lblDisque
@@ -662,7 +598,7 @@
             lblDisque.ForeColor = Color.FromArgb(31, 41, 55);
             lblDisque.Location = new Point(196, 100);
             lblDisque.Name = "lblDisque";
-            lblDisque.Size = new Size(62, 23);
+            lblDisque.Size = new Size(97, 36);
             lblDisque.TabIndex = 13;
             lblDisque.Text = "Disque";
             // 
@@ -672,7 +608,7 @@
             txtDisque.Font = new Font("Segoe UI", 10.5F);
             txtDisque.Location = new Point(196, 122);
             txtDisque.Name = "txtDisque";
-            txtDisque.Size = new Size(156, 31);
+            txtDisque.Size = new Size(156, 45);
             txtDisque.TabIndex = 13;
             // 
             // lblLogiciels
@@ -682,7 +618,7 @@
             lblLogiciels.ForeColor = Color.FromArgb(31, 41, 55);
             lblLogiciels.Location = new Point(24, 164);
             lblLogiciels.Name = "lblLogiciels";
-            lblLogiciels.Size = new Size(74, 23);
+            lblLogiciels.Size = new Size(118, 36);
             lblLogiciels.TabIndex = 14;
             lblLogiciels.Text = "Logiciels";
             // 
@@ -692,7 +628,7 @@
             txtLogiciels.Font = new Font("Segoe UI", 10.5F);
             txtLogiciels.Location = new Point(24, 186);
             txtLogiciels.Name = "txtLogiciels";
-            txtLogiciels.Size = new Size(156, 31);
+            txtLogiciels.Size = new Size(156, 45);
             txtLogiciels.TabIndex = 14;
             // 
             // lblEtatMateriel
@@ -702,7 +638,7 @@
             lblEtatMateriel.ForeColor = Color.FromArgb(31, 41, 55);
             lblEtatMateriel.Location = new Point(196, 164);
             lblEtatMateriel.Name = "lblEtatMateriel";
-            lblEtatMateriel.Size = new Size(40, 23);
+            lblEtatMateriel.Size = new Size(60, 36);
             lblEtatMateriel.TabIndex = 15;
             lblEtatMateriel.Text = "État";
             // 
@@ -713,7 +649,7 @@
             cboEtatMateriel.Items.AddRange(new object[] { "En service", "En panne", "Hors service" });
             cboEtatMateriel.Location = new Point(196, 186);
             cboEtatMateriel.Name = "cboEtatMateriel";
-            cboEtatMateriel.Size = new Size(156, 31);
+            cboEtatMateriel.Size = new Size(156, 46);
             cboEtatMateriel.TabIndex = 15;
             // 
             // lblSuiviMateriel
@@ -723,7 +659,7 @@
             lblSuiviMateriel.ForeColor = Color.FromArgb(31, 41, 55);
             lblSuiviMateriel.Location = new Point(24, 228);
             lblSuiviMateriel.Name = "lblSuiviMateriel";
-            lblSuiviMateriel.Size = new Size(46, 23);
+            lblSuiviMateriel.Size = new Size(71, 36);
             lblSuiviMateriel.TabIndex = 16;
             lblSuiviMateriel.Text = "Suivi";
             // 
@@ -733,7 +669,7 @@
             txtSuiviMateriel.Font = new Font("Segoe UI", 10.5F);
             txtSuiviMateriel.Location = new Point(24, 250);
             txtSuiviMateriel.Name = "txtSuiviMateriel";
-            txtSuiviMateriel.Size = new Size(328, 31);
+            txtSuiviMateriel.Size = new Size(328, 45);
             txtSuiviMateriel.TabIndex = 16;
             // 
             // btnAjouterMateriel
@@ -769,7 +705,7 @@
             lblConsultation.ForeColor = Color.FromArgb(31, 41, 55);
             lblConsultation.Location = new Point(400, 64);
             lblConsultation.Name = "lblConsultation";
-            lblConsultation.Size = new Size(250, 25);
+            lblConsultation.Size = new Size(395, 41);
             lblConsultation.TabIndex = 19;
             lblConsultation.Text = "Consultation d'un matériel";
             // 
@@ -779,7 +715,7 @@
             cboConsultMateriel.Font = new Font("Segoe UI", 10.5F);
             cboConsultMateriel.Location = new Point(400, 100);
             cboConsultMateriel.Name = "cboConsultMateriel";
-            cboConsultMateriel.Size = new Size(460, 31);
+            cboConsultMateriel.Size = new Size(460, 46);
             cboConsultMateriel.TabIndex = 18;
             // 
             // btnAfficherMateriel
@@ -824,7 +760,7 @@
             lblDetailProcesseur.ForeColor = Color.FromArgb(107, 114, 128);
             lblDetailProcesseur.Location = new Point(16, 10);
             lblDetailProcesseur.Name = "lblDetailProcesseur";
-            lblDetailProcesseur.Size = new Size(79, 20);
+            lblDetailProcesseur.Size = new Size(128, 32);
             lblDetailProcesseur.TabIndex = 0;
             lblDetailProcesseur.Text = "Processeur";
             // 
@@ -835,7 +771,7 @@
             lblValeurProcesseur.ForeColor = Color.FromArgb(31, 41, 55);
             lblValeurProcesseur.Location = new Point(16, 30);
             lblValeurProcesseur.Name = "lblValeurProcesseur";
-            lblValeurProcesseur.Size = new Size(19, 25);
+            lblValeurProcesseur.Size = new Size(28, 38);
             lblValeurProcesseur.TabIndex = 1;
             lblValeurProcesseur.Text = "-";
             // 
@@ -846,7 +782,7 @@
             lblDetailDisque.ForeColor = Color.FromArgb(107, 114, 128);
             lblDetailDisque.Location = new Point(134, 10);
             lblDetailDisque.Name = "lblDetailDisque";
-            lblDetailDisque.Size = new Size(55, 20);
+            lblDetailDisque.Size = new Size(88, 32);
             lblDetailDisque.TabIndex = 2;
             lblDetailDisque.Text = "Disque";
             // 
@@ -857,7 +793,7 @@
             lblValeurDisque.ForeColor = Color.FromArgb(31, 41, 55);
             lblValeurDisque.Location = new Point(134, 30);
             lblValeurDisque.Name = "lblValeurDisque";
-            lblValeurDisque.Size = new Size(19, 25);
+            lblValeurDisque.Size = new Size(28, 38);
             lblValeurDisque.TabIndex = 3;
             lblValeurDisque.Text = "-";
             // 
@@ -868,7 +804,7 @@
             lblDetailLogiciels.ForeColor = Color.FromArgb(107, 114, 128);
             lblDetailLogiciels.Location = new Point(252, 10);
             lblDetailLogiciels.Name = "lblDetailLogiciels";
-            lblDetailLogiciels.Size = new Size(67, 20);
+            lblDetailLogiciels.Size = new Size(105, 32);
             lblDetailLogiciels.TabIndex = 4;
             lblDetailLogiciels.Text = "Logiciels";
             // 
@@ -879,7 +815,7 @@
             lblValeurLogiciels.ForeColor = Color.FromArgb(31, 41, 55);
             lblValeurLogiciels.Location = new Point(252, 30);
             lblValeurLogiciels.Name = "lblValeurLogiciels";
-            lblValeurLogiciels.Size = new Size(19, 25);
+            lblValeurLogiciels.Size = new Size(28, 38);
             lblValeurLogiciels.TabIndex = 5;
             lblValeurLogiciels.Text = "-";
             // 
@@ -890,7 +826,7 @@
             lblDetailEtat.ForeColor = Color.FromArgb(107, 114, 128);
             lblDetailEtat.Location = new Point(370, 10);
             lblDetailEtat.Name = "lblDetailEtat";
-            lblDetailEtat.Size = new Size(35, 20);
+            lblDetailEtat.Size = new Size(54, 32);
             lblDetailEtat.TabIndex = 6;
             lblDetailEtat.Text = "État";
             // 
@@ -901,7 +837,7 @@
             lblValeurEtat.ForeColor = Color.FromArgb(31, 41, 55);
             lblValeurEtat.Location = new Point(370, 30);
             lblValeurEtat.Name = "lblValeurEtat";
-            lblValeurEtat.Size = new Size(19, 25);
+            lblValeurEtat.Size = new Size(28, 38);
             lblValeurEtat.TabIndex = 7;
             lblValeurEtat.Text = "-";
             // 
@@ -912,7 +848,7 @@
             lblDetailSuivi.ForeColor = Color.FromArgb(107, 114, 128);
             lblDetailSuivi.Location = new Point(488, 10);
             lblDetailSuivi.Name = "lblDetailSuivi";
-            lblDetailSuivi.Size = new Size(40, 20);
+            lblDetailSuivi.Size = new Size(65, 32);
             lblDetailSuivi.TabIndex = 8;
             lblDetailSuivi.Text = "Suivi";
             // 
@@ -923,7 +859,7 @@
             lblValeurSuivi.ForeColor = Color.FromArgb(31, 41, 55);
             lblValeurSuivi.Location = new Point(488, 30);
             lblValeurSuivi.Name = "lblValeurSuivi";
-            lblValeurSuivi.Size = new Size(19, 25);
+            lblValeurSuivi.Size = new Size(28, 38);
             lblValeurSuivi.TabIndex = 9;
             lblValeurSuivi.Text = "-";
             // 
@@ -934,7 +870,7 @@
             lblSuppression.ForeColor = Color.FromArgb(31, 41, 55);
             lblSuppression.Location = new Point(400, 226);
             lblSuppression.Name = "lblSuppression";
-            lblSuppression.Size = new Size(246, 25);
+            lblSuppression.Size = new Size(387, 41);
             lblSuppression.TabIndex = 21;
             lblSuppression.Text = "Suppression d'un matériel";
             // 
@@ -944,7 +880,7 @@
             cboSupprMateriel.Font = new Font("Segoe UI", 10.5F);
             cboSupprMateriel.Location = new Point(400, 262);
             cboSupprMateriel.Name = "cboSupprMateriel";
-            cboSupprMateriel.Size = new Size(460, 31);
+            cboSupprMateriel.Size = new Size(460, 46);
             cboSupprMateriel.TabIndex = 20;
             // 
             // btnSupprimerMateriel
@@ -982,7 +918,7 @@
             lblIncidents.ForeColor = Color.FromArgb(31, 41, 55);
             lblIncidents.Location = new Point(22, 20);
             lblIncidents.Name = "lblIncidents";
-            lblIncidents.Size = new Size(119, 32);
+            lblIncidents.Size = new Size(186, 51);
             lblIncidents.TabIndex = 0;
             lblIncidents.Text = "Incidents";
             // 
@@ -991,7 +927,7 @@
             lstIncidents.BorderStyle = BorderStyle.FixedSingle;
             lstIncidents.Font = new Font("Segoe UI", 10.5F);
             lstIncidents.IntegralHeight = false;
-            lstIncidents.ItemHeight = 23;
+            lstIncidents.ItemHeight = 38;
             lstIncidents.Location = new Point(24, 60);
             lstIncidents.Name = "lstIncidents";
             lstIncidents.Size = new Size(372, 200);
@@ -1040,7 +976,7 @@
             lblTicketSelection.ForeColor = Color.FromArgb(31, 41, 55);
             lblTicketSelection.Location = new Point(22, 20);
             lblTicketSelection.Name = "lblTicketSelection";
-            lblTicketSelection.Size = new Size(199, 30);
+            lblTicketSelection.Size = new Size(317, 47);
             lblTicketSelection.TabIndex = 0;
             lblTicketSelection.Text = "Ticket sélectionné";
             // 
@@ -1062,7 +998,7 @@
             lblEtat.ForeColor = Color.FromArgb(31, 41, 55);
             lblEtat.Location = new Point(24, 64);
             lblEtat.Name = "lblEtat";
-            lblEtat.Size = new Size(40, 23);
+            lblEtat.Size = new Size(60, 36);
             lblEtat.TabIndex = 2;
             lblEtat.Text = "État";
             // 
@@ -1084,7 +1020,7 @@
             rbEnCours.ForeColor = Color.FromArgb(31, 41, 55);
             rbEnCours.Location = new Point(0, 3);
             rbEnCours.Name = "rbEnCours";
-            rbEnCours.Size = new Size(96, 27);
+            rbEnCours.Size = new Size(147, 41);
             rbEnCours.TabIndex = 0;
             rbEnCours.TabStop = true;
             rbEnCours.Text = "En cours";
@@ -1096,7 +1032,7 @@
             rbResolu.ForeColor = Color.FromArgb(31, 41, 55);
             rbResolu.Location = new Point(110, 3);
             rbResolu.Name = "rbResolu";
-            rbResolu.Size = new Size(81, 27);
+            rbResolu.Size = new Size(126, 41);
             rbResolu.TabIndex = 1;
             rbResolu.Text = "Résolu";
             // 
@@ -1107,7 +1043,7 @@
             rbCloture.ForeColor = Color.FromArgb(31, 41, 55);
             rbCloture.Location = new Point(220, 3);
             rbCloture.Name = "rbCloture";
-            rbCloture.Size = new Size(87, 27);
+            rbCloture.Size = new Size(135, 41);
             rbCloture.TabIndex = 2;
             rbCloture.Text = "Clôturé";
             // 
@@ -1118,7 +1054,7 @@
             lblUrgence.ForeColor = Color.FromArgb(31, 41, 55);
             lblUrgence.Location = new Point(24, 122);
             lblUrgence.Name = "lblUrgence";
-            lblUrgence.Size = new Size(145, 23);
+            lblUrgence.Size = new Size(224, 36);
             lblUrgence.TabIndex = 25;
             lblUrgence.Text = "Niveau d'urgence";
             // 
@@ -1140,7 +1076,7 @@
             rbFaible.ForeColor = Color.FromArgb(31, 41, 55);
             rbFaible.Location = new Point(0, 3);
             rbFaible.Name = "rbFaible";
-            rbFaible.Size = new Size(74, 27);
+            rbFaible.Size = new Size(118, 41);
             rbFaible.TabIndex = 0;
             rbFaible.TabStop = true;
             rbFaible.Text = "Faible";
@@ -1152,7 +1088,7 @@
             rbMoyen.ForeColor = Color.FromArgb(31, 41, 55);
             rbMoyen.Location = new Point(110, 3);
             rbMoyen.Name = "rbMoyen";
-            rbMoyen.Size = new Size(83, 27);
+            rbMoyen.Size = new Size(130, 41);
             rbMoyen.TabIndex = 1;
             rbMoyen.Text = "Moyen";
             // 
@@ -1163,7 +1099,7 @@
             rbCritique.ForeColor = Color.FromArgb(31, 41, 55);
             rbCritique.Location = new Point(220, 3);
             rbCritique.Name = "rbCritique";
-            rbCritique.Size = new Size(91, 27);
+            rbCritique.Size = new Size(142, 41);
             rbCritique.TabIndex = 2;
             rbCritique.Text = "Critique";
             // 
@@ -1174,7 +1110,7 @@
             lblSuivi.ForeColor = Color.FromArgb(31, 41, 55);
             lblSuivi.Location = new Point(24, 180);
             lblSuivi.Name = "lblSuivi";
-            lblSuivi.Size = new Size(178, 23);
+            lblSuivi.Size = new Size(273, 36);
             lblSuivi.TabIndex = 26;
             lblSuivi.Text = "Suivi (travail effectué)";
             // 
@@ -1211,10 +1147,10 @@
             // 
             tabResponsable.BackColor = Color.FromArgb(243, 244, 246);
             tabResponsable.Controls.Add(cartePersonnel);
-            tabResponsable.Location = new Point(4, 38);
+            tabResponsable.Location = new Point(8, 55);
             tabResponsable.Name = "tabResponsable";
             tabResponsable.Padding = new Padding(3);
-            tabResponsable.Size = new Size(1060, 530);
+            tabResponsable.Size = new Size(1052, 509);
             tabResponsable.TabIndex = 5;
             tabResponsable.Text = "Responsable";
             // 
@@ -1254,7 +1190,7 @@
             lblType.ForeColor = Color.FromArgb(31, 41, 55);
             lblType.Location = new Point(24, 20);
             lblType.Name = "lblType";
-            lblType.Size = new Size(133, 23);
+            lblType.Size = new Size(205, 36);
             lblType.TabIndex = 0;
             lblType.Text = "Type de compte";
             // 
@@ -1275,7 +1211,7 @@
             rbTechnicien.ForeColor = Color.FromArgb(31, 41, 55);
             rbTechnicien.Location = new Point(0, 3);
             rbTechnicien.Name = "rbTechnicien";
-            rbTechnicien.Size = new Size(110, 27);
+            rbTechnicien.Size = new Size(170, 41);
             rbTechnicien.TabIndex = 0;
             rbTechnicien.TabStop = true;
             rbTechnicien.Text = "Technicien";
@@ -1288,7 +1224,7 @@
             rbUtilisateur.ForeColor = Color.FromArgb(31, 41, 55);
             rbUtilisateur.Location = new Point(110, 3);
             rbUtilisateur.Name = "rbUtilisateur";
-            rbUtilisateur.Size = new Size(108, 27);
+            rbUtilisateur.Size = new Size(169, 41);
             rbUtilisateur.TabIndex = 1;
             rbUtilisateur.Text = "Utilisateur";
             // 
@@ -1299,7 +1235,7 @@
             lblPersonne.ForeColor = Color.FromArgb(31, 41, 55);
             lblPersonne.Location = new Point(300, 20);
             lblPersonne.Name = "lblPersonne";
-            lblPersonne.Size = new Size(270, 23);
+            lblPersonne.Size = new Size(421, 36);
             lblPersonne.TabIndex = 29;
             lblPersonne.Text = "Personne à modifier ou supprimer";
             // 
@@ -1309,7 +1245,7 @@
             cboPersonne.Font = new Font("Segoe UI", 10.5F);
             cboPersonne.Location = new Point(300, 42);
             cboPersonne.Name = "cboPersonne";
-            cboPersonne.Size = new Size(448, 31);
+            cboPersonne.Size = new Size(448, 46);
             cboPersonne.TabIndex = 29;
             cboPersonne.SelectedIndexChanged += cboPersonne_SelectedIndexChanged;
             // 
@@ -1328,7 +1264,7 @@
             lblNom.ForeColor = Color.FromArgb(31, 41, 55);
             lblNom.Location = new Point(24, 108);
             lblNom.Name = "lblNom";
-            lblNom.Size = new Size(48, 23);
+            lblNom.Size = new Size(74, 36);
             lblNom.TabIndex = 31;
             lblNom.Text = "Nom";
             // 
@@ -1338,7 +1274,7 @@
             txtNom.Font = new Font("Segoe UI", 10.5F);
             txtNom.Location = new Point(24, 130);
             txtNom.Name = "txtNom";
-            txtNom.Size = new Size(356, 31);
+            txtNom.Size = new Size(356, 45);
             txtNom.TabIndex = 30;
             // 
             // lblPrenom
@@ -1348,7 +1284,7 @@
             lblPrenom.ForeColor = Color.FromArgb(31, 41, 55);
             lblPrenom.Location = new Point(392, 108);
             lblPrenom.Name = "lblPrenom";
-            lblPrenom.Size = new Size(70, 23);
+            lblPrenom.Size = new Size(108, 36);
             lblPrenom.TabIndex = 32;
             lblPrenom.Text = "Prénom";
             // 
@@ -1358,7 +1294,7 @@
             txtPrenom.Font = new Font("Segoe UI", 10.5F);
             txtPrenom.Location = new Point(392, 130);
             txtPrenom.Name = "txtPrenom";
-            txtPrenom.Size = new Size(356, 31);
+            txtPrenom.Size = new Size(356, 45);
             txtPrenom.TabIndex = 31;
             // 
             // lblDateEmbauche
@@ -1368,7 +1304,7 @@
             lblDateEmbauche.ForeColor = Color.FromArgb(31, 41, 55);
             lblDateEmbauche.Location = new Point(24, 172);
             lblDateEmbauche.Name = "lblDateEmbauche";
-            lblDateEmbauche.Size = new Size(145, 23);
+            lblDateEmbauche.Size = new Size(224, 36);
             lblDateEmbauche.TabIndex = 33;
             lblDateEmbauche.Text = "Date d'embauche";
             // 
@@ -1378,7 +1314,7 @@
             dtpDateEmbauche.Format = DateTimePickerFormat.Short;
             dtpDateEmbauche.Location = new Point(24, 194);
             dtpDateEmbauche.Name = "dtpDateEmbauche";
-            dtpDateEmbauche.Size = new Size(356, 31);
+            dtpDateEmbauche.Size = new Size(356, 45);
             dtpDateEmbauche.TabIndex = 32;
             // 
             // lblPostePersonne
@@ -1388,7 +1324,7 @@
             lblPostePersonne.ForeColor = Color.FromArgb(31, 41, 55);
             lblPostePersonne.Location = new Point(392, 172);
             lblPostePersonne.Name = "lblPostePersonne";
-            lblPostePersonne.Size = new Size(51, 23);
+            lblPostePersonne.Size = new Size(79, 36);
             lblPostePersonne.TabIndex = 34;
             lblPostePersonne.Text = "Poste";
             // 
@@ -1398,7 +1334,7 @@
             txtPostePersonne.Font = new Font("Segoe UI", 10.5F);
             txtPostePersonne.Location = new Point(392, 194);
             txtPostePersonne.Name = "txtPostePersonne";
-            txtPostePersonne.Size = new Size(356, 31);
+            txtPostePersonne.Size = new Size(356, 45);
             txtPostePersonne.TabIndex = 33;
             // 
             // lblLoginPersonne
@@ -1408,7 +1344,7 @@
             lblLoginPersonne.ForeColor = Color.FromArgb(31, 41, 55);
             lblLoginPersonne.Location = new Point(24, 236);
             lblLoginPersonne.Name = "lblLoginPersonne";
-            lblLoginPersonne.Size = new Size(52, 23);
+            lblLoginPersonne.Size = new Size(82, 36);
             lblLoginPersonne.TabIndex = 35;
             lblLoginPersonne.Text = "Login";
             // 
@@ -1418,7 +1354,7 @@
             txtLoginPersonne.Font = new Font("Segoe UI", 10.5F);
             txtLoginPersonne.Location = new Point(24, 258);
             txtLoginPersonne.Name = "txtLoginPersonne";
-            txtLoginPersonne.Size = new Size(356, 31);
+            txtLoginPersonne.Size = new Size(356, 45);
             txtLoginPersonne.TabIndex = 34;
             // 
             // lblMdpPersonne
@@ -1428,7 +1364,7 @@
             lblMdpPersonne.ForeColor = Color.FromArgb(31, 41, 55);
             lblMdpPersonne.Location = new Point(392, 236);
             lblMdpPersonne.Name = "lblMdpPersonne";
-            lblMdpPersonne.Size = new Size(113, 23);
+            lblMdpPersonne.Size = new Size(174, 36);
             lblMdpPersonne.TabIndex = 36;
             lblMdpPersonne.Text = "Mot de passe";
             // 
@@ -1438,7 +1374,7 @@
             txtMdpPersonne.Font = new Font("Segoe UI", 10.5F);
             txtMdpPersonne.Location = new Point(392, 258);
             txtMdpPersonne.Name = "txtMdpPersonne";
-            txtMdpPersonne.Size = new Size(356, 31);
+            txtMdpPersonne.Size = new Size(356, 45);
             txtMdpPersonne.TabIndex = 35;
             txtMdpPersonne.UseSystemPasswordChar = true;
             // 
@@ -1461,7 +1397,7 @@
             lblFormation.ForeColor = Color.FromArgb(31, 41, 55);
             lblFormation.Location = new Point(16, 12);
             lblFormation.Name = "lblFormation";
-            lblFormation.Size = new Size(89, 23);
+            lblFormation.Size = new Size(138, 36);
             lblFormation.TabIndex = 0;
             lblFormation.Text = "Formation";
             // 
@@ -1471,7 +1407,7 @@
             txtFormation.Font = new Font("Segoe UI", 10.5F);
             txtFormation.Location = new Point(16, 34);
             txtFormation.Name = "txtFormation";
-            txtFormation.Size = new Size(336, 31);
+            txtFormation.Size = new Size(336, 45);
             txtFormation.TabIndex = 36;
             // 
             // lblCompetence
@@ -1481,7 +1417,7 @@
             lblCompetence.ForeColor = Color.FromArgb(31, 41, 55);
             lblCompetence.Location = new Point(372, 12);
             lblCompetence.Name = "lblCompetence";
-            lblCompetence.Size = new Size(107, 23);
+            lblCompetence.Size = new Size(164, 36);
             lblCompetence.TabIndex = 37;
             lblCompetence.Text = "Compétence";
             // 
@@ -1491,7 +1427,7 @@
             txtCompetence.Font = new Font("Segoe UI", 10.5F);
             txtCompetence.Location = new Point(372, 34);
             txtCompetence.Name = "txtCompetence";
-            txtCompetence.Size = new Size(336, 31);
+            txtCompetence.Size = new Size(336, 45);
             txtCompetence.TabIndex = 37;
             // 
             // btnAjouterPersonne
@@ -1548,7 +1484,7 @@
             // 
             // FormPrincipal
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(14F, 36F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 244, 246);
             ClientSize = new Size(1248, 834);
@@ -1570,8 +1506,6 @@
             tabUtilisateur.ResumeLayout(false);
             carteNouveau.ResumeLayout(false);
             carteNouveau.PerformLayout();
-            panelDeclUrgence.ResumeLayout(false);
-            panelDeclUrgence.PerformLayout();
             carteTickets.ResumeLayout(false);
             carteTickets.PerformLayout();
             tabTechnicien.ResumeLayout(false);
@@ -1623,11 +1557,6 @@
         private System.Windows.Forms.Label lblNouveau;
         private System.Windows.Forms.Label lblMateriel;
         private System.Windows.Forms.ComboBox cboMateriel;
-        private System.Windows.Forms.Label lblDeclUrgence;
-        private System.Windows.Forms.Panel panelDeclUrgence;
-        private System.Windows.Forms.RadioButton rbDeclFaible;
-        private System.Windows.Forms.RadioButton rbDeclMoyen;
-        private System.Windows.Forms.RadioButton rbDeclCritique;
         private System.Windows.Forms.Label lblIncident;
         private System.Windows.Forms.TextBox txtIncident;
         private System.Windows.Forms.Button btnEnvoyer;

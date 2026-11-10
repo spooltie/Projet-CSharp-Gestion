@@ -76,6 +76,7 @@ namespace GSBIncidents
                 carteMateriel.Enabled = true;
                 carteIncidents.Enabled = true;
                 carteTicket.Enabled = true;
+                tabMenu.SelectedTab = tabTechnicien;
 
             }
             else if (poste == "utilisateur")
@@ -86,6 +87,7 @@ namespace GSBIncidents
                 carteIncidents.Enabled = false;
                 carteTicket.Enabled = false;
                 cartePersonnel.Enabled = false;
+                tabMenu.SelectedTab = tabUtilisateur;
             }
             else if (poste == "responsable")
             {
@@ -95,6 +97,7 @@ namespace GSBIncidents
                 carteIncidents.Enabled = false;
                 carteTicket.Enabled = false;
                 cartePersonnel.Enabled = true;
+                tabMenu.SelectedTab = tabResponsable;
             }
             else
             {

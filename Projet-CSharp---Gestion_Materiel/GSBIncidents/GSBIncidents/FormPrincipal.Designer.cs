@@ -37,7 +37,7 @@
             lblMotDePasse = new Label();
             txtMotDePasse = new TextBox();
             lblPoste = new Label();
-            txtPoste = new TextBox();
+            cboPoste = new ComboBox();
             chkResterConnecte = new CheckBox();
             btnSeConnecter = new Button();
             tabUtilisateur = new TabPage();
@@ -239,7 +239,7 @@
             carteConnexion.Controls.Add(lblMotDePasse);
             carteConnexion.Controls.Add(txtMotDePasse);
             carteConnexion.Controls.Add(lblPoste);
-            carteConnexion.Controls.Add(txtPoste);
+            carteConnexion.Controls.Add(cboPoste);
             carteConnexion.Controls.Add(chkResterConnecte);
             carteConnexion.Controls.Add(btnSeConnecter);
             carteConnexion.Location = new Point(350, 55);
@@ -321,14 +321,15 @@
             lblPoste.TabIndex = 4;
             lblPoste.Text = "Poste";
             // 
-            // txtPoste
+            // cboPoste
             // 
-            txtPoste.BorderStyle = BorderStyle.FixedSingle;
-            txtPoste.Font = new Font("Segoe UI", 10.5F);
-            txtPoste.Location = new Point(32, 270);
-            txtPoste.Name = "txtPoste";
-            txtPoste.Size = new Size(296, 45);
-            txtPoste.TabIndex = 2;
+            cboPoste.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPoste.Font = new Font("Segoe UI", 10.5F);
+            cboPoste.Items.AddRange(new object[] { "Utilisateur", "Technicien", "Responsable" });
+            cboPoste.Location = new Point(32, 270);
+            cboPoste.Name = "cboPoste";
+            cboPoste.Size = new Size(296, 45);
+            cboPoste.TabIndex = 2;
             // 
             // chkResterConnecte
             // 
@@ -1550,7 +1551,7 @@
         private System.Windows.Forms.Label lblMotDePasse;
         private System.Windows.Forms.TextBox txtMotDePasse;
         private System.Windows.Forms.Label lblPoste;
-        private System.Windows.Forms.TextBox txtPoste;
+        private System.Windows.Forms.ComboBox cboPoste;
         private System.Windows.Forms.CheckBox chkResterConnecte;
         private System.Windows.Forms.Button btnSeConnecter;
         private System.Windows.Forms.Panel carteNouveau;

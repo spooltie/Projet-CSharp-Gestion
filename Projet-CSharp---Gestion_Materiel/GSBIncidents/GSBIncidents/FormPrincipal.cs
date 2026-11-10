@@ -47,13 +47,29 @@ namespace GSBIncidents
                 return;
             }
 
+            if (cboPoste.SelectedIndex == -1)
+            {
+                MessageBox.Show("Veuillez choisir un poste !");
+                return;
+            }
+
             personneConnecte = BD.SeConnecter(login, password);
             if (personneConnecte == null)
             {
                 MessageBox.Show("Identifiant ou mot de passe incorrect !");
                 return;
             }
-            if (personneConnecte.fonction == "Technicien")
+
+            string poste = cboPoste.Text.ToLower();
+
+            if (personneConnecte.poste.Trim().ToLower() != poste)
+            {
+                MessageBox.Show("Ce poste ne correspond pas à votre compte !");
+                personneConnecte = null;
+                return;
+            }
+
+            if (poste == "technicien")
             {
                 carteNouveau.Enabled = false;
                 carteTickets.Enabled = false;
@@ -62,7 +78,7 @@ namespace GSBIncidents
                 carteTicket.Enabled = true;
 
             }
-            else if (personneConnecte.fonction == "Utilisateur")
+            else if (poste == "utilisateur")
             {
                 carteNouveau.Enabled = true;
                 carteTickets.Enabled = true;
@@ -71,7 +87,7 @@ namespace GSBIncidents
                 carteTicket.Enabled = false;
                 cartePersonnel.Enabled = false;
             }
-            else if (personneConnecte.fonction == "Responsable")
+            else if (poste == "responsable")
             {
                 carteNouveau.Enabled = false;
                 carteTickets.Enabled = false;
@@ -83,12 +99,14 @@ namespace GSBIncidents
             else
             {
                 MessageBox.Show("Fonction non reconnue !"+ personneConnecte.poste);
+                personneConnecte = null;
                 return;
 
             }
             lblUtilisateur.Text = "Connecté :" + personneConnecte.prenom + " " + personneConnecte.nom;
             txtLogin.Clear();
             txtMotDePasse.Clear();
+            cboPoste.SelectedIndex = -1;
         }
 
         #endregion

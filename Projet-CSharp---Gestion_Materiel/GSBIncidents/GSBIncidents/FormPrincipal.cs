@@ -10,7 +10,7 @@ namespace GSBIncidents
         {
 
             InitializeComponent();
-            
+
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
@@ -19,6 +19,7 @@ namespace GSBIncidents
             tabMenu.TabPages.Remove(tabUtilisateur);
             tabMenu.TabPages.Remove(tabResponsable);
             tabMenu.TabPages.Remove(tabTechnicien);
+            btnDeconnexion.Hide();
 
             //L'utilisateur qui se connecte n'a accès qu'à la page de connexion, les autres sont masqué via les lignes ci-dessous.
             //carteNouveau.Enabled= false;
@@ -39,6 +40,9 @@ namespace GSBIncidents
             tabMenu.TabPages.Remove(tabTechnicien);
             tabMenu.TabPages.Add(tabConnexion);
             tabMenu.SelectedTab = tabConnexion;
+            btnDeconnexion.Hide();
+            lblUtilisateur.Hide();
+
 
 
         }
@@ -51,6 +55,10 @@ namespace GSBIncidents
         {
             string login = txtLogin.Text;
             string password = txtMotDePasse.Text;
+            btnDeconnexion.Show();
+            lblUtilisateur.Show();
+
+
 
             if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
             {
@@ -84,6 +92,7 @@ namespace GSBIncidents
             {
                 tabMenu.TabPages.Add(tabTechnicien);
                 tabMenu.SelectedTab = tabTechnicien;
+
             }
             else if (poste == "utilisateur")
             {
@@ -98,10 +107,11 @@ namespace GSBIncidents
                 tabMenu.SelectedTab = tabResponsable;
 
 
+
             }
             else
             {
-                MessageBox.Show("Fonction non reconnue !"+ personneConnecte.poste);
+                MessageBox.Show("Fonction non reconnue !" + personneConnecte.poste);
                 personneConnecte = null;
                 return;
 
@@ -193,5 +203,10 @@ namespace GSBIncidents
         }
 
         #endregion
+
+        private void lblUtilisateur_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

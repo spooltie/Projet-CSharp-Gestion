@@ -191,7 +191,7 @@ namespace GSBIncidents
         private void rbTechnicien_CheckedChanged(object sender, EventArgs e)
         {
             panelTechnicien.Show();
-            cboPersonne.Items.Add();
+            //cboPersonne.Items.Add(La liste des techniciens);
         }
         private void rbUtilisateur_CheckedChanged(object sender, EventArgs e)
         {
@@ -231,6 +231,6 @@ namespace GSBIncidents
         #endregion
 
 
-        
+
     }
 }

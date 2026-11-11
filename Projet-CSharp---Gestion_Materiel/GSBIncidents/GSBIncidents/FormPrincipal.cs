@@ -13,21 +13,19 @@ namespace GSBIncidents
 
         }
 
+
+
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
 
+            //L'utilisateur qui se connecte n'a accès qu'à la page de connexion, les autres sont masqué via les lignes ci-dessous.
             tabMenu.TabPages.Remove(tabUtilisateur);
             tabMenu.TabPages.Remove(tabResponsable);
             tabMenu.TabPages.Remove(tabTechnicien);
             btnDeconnexion.Hide();
 
-            //L'utilisateur qui se connecte n'a accès qu'à la page de connexion, les autres sont masqué via les lignes ci-dessous.
-            //carteNouveau.Enabled= false;
-            //carteTickets.Enabled = false;
-            //carteMateriel.Enabled = false;
-            //carteIncidents.Enabled = false;
-            //carteTicket.Enabled = false;
-            //cartePersonnel.Enabled = false;
+
+
 
         }
 
@@ -58,7 +56,20 @@ namespace GSBIncidents
             btnDeconnexion.Show();
             lblUtilisateur.Show();
 
+            // Cacher la groupe box avec les formations et compétence dans l'onglet responsable
 
+            panelTechnicien.Hide();
+
+            //
+
+            // Clear des comboBox, listBox...
+
+            cboPersonne.Items.Clear();
+            cboConsultMateriel.Items.Clear();
+            cboSupprMateriel.Items.Clear();
+            lstIncidents.Items.Clear();
+
+            //
 
             if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
             {
@@ -179,9 +190,14 @@ namespace GSBIncidents
 
         private void rbTechnicien_CheckedChanged(object sender, EventArgs e)
         {
-
+            panelTechnicien.Show();
+            cboPersonne.Items.Add();
         }
-
+        private void rbUtilisateur_CheckedChanged(object sender, EventArgs e)
+        {
+            panelTechnicien.Hide();
+            //cboPersonne.Items.Add(La liste des utilisateur - leurs id et nom ?);
+        }
         private void cboPersonne_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -189,6 +205,16 @@ namespace GSBIncidents
 
         private void btnAjouterPersonne_Click(object sender, EventArgs e)
         {
+            if (rbTechnicien.Checked)
+            {
+
+            }
+            if (rbUtilisateur.Checked)
+            {
+                panelTechnicien.Hide();
+            }
+
+
 
         }
 
@@ -204,9 +230,7 @@ namespace GSBIncidents
 
         #endregion
 
-        private void lblUtilisateur_Click(object sender, EventArgs e)
-        {
 
-        }
+        
     }
 }

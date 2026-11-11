@@ -23,8 +23,8 @@ namespace GSBIncidents
 
             string reqSql;
 
-            reqSql = "INSERT INTO Personnel (Id_Personnel, Nom, Prenom, Date_Embauche, Login, MDP, Poste) "
-                   + "VALUES (@id_Personnel, @nom, @prenom, @date_Embauche, @login, @MDP, @poste)";
+            reqSql = "INSERT INTO Personnel (Id_Personnel, Nom, Prenom, Date_Embauche, Fonction, Login, MDP, Poste) "
+                   + "VALUES (@id_Personnel, @nom, @prenom, @date_Embauche, @fonction, @login, @MDP, @poste)";
 
             MySqlCommand cmd = new MySqlCommand(reqSql, conn);
 
@@ -32,6 +32,7 @@ namespace GSBIncidents
             cmd.Parameters.AddWithValue("@nom", unPersonnel.nom);
             cmd.Parameters.AddWithValue("@prenom", unPersonnel.prenom);
             cmd.Parameters.AddWithValue("@date_Embauche", unPersonnel.date_Embauche);
+            cmd.Parameters.AddWithValue("@fonction", unPersonnel.fonction);
             cmd.Parameters.AddWithValue("@login", unPersonnel.login);
             cmd.Parameters.AddWithValue("@MDP", unPersonnel.MDP);
             cmd.Parameters.AddWithValue("@poste", unPersonnel.poste);
@@ -253,6 +254,40 @@ namespace GSBIncidents
             conn.Close();
 
             return personne;
+        }
+
+        public static void PriseEnChargeIncident(Ticket unTicket, Technicien unTechnicien)
+        {
+            MySqlConnection conn = Connexion();
+
+            string reqSql;
+
+            reqSql = "UPDATE Ticket SET Id_Tech = @id_Tech WHERE Id_Ticket = @id_Ticket";
+
+            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
+            cmd.Parameters.AddWithValue("@id_Tech", unTechnicien.id_Tech);
+            cmd.Parameters.AddWithValue("@id_Ticket", unTicket.id_Ticket);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        public static void ModificationEtatIncident(Ticket unTicket)
+        {
+            MySqlConnection conn = Connexion();
+
+            string reqSql;
+
+            reqSql = "UPDATE Ticket SET Etat = @etat WHERE Id_Ticket = @id_Ticket";
+
+            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
+            cmd.Parameters.AddWithValue("@etat", unTicket.etat);
+            cmd.Parameters.AddWithValue("@id_Ticket", unTicket.id_Ticket);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
         }
 
     }

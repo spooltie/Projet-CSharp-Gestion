@@ -22,5 +22,10 @@ namespace GSBIncidents
             this.niveau_Urgence = niveau_Urgence;
             this.suivi = suivi;
         }
+        public override string ToString()
+        {
+            return "Ticket n°" + id_Ticket + " - " + incident + " [" + etat + " / " + niveau_Urgence + "]";
+        }
     }
+
 }

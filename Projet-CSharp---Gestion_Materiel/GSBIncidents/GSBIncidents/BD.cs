@@ -290,6 +290,20 @@ namespace GSBIncidents
 
         }
 
+        internal static List<Materiel> GetMateriels()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static void ModificationTicket(Ticket unTicket)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static List<Ticket> GetTicketsNonClotures()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

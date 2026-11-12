@@ -6,7 +6,7 @@ namespace GSBIncidents
     {
 
         private Personnel personneConnecte;
-        private object technicienConnecte;
+        private Technicien technicienConnecte;
 
         public FormPrincipal()
         {

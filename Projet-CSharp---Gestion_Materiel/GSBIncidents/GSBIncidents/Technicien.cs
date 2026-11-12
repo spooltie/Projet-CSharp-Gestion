@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GSBIncidents
 {
-    internal class Technicien
+    internal class Technicien : Personnel
     {
         public int id_Tech;
         public int niveau;

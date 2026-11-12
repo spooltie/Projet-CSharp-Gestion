@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GSBIncidents
 {
-    internal class Responsable
+    internal class Responsable : Personnel
     {
         public int id_Responsable;
 

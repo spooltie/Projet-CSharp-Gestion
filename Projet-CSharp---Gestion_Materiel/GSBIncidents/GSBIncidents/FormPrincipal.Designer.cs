@@ -28,6 +28,7 @@
             lblUtilisateur = new Label();
             btnDeconnexion = new Button();
             tabMenu = new TabControl();
+            btnAdmin = new Button();
             tabConnexion = new TabPage();
             carteConnexion = new Panel();
             lblTitre = new Label();
@@ -226,12 +227,32 @@
             // 
             tabConnexion.BackColor = Color.FromArgb(238, 242, 247);
             tabConnexion.Controls.Add(carteConnexion);
+            tabConnexion.Controls.Add(btnAdmin);
             tabConnexion.Location = new Point(4, 32);
             tabConnexion.Name = "tabConnexion";
             tabConnexion.Padding = new Padding(3);
             tabConnexion.Size = new Size(1272, 628);
             tabConnexion.TabIndex = 2;
             tabConnexion.Text = "Connexion";
+            // 
+            // btnAdmin
+            // 
+            btnAdmin.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAdmin.BackColor = Color.White;
+            btnAdmin.Cursor = Cursors.Hand;
+            btnAdmin.FlatAppearance.BorderColor = Color.FromArgb(133, 183, 235);
+            btnAdmin.FlatAppearance.BorderSize = 1;
+            btnAdmin.FlatAppearance.MouseDownBackColor = Color.FromArgb(181, 212, 244);
+            btnAdmin.FlatAppearance.MouseOverBackColor = Color.FromArgb(230, 241, 251);
+            btnAdmin.FlatStyle = FlatStyle.Flat;
+            btnAdmin.Font = new Font("Segoe UI Semibold", 10F);
+            btnAdmin.ForeColor = Color.FromArgb(24, 95, 165);
+            btnAdmin.Location = new Point(1136, 576);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Size = new Size(120, 36);
+            btnAdmin.TabIndex = 1;
+            btnAdmin.Text = "Admin";
+            btnAdmin.UseVisualStyleBackColor = false;
             // 
             // carteConnexion
             // 
@@ -359,6 +380,7 @@
             btnSeConnecter.Text = "Se connecter";
             btnSeConnecter.UseVisualStyleBackColor = false;
             btnSeConnecter.Click += btnSeConnecter_Click;
+            btnAdmin.Click += btnAdmin_Click;
             // 
             // tabUtilisateur
             // 
@@ -1610,6 +1632,7 @@
         private System.Windows.Forms.Button btnDeconnexion;
         private System.Windows.Forms.TabControl tabMenu;
         private System.Windows.Forms.TabPage tabConnexion;
+        private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.TabPage tabUtilisateur;
         private System.Windows.Forms.TabPage tabTechnicien;
         private System.Windows.Forms.TabPage tabResponsable;

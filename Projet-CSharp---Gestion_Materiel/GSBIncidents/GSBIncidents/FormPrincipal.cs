@@ -134,6 +134,24 @@ namespace GSBIncidents
             tabMenu.TabPages.Remove(tabConnexion);
         }
 
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            btnDeconnexion.Show();
+            lblUtilisateur.Show();
+            cboPersonne.Items.Clear();
+            cboConsultMateriel.Items.Clear();
+            cboSupprMateriel.Items.Clear();
+            lstIncidents.Items.Clear();
+
+            tabMenu.TabPages.Add(tabUtilisateur);
+            tabMenu.TabPages.Add(tabResponsable);
+            tabMenu.TabPages.Add(tabTechnicien);
+            tabMenu.TabPages.Remove(tabConnexion);
+            tabMenu.SelectedTab = tabUtilisateur;
+
+
+        }
+
 
         #endregion
 
@@ -191,7 +209,7 @@ namespace GSBIncidents
         private void rbTechnicien_CheckedChanged(object sender, EventArgs e)
         {
             panelTechnicien.Show();
-            //cboPersonne.Items.Add(La liste des techniciens);
+            cboPersonne.Items.Add(lblNom);
         }
         private void rbUtilisateur_CheckedChanged(object sender, EventArgs e)
         {

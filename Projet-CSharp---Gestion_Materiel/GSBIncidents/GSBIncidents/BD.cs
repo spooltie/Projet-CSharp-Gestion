@@ -318,6 +318,34 @@ namespace GSBIncidents
             return lesMateriels;
         }
 
+        internal static List<Ticket> GetTicket()
+        {
+            List<Ticket> lesTickets = new List<Ticket>();
+            MySqlConnection conn = Connexion();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM TICKET", conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = Convert.ToInt32(reader["Id_Ticket"]);
+                string incident = reader["Incident"].ToString();
+                string etat = reader["Etat"].ToString();
+                string niveau_urgence = reader["Niveau_urgence"].ToString();
+                string suivi = reader["Suivi"].ToString();
+
+
+                Ticket ticket = new Ticket(id, incident, etat, niveau_urgence, suivi);
+                lesTickets.Add(ticket);
+            }
+            reader.Close();
+            conn.Close();
+
+            return lesTickets;
+
+
+        }
+
         internal static List<Ticket> GetTicketsUtilisateur(int idPersonel)
         {
             List<Ticket> LesTickets = new List<Ticket>();
@@ -354,6 +382,8 @@ namespace GSBIncidents
         {
             throw new NotImplementedException();
         }
+
+
 
     }
 }

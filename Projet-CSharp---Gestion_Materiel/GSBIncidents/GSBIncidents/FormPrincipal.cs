@@ -105,6 +105,10 @@ namespace GSBIncidents
             {
                 tabMenu.TabPages.Add(tabTechnicien);
                 tabMenu.SelectedTab = tabTechnicien;
+                foreach (Ticket t in BD.GetTicket())
+                {
+                    lstIncidents.Items.Add(t);
+                }
 
             }
             else if (poste == "utilisateur")
@@ -187,7 +191,11 @@ namespace GSBIncidents
 
         private void btnAfficher_Click(object sender, EventArgs e)
         {
-
+            lstTickets.Items.Clear();
+            foreach (Ticket t in BD.GetTicketsUtilisateur(personneConnecte.id_Personnel))
+            {
+                lstTickets.Items.Add(t);
+            }
         }
 
         #endregion

@@ -28,7 +28,6 @@
             lblUtilisateur = new Label();
             btnDeconnexion = new Button();
             tabMenu = new TabControl();
-            btnAdmin = new Button();
             tabConnexion = new TabPage();
             carteConnexion = new Panel();
             lblTitre = new Label();
@@ -40,6 +39,7 @@
             lblPoste = new Label();
             cboPoste = new ComboBox();
             btnSeConnecter = new Button();
+            btnAdmin = new Button();
             tabUtilisateur = new TabPage();
             carteNouveau = new Panel();
             lblNouveau = new Label();
@@ -134,6 +134,15 @@
             btnAjouterPersonne = new Button();
             btnModifierPersonne = new Button();
             btnSupprimerPersonne = new Button();
+            carteStats = new Panel();
+            lblStats = new Label();
+            btnActualiserStats = new Button();
+            lblStatsIncidents = new Label();
+            lstStatsIncidents = new ListBox();
+            lblStatsTechniciens = new Label();
+            lstStatsTechniciens = new ListBox();
+            lblStatsUtilisateurs = new Label();
+            lstStatsUtilisateurs = new ListBox();
             panelEntete.SuspendLayout();
             tabMenu.SuspendLayout();
             tabConnexion.SuspendLayout();
@@ -152,6 +161,7 @@
             cartePersonnel.SuspendLayout();
             panelType.SuspendLayout();
             panelTechnicien.SuspendLayout();
+            carteStats.SuspendLayout();
             SuspendLayout();
             // 
             // panelEntete
@@ -234,25 +244,6 @@
             tabConnexion.Size = new Size(1272, 628);
             tabConnexion.TabIndex = 2;
             tabConnexion.Text = "Connexion";
-            // 
-            // btnAdmin
-            // 
-            btnAdmin.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnAdmin.BackColor = Color.White;
-            btnAdmin.Cursor = Cursors.Hand;
-            btnAdmin.FlatAppearance.BorderColor = Color.FromArgb(133, 183, 235);
-            btnAdmin.FlatAppearance.BorderSize = 1;
-            btnAdmin.FlatAppearance.MouseDownBackColor = Color.FromArgb(181, 212, 244);
-            btnAdmin.FlatAppearance.MouseOverBackColor = Color.FromArgb(230, 241, 251);
-            btnAdmin.FlatStyle = FlatStyle.Flat;
-            btnAdmin.Font = new Font("Segoe UI Semibold", 10F);
-            btnAdmin.ForeColor = Color.FromArgb(24, 95, 165);
-            btnAdmin.Location = new Point(1136, 576);
-            btnAdmin.Name = "btnAdmin";
-            btnAdmin.Size = new Size(120, 36);
-            btnAdmin.TabIndex = 1;
-            btnAdmin.Text = "Admin";
-            btnAdmin.UseVisualStyleBackColor = false;
             // 
             // carteConnexion
             // 
@@ -380,6 +371,24 @@
             btnSeConnecter.Text = "Se connecter";
             btnSeConnecter.UseVisualStyleBackColor = false;
             btnSeConnecter.Click += btnSeConnecter_Click;
+            // 
+            // btnAdmin
+            // 
+            btnAdmin.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAdmin.BackColor = Color.White;
+            btnAdmin.Cursor = Cursors.Hand;
+            btnAdmin.FlatAppearance.BorderColor = Color.FromArgb(133, 183, 235);
+            btnAdmin.FlatAppearance.MouseDownBackColor = Color.FromArgb(181, 212, 244);
+            btnAdmin.FlatAppearance.MouseOverBackColor = Color.FromArgb(230, 241, 251);
+            btnAdmin.FlatStyle = FlatStyle.Flat;
+            btnAdmin.Font = new Font("Segoe UI Semibold", 10F);
+            btnAdmin.ForeColor = Color.FromArgb(24, 95, 165);
+            btnAdmin.Location = new Point(1136, 576);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Size = new Size(120, 36);
+            btnAdmin.TabIndex = 1;
+            btnAdmin.Text = "Admin";
+            btnAdmin.UseVisualStyleBackColor = false;
             btnAdmin.Click += btnAdmin_Click;
             // 
             // tabUtilisateur
@@ -1217,6 +1226,7 @@
             // 
             tabResponsable.BackColor = Color.FromArgb(238, 242, 247);
             tabResponsable.Controls.Add(cartePersonnel);
+            tabResponsable.Controls.Add(carteStats);
             tabResponsable.Location = new Point(4, 32);
             tabResponsable.Name = "tabResponsable";
             tabResponsable.Padding = new Padding(3);
@@ -1226,7 +1236,7 @@
             // 
             // cartePersonnel
             // 
-            cartePersonnel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cartePersonnel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             cartePersonnel.BackColor = Color.White;
             cartePersonnel.Controls.Add(lblType);
             cartePersonnel.Controls.Add(panelType);
@@ -1251,7 +1261,7 @@
             cartePersonnel.Controls.Add(btnSupprimerPersonne);
             cartePersonnel.Location = new Point(16, 16);
             cartePersonnel.Name = "cartePersonnel";
-            cartePersonnel.Size = new Size(1240, 596);
+            cartePersonnel.Size = new Size(1240, 362);
             cartePersonnel.TabIndex = 0;
             // 
             // lblType
@@ -1327,11 +1337,10 @@
             // 
             // separateurPersonnel
             // 
-            separateurPersonnel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             separateurPersonnel.BackColor = Color.FromArgb(214, 224, 236);
             separateurPersonnel.Location = new Point(360, 24);
             separateurPersonnel.Name = "separateurPersonnel";
-            separateurPersonnel.Size = new Size(1, 548);
+            separateurPersonnel.Size = new Size(1, 314);
             separateurPersonnel.TabIndex = 30;
             // 
             // lblNom
@@ -1575,6 +1584,128 @@
             btnSupprimerPersonne.UseVisualStyleBackColor = false;
             btnSupprimerPersonne.Click += btnSupprimerPersonne_Click;
             // 
+            // carteStats
+            // 
+            carteStats.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            carteStats.BackColor = Color.White;
+            carteStats.Controls.Add(lblStats);
+            carteStats.Controls.Add(btnActualiserStats);
+            carteStats.Controls.Add(lblStatsIncidents);
+            carteStats.Controls.Add(lstStatsIncidents);
+            carteStats.Controls.Add(lblStatsTechniciens);
+            carteStats.Controls.Add(lstStatsTechniciens);
+            carteStats.Controls.Add(lblStatsUtilisateurs);
+            carteStats.Controls.Add(lstStatsUtilisateurs);
+            carteStats.Location = new Point(16, 394);
+            carteStats.Name = "carteStats";
+            carteStats.Size = new Size(1240, 218);
+            carteStats.TabIndex = 1;
+            // 
+            // lblStats
+            // 
+            lblStats.AutoSize = true;
+            lblStats.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblStats.ForeColor = Color.FromArgb(12, 68, 124);
+            lblStats.Location = new Point(22, 18);
+            lblStats.Name = "lblStats";
+            lblStats.Size = new Size(111, 25);
+            lblStats.TabIndex = 0;
+            lblStats.Text = "Statistiques";
+            // 
+            // btnActualiserStats
+            // 
+            btnActualiserStats.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnActualiserStats.BackColor = Color.White;
+            btnActualiserStats.Cursor = Cursors.Hand;
+            btnActualiserStats.FlatAppearance.BorderColor = Color.FromArgb(133, 183, 235);
+            btnActualiserStats.FlatAppearance.MouseDownBackColor = Color.FromArgb(181, 212, 244);
+            btnActualiserStats.FlatAppearance.MouseOverBackColor = Color.FromArgb(230, 241, 251);
+            btnActualiserStats.FlatStyle = FlatStyle.Flat;
+            btnActualiserStats.Font = new Font("Segoe UI Semibold", 10F);
+            btnActualiserStats.ForeColor = Color.FromArgb(24, 95, 165);
+            btnActualiserStats.Location = new Point(1096, 14);
+            btnActualiserStats.Name = "btnActualiserStats";
+            btnActualiserStats.Size = new Size(120, 32);
+            btnActualiserStats.TabIndex = 1;
+            btnActualiserStats.Text = "Actualiser";
+            btnActualiserStats.UseVisualStyleBackColor = false;
+            btnActualiserStats.Click += btnActualiserStats_Click;
+            // 
+            // lblStatsIncidents
+            // 
+            lblStatsIncidents.AutoSize = true;
+            lblStatsIncidents.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblStatsIncidents.ForeColor = Color.FromArgb(71, 85, 105);
+            lblStatsIncidents.Location = new Point(24, 56);
+            lblStatsIncidents.Name = "lblStatsIncidents";
+            lblStatsIncidents.Size = new Size(115, 17);
+            lblStatsIncidents.TabIndex = 2;
+            lblStatsIncidents.Text = "Incidents par état";
+            // 
+            // lstStatsIncidents
+            // 
+            lstStatsIncidents.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lstStatsIncidents.BackColor = Color.FromArgb(245, 248, 251);
+            lstStatsIncidents.BorderStyle = BorderStyle.FixedSingle;
+            lstStatsIncidents.Font = new Font("Segoe UI", 10.5F);
+            lstStatsIncidents.ForeColor = Color.FromArgb(27, 42, 61);
+            lstStatsIncidents.IntegralHeight = false;
+            lstStatsIncidents.ItemHeight = 19;
+            lstStatsIncidents.Location = new Point(24, 78);
+            lstStatsIncidents.Name = "lstStatsIncidents";
+            lstStatsIncidents.Size = new Size(381, 120);
+            lstStatsIncidents.TabIndex = 3;
+            // 
+            // lblStatsTechniciens
+            // 
+            lblStatsTechniciens.AutoSize = true;
+            lblStatsTechniciens.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblStatsTechniciens.ForeColor = Color.FromArgb(71, 85, 105);
+            lblStatsTechniciens.Location = new Point(429, 56);
+            lblStatsTechniciens.Name = "lblStatsTechniciens";
+            lblStatsTechniciens.Size = new Size(93, 17);
+            lblStatsTechniciens.TabIndex = 4;
+            lblStatsTechniciens.Text = "Par technicien";
+            // 
+            // lstStatsTechniciens
+            // 
+            lstStatsTechniciens.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lstStatsTechniciens.BackColor = Color.FromArgb(245, 248, 251);
+            lstStatsTechniciens.BorderStyle = BorderStyle.FixedSingle;
+            lstStatsTechniciens.Font = new Font("Segoe UI", 10.5F);
+            lstStatsTechniciens.ForeColor = Color.FromArgb(27, 42, 61);
+            lstStatsTechniciens.IntegralHeight = false;
+            lstStatsTechniciens.ItemHeight = 19;
+            lstStatsTechniciens.Location = new Point(429, 78);
+            lstStatsTechniciens.Name = "lstStatsTechniciens";
+            lstStatsTechniciens.Size = new Size(381, 120);
+            lstStatsTechniciens.TabIndex = 5;
+            // 
+            // lblStatsUtilisateurs
+            // 
+            lblStatsUtilisateurs.AutoSize = true;
+            lblStatsUtilisateurs.Font = new Font("Segoe UI Semibold", 9.75F);
+            lblStatsUtilisateurs.ForeColor = Color.FromArgb(71, 85, 105);
+            lblStatsUtilisateurs.Location = new Point(834, 56);
+            lblStatsUtilisateurs.Name = "lblStatsUtilisateurs";
+            lblStatsUtilisateurs.Size = new Size(92, 17);
+            lblStatsUtilisateurs.TabIndex = 6;
+            lblStatsUtilisateurs.Text = "Par utilisateur";
+            // 
+            // lstStatsUtilisateurs
+            // 
+            lstStatsUtilisateurs.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lstStatsUtilisateurs.BackColor = Color.FromArgb(245, 248, 251);
+            lstStatsUtilisateurs.BorderStyle = BorderStyle.FixedSingle;
+            lstStatsUtilisateurs.Font = new Font("Segoe UI", 10.5F);
+            lstStatsUtilisateurs.ForeColor = Color.FromArgb(27, 42, 61);
+            lstStatsUtilisateurs.IntegralHeight = false;
+            lstStatsUtilisateurs.ItemHeight = 19;
+            lstStatsUtilisateurs.Location = new Point(834, 78);
+            lstStatsUtilisateurs.Name = "lstStatsUtilisateurs";
+            lstStatsUtilisateurs.Size = new Size(381, 120);
+            lstStatsUtilisateurs.TabIndex = 7;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -1621,6 +1752,8 @@
             panelType.PerformLayout();
             panelTechnicien.ResumeLayout(false);
             panelTechnicien.PerformLayout();
+            carteStats.ResumeLayout(false);
+            carteStats.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1710,6 +1843,15 @@
         private System.Windows.Forms.TextBox txtSuivi;
         private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.Panel cartePersonnel;
+        private System.Windows.Forms.Panel carteStats;
+        private System.Windows.Forms.Label lblStats;
+        private System.Windows.Forms.Button btnActualiserStats;
+        private System.Windows.Forms.Label lblStatsIncidents;
+        private System.Windows.Forms.ListBox lstStatsIncidents;
+        private System.Windows.Forms.Label lblStatsTechniciens;
+        private System.Windows.Forms.ListBox lstStatsTechniciens;
+        private System.Windows.Forms.Label lblStatsUtilisateurs;
+        private System.Windows.Forms.ListBox lstStatsUtilisateurs;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.Panel panelType;
         private System.Windows.Forms.RadioButton rbTechnicien;

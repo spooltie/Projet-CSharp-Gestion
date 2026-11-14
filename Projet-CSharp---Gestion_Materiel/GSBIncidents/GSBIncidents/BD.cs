@@ -12,7 +12,7 @@ namespace GSBIncidents
     {
         private static MySqlConnection Connexion()
         {
-            MySqlConnection conn = new MySqlConnection("Server=192.168.1.10;Port=8889;Database=projetgestion;Uid=admin;Password=1234");
+            MySqlConnection conn = new MySqlConnection("Server=192.168.1.16;Port=8889;Database=projetgestion;Uid=admin;Password=1234");
             conn.Open();
             return conn;
         }
@@ -90,17 +90,18 @@ namespace GSBIncidents
 
             string reqSql;
 
-            reqSql = "INSERT INTO Ticket (Id_Ticket, Incident, Etat, Niveau_Urgence, Suivi) "
-                   + "VALUES (@id_Ticket, @incident, @etat, @niveau_Urgence, @suivi)";
+            reqSql = "INSERT INTO Ticket (Incident, Etat, Niveau_Urgence, Suivi, id_materiel, Id_Utilisateur, Id_Tech) "
+                   + "VALUES (@incident, @etat, @niveau_Urgence, @suivi, @id_materiel, (SELECT Id_Utilisateur FROM Utilisateurs WHERE Id_personnel = @idPersonnel), NULL)";
 
             MySqlCommand cmd = new MySqlCommand(reqSql, conn);
 
-            cmd.Parameters.AddWithValue("@id_Ticket", unTicket.id_Ticket);
             cmd.Parameters.AddWithValue("@incident", unTicket.incident);
             cmd.Parameters.AddWithValue("@etat", unTicket.etat);
             cmd.Parameters.AddWithValue("@niveau_Urgence", unTicket.niveau_Urgence);
             cmd.Parameters.AddWithValue("@suivi", unTicket.suivi);
-
+            cmd.Parameters.AddWithValue("@id_materiel", unTicket.id_Materiel);
+            cmd.Parameters.AddWithValue("@idPersonnel", unTicket.id_Personnel);
+            
             cmd.ExecuteNonQuery();
             conn.Close();
 

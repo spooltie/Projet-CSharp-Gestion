@@ -111,6 +111,11 @@ namespace GSBIncidents
             {
                 tabMenu.TabPages.Add(tabUtilisateur);
                 tabMenu.SelectedTab = tabUtilisateur;
+                cboMateriel.Items.Clear();
+                foreach (Materiel m in BD.GetMateriels())
+                {
+                    cboMateriel.Items.Add(m);
+                }
 
 
             }
@@ -161,7 +166,23 @@ namespace GSBIncidents
 
         private void btnEnvoyer_Click(object sender, EventArgs e)
         {
+            if (cboMateriel.SelectedIndex == -1)
+            {
+                MessageBox.Show("Veuillez choisir un matériel !");
+                return;
+            }
 
+            Materiel leMateriel = (Materiel)cboMateriel.SelectedItem;
+
+            Ticket unTicket = new Ticket(0, txtIncident.Text, "En Attente", "Non définie", "");
+            unTicket.id_Materiel = leMateriel.id_Materiel;
+            unTicket.id_Personnel = personneConnecte.id_Personnel;
+
+            BD.AjouteTicket(unTicket);
+
+            MessageBox.Show("Ticket envoyé");
+            cboMateriel.SelectedIndex = -1;
+            txtIncident.Clear();
         }
 
         private void btnAfficher_Click(object sender, EventArgs e)
@@ -184,7 +205,7 @@ namespace GSBIncidents
 
             Materiel unMateriel = new Materiel(0, txtProcesseur.Text, txtDisque.Text, txtLogiciels.Text,
                                                txtSuiviMateriel.Text, cboEtatMateriel.Text);
-            object value = technicienConnecte.AjouterMateriel(unMateriel);
+            technicienConnecte.AjouterMateriel(unMateriel);
 
             MessageBox.Show("Matériel ajouté");
             txtProcesseur.Clear();

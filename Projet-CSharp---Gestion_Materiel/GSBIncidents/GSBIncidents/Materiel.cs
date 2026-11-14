@@ -24,5 +24,10 @@ namespace GSBIncidents
             this.suivis = suivis;
             this.etat = etat;
         }
+
+        public override string ToString()
+        {
+            return "#" + id_Materiel + " - " + processus;
+        }
     }
 }

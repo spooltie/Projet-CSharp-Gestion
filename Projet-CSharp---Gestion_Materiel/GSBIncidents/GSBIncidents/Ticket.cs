@@ -14,6 +14,9 @@ namespace GSBIncidents
         public string niveau_Urgence;
         public string suivi;
 
+        public int id_Materiel;
+        public int id_Personnel;
+
         public Ticket(int id_Ticket, string incident, string etat, string niveau_Urgence, string suivi)
         {
             this.id_Ticket = id_Ticket;

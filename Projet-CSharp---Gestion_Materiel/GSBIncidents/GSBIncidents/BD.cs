@@ -292,7 +292,56 @@ namespace GSBIncidents
 
         internal static List<Materiel> GetMateriels()
         {
-            throw new NotImplementedException();
+            List<Materiel> lesMateriels = new List<Materiel>();
+            MySqlConnection conn = Connexion();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM Materiel", conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = Convert.ToInt32(reader["Id_Materiel"]);
+                string processus = reader["Processus"].ToString();
+                string disque = reader["Disque"].ToString();
+                string logiciel = reader["Logiciel"].ToString();
+                string suivis = reader["Suivis"].ToString();
+                string etat = reader["Etat"].ToString();
+
+                Materiel materiel = new Materiel(id, processus, disque, logiciel, suivis, etat);
+                lesMateriels.Add(materiel);
+            }
+
+            reader.Close();
+            conn.Close();
+
+            return lesMateriels;
+        }
+
+        internal static List<Ticket> GetTicketsUtilisateur(int idPersonel)
+        {
+            List<Ticket> LesTickets = new List<Ticket>();
+            MySqlConnection conn = Connexion();
+            string reqSql = "SELECT t.* FROM Ticket t "
+                  + "JOIN Utilisateurs u ON t.Id_Utilisateur = u.Id_Utilisateur "
+                  + "WHERE u.Id_personnel = @idPersonnel";
+            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
+            cmd.Parameters.AddWithValue("@idPersonnel", idPersonel);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                int idTicket = Convert.ToInt32(reader["Id_Ticket"]);
+                string incident = reader["Incident"].ToString();
+                string etat = reader["Etat"].ToString();
+                string niveauUrgence = reader["Niveau_Urgence"].ToString();
+                string suivi = reader["Suivi"].ToString();
+                Ticket ticket = new Ticket(idTicket, incident, etat, niveauUrgence, suivi);
+                LesTickets.Add(ticket);
+            }
+            reader.Close();
+            conn.Close();
+
+            return LesTickets;
         }
 
         internal static void ModificationTicket(Ticket unTicket)
@@ -304,6 +353,6 @@ namespace GSBIncidents
         {
             throw new NotImplementedException();
         }
-    }
 
+    }
 }

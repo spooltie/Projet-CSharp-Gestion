@@ -13,7 +13,7 @@ namespace GSBIncidents
     {
         private static MySqlConnection Connexion()
         {
-            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database=projetgestion;Uid=root;Password=;");
+            MySqlConnection conn = new MySqlConnection("Server=192.168.1.16;Port=8889;Database=projetgestion;Uid=admin;Password=1234");
 
             conn.Open();
             return conn;
@@ -115,38 +115,21 @@ namespace GSBIncidents
         public static void AjouteUtilisateur(Utilisateur unUtilisateur)
         {
             MySqlConnection conn = Connexion();
-
-            string reqSql;
-
-            reqSql = "INSERT INTO Utilisateur (Id_User) "
-                   + "VALUES (@id_User)";
-
-            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
-
-            cmd.Parameters.AddWithValue("@id_User", unUtilisateur.id_User);
-
-
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO Utilisateurs (Id_personnel) VALUES (@id_Personnel)", conn);
+            cmd.Parameters.AddWithValue("@id_Personnel", unUtilisateur.id_Personnel);
             cmd.ExecuteNonQuery();
             conn.Close();
-
+    
         }
 
         public static void AjouteTechnicien(Technicien unTechnicien)
         {
             MySqlConnection conn = Connexion();
-
-            string reqSql;
-
-            reqSql = "INSERT INTO Technicien (Id_Tech, Formation, Competence) "
-                   + "VALUES (@id_Tech, @formation, @competence)";
-
-            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
-
-            cmd.Parameters.AddWithValue("@id_Tech", unTechnicien.id_Tech);
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO Technicien (Formation, Competence, Id_personnel) "
+                                              + "VALUES (@formation, @competence, @id_Personnel)", conn);
             cmd.Parameters.AddWithValue("@formation", unTechnicien.formation);
             cmd.Parameters.AddWithValue("@competence", unTechnicien.competence);
-
-
+            cmd.Parameters.AddWithValue("@id_Personnel", unTechnicien.id_Personnel);
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -173,14 +156,14 @@ namespace GSBIncidents
         {
             MySqlConnection conn = Connexion();
 
-            string reqSql;
-
-            reqSql = "DELETE FROM Utilisateur WHERE Id_User = @id_User";
-
-            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
-            cmd.Parameters.AddWithValue("@id_User", unUtilisateur.id_User);
-
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM Utilisateurs WHERE Id_personnel=@id", conn);
+            cmd.Parameters.AddWithValue("@id", unUtilisateur.id_Personnel);
             cmd.ExecuteNonQuery();
+
+            cmd = new MySqlCommand("DELETE FROM Personnel WHERE Id_Personnel=@id", conn);
+            cmd.Parameters.AddWithValue("@id", unUtilisateur.id_Personnel);
+            cmd.ExecuteNonQuery();
+
             conn.Close();
 
         }
@@ -189,14 +172,14 @@ namespace GSBIncidents
         {
             MySqlConnection conn = Connexion();
 
-            string reqSql;
-
-            reqSql = "DELETE FROM Technicien WHERE Id_Tech = @id_Tech";
-
-            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
-            cmd.Parameters.AddWithValue("@id_Tech", unTechnicien.id_Tech);
-
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM Technicien WHERE Id_personnel=@id", conn);
+            cmd.Parameters.AddWithValue("@id", unTechnicien.id_Personnel);
             cmd.ExecuteNonQuery();
+
+            cmd = new MySqlCommand("DELETE FROM Personnel WHERE Id_Personnel=@id", conn);
+            cmd.Parameters.AddWithValue("@id", unTechnicien.id_Personnel);
+            cmd.ExecuteNonQuery();
+
             conn.Close();
 
         }
@@ -204,14 +187,15 @@ namespace GSBIncidents
         public static void UpdateUtilisateur(Utilisateur unUtilisateur)
         {
             MySqlConnection conn = Connexion();
-
-            string reqSql;
-
-            reqSql = "UPDATE Utilisateur SET nom_user WHERE Id_User = @id_User";
-
-            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
-            cmd.Parameters.AddWithValue("@id_User", unUtilisateur.id_User);
-
+            MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET Nom=@nom, Prenom=@prenom, Date_Embauche=@date, "
+                                              + "Fonction=@fonction, Login=@login, MDP=@mdp WHERE Id_Personnel=@id_Personnel", conn);
+            cmd.Parameters.AddWithValue("@nom", unUtilisateur.nom);
+            cmd.Parameters.AddWithValue("@prenom", unUtilisateur.prenom);
+            cmd.Parameters.AddWithValue("@date", unUtilisateur.date_Embauche);
+            cmd.Parameters.AddWithValue("@fonction", unUtilisateur.fonction);
+            cmd.Parameters.AddWithValue("@login", unUtilisateur.login);
+            cmd.Parameters.AddWithValue("@mdp", unUtilisateur.MDP);
+            cmd.Parameters.AddWithValue("@id_Personnel", unUtilisateur.id_Personnel);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
@@ -220,14 +204,24 @@ namespace GSBIncidents
         {
             MySqlConnection conn = Connexion();
 
-            string reqSql;
-
-            reqSql = "UPDATE Technicien SET nom_tech WHERE Id_Tech = @id_Tech";
-
-            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
-            cmd.Parameters.AddWithValue("@id_Tech", unTechnicien.id_Tech);
-
+            MySqlCommand cmd = new MySqlCommand("UPDATE Personnel SET Nom=@nom, Prenom=@prenom, Date_Embauche=@date, "
+                                              + "Fonction=@fonction, Login=@login, MDP=@mdp WHERE Id_Personnel=@id_Personnel", conn);
+            cmd.Parameters.AddWithValue("@nom", unTechnicien.nom);
+            cmd.Parameters.AddWithValue("@prenom", unTechnicien.prenom);
+            cmd.Parameters.AddWithValue("@date", unTechnicien.date_Embauche);
+            cmd.Parameters.AddWithValue("@fonction", unTechnicien.fonction);
+            cmd.Parameters.AddWithValue("@login", unTechnicien.login);
+            cmd.Parameters.AddWithValue("@mdp", unTechnicien.MDP);
+            cmd.Parameters.AddWithValue("@id_Personnel", unTechnicien.id_Personnel);
             cmd.ExecuteNonQuery();
+
+            cmd = new MySqlCommand("UPDATE Technicien SET Formation=@formation, Competence=@competence "
+                                 + "WHERE Id_personnel=@id_Personnel", conn);
+            cmd.Parameters.AddWithValue("@formation", unTechnicien.formation);
+            cmd.Parameters.AddWithValue("@competence", unTechnicien.competence);
+            cmd.Parameters.AddWithValue("@id_Personnel", unTechnicien.id_Personnel);
+            cmd.ExecuteNonQuery();
+
             conn.Close();
         }
 

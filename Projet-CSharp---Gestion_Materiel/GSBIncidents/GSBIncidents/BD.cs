@@ -445,6 +445,39 @@ namespace GSBIncidents
             return leTechnicien;
         }
 
+        internal static Utilisateur GetUtilisateur(int id_Personnel)
+        {
+            Utilisateur lUtilisateur = null;
+            MySqlConnection conn = Connexion();
+
+            string reqSql = "SELECT p.*, u.Id_Utilisateur FROM utilisateurs u "
+                          + "JOIN personnel p ON u.Id_personnel = p.Id_personnel "
+                          + "WHERE p.Id_personnel = @id_Personnel";
+            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
+            cmd.Parameters.AddWithValue("@id_Personnel", id_Personnel);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                int id = Convert.ToInt32(reader["Id_Personnel"]);
+                string nom = reader["Nom"].ToString();
+                string prenom = reader["Prenom"].ToString();
+                DateTime dateEmbauche = Convert.ToDateTime(reader["Date_Embauche"]);
+                string fonction = reader["Fonction"].ToString();
+                string loginBD = reader["Login"].ToString();
+                string mdpBD = reader["MDP"].ToString();
+                string poste = reader["Poste"].ToString();
+                int idUser = Convert.ToInt32(reader["Id_Utilisateur"]);
+
+                Personnel p = new Personnel(id, nom, prenom, dateEmbauche, fonction, loginBD, mdpBD, poste);
+                lUtilisateur = new Utilisateur(idUser, p);
+            }
+
+            reader.Close();
+            conn.Close();
+            return lUtilisateur;
+        }
+
         internal static StatsIncidents GetStatsIncidents()
         {
             StatsIncidents stats = new StatsIncidents();

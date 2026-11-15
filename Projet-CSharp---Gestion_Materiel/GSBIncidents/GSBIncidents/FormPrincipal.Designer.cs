@@ -64,8 +64,6 @@
             txtLogiciels = new TextBox();
             lblEtatMateriel = new Label();
             cboEtatMateriel = new ComboBox();
-            lblSuiviMateriel = new Label();
-            txtSuiviMateriel = new TextBox();
             btnAjouterMateriel = new Button();
             separateurMateriel = new Panel();
             lblConsultation = new Label();
@@ -80,8 +78,8 @@
             lblValeurLogiciels = new Label();
             lblDetailEtat = new Label();
             lblValeurEtat = new Label();
-            lblDetailSuivi = new Label();
-            lblValeurSuivi = new Label();
+            lblDetailDateAjout = new Label();
+            lblValeurDateAjout = new Label();
             lblSuppression = new Label();
             cboSupprMateriel = new ComboBox();
             btnSupprimerMateriel = new Button();
@@ -95,7 +93,6 @@
             lblEtat = new Label();
             panelEtat = new Panel();
             rbEnCours = new RadioButton();
-            rbResolu = new RadioButton();
             rbCloture = new RadioButton();
             lblUrgence = new Label();
             panelUrgence = new Panel();
@@ -549,6 +546,7 @@
             lstTickets.ItemHeight = 19;
             lstTickets.Location = new Point(24, 60);
             lstTickets.Name = "lstTickets";
+            lstTickets.HorizontalScrollbar = true;
             lstTickets.Size = new Size(696, 512);
             lstTickets.TabIndex = 11;
             // 
@@ -580,8 +578,6 @@
             carteMateriel.Controls.Add(txtLogiciels);
             carteMateriel.Controls.Add(lblEtatMateriel);
             carteMateriel.Controls.Add(cboEtatMateriel);
-            carteMateriel.Controls.Add(lblSuiviMateriel);
-            carteMateriel.Controls.Add(txtSuiviMateriel);
             carteMateriel.Controls.Add(btnAjouterMateriel);
             carteMateriel.Controls.Add(separateurMateriel);
             carteMateriel.Controls.Add(lblConsultation);
@@ -591,9 +587,9 @@
             carteMateriel.Controls.Add(lblSuppression);
             carteMateriel.Controls.Add(cboSupprMateriel);
             carteMateriel.Controls.Add(btnSupprimerMateriel);
-            carteMateriel.Location = new Point(432, 282);
+            carteMateriel.Location = new Point(552, 282);
             carteMateriel.Name = "carteMateriel";
-            carteMateriel.Size = new Size(824, 330);
+            carteMateriel.Size = new Size(704, 330);
             carteMateriel.TabIndex = 0;
             // 
             // lblGestion
@@ -637,7 +633,7 @@
             txtProcesseur.ForeColor = Color.FromArgb(27, 42, 61);
             txtProcesseur.Location = new Point(24, 112);
             txtProcesseur.Name = "txtProcesseur";
-            txtProcesseur.Size = new Size(172, 26);
+            txtProcesseur.Size = new Size(150, 26);
             txtProcesseur.TabIndex = 12;
             // 
             // lblDisque
@@ -645,7 +641,7 @@
             lblDisque.AutoSize = true;
             lblDisque.Font = new Font("Segoe UI Semibold", 9.75F);
             lblDisque.ForeColor = Color.FromArgb(71, 85, 105);
-            lblDisque.Location = new Point(212, 90);
+            lblDisque.Location = new Point(190, 90);
             lblDisque.Name = "lblDisque";
             lblDisque.Size = new Size(49, 17);
             lblDisque.TabIndex = 13;
@@ -657,9 +653,9 @@
             txtDisque.BorderStyle = BorderStyle.FixedSingle;
             txtDisque.Font = new Font("Segoe UI", 10.5F);
             txtDisque.ForeColor = Color.FromArgb(27, 42, 61);
-            txtDisque.Location = new Point(212, 112);
+            txtDisque.Location = new Point(190, 112);
             txtDisque.Name = "txtDisque";
-            txtDisque.Size = new Size(172, 26);
+            txtDisque.Size = new Size(150, 26);
             txtDisque.TabIndex = 13;
             // 
             // lblLogiciels
@@ -681,7 +677,7 @@
             txtLogiciels.ForeColor = Color.FromArgb(27, 42, 61);
             txtLogiciels.Location = new Point(24, 170);
             txtLogiciels.Name = "txtLogiciels";
-            txtLogiciels.Size = new Size(172, 26);
+            txtLogiciels.Size = new Size(150, 26);
             txtLogiciels.TabIndex = 14;
             // 
             // lblEtatMateriel
@@ -689,7 +685,7 @@
             lblEtatMateriel.AutoSize = true;
             lblEtatMateriel.Font = new Font("Segoe UI Semibold", 9.75F);
             lblEtatMateriel.ForeColor = Color.FromArgb(71, 85, 105);
-            lblEtatMateriel.Location = new Point(212, 148);
+            lblEtatMateriel.Location = new Point(190, 148);
             lblEtatMateriel.Name = "lblEtatMateriel";
             lblEtatMateriel.Size = new Size(32, 17);
             lblEtatMateriel.TabIndex = 15;
@@ -702,33 +698,11 @@
             cboEtatMateriel.FlatStyle = FlatStyle.Flat;
             cboEtatMateriel.Font = new Font("Segoe UI", 10.5F);
             cboEtatMateriel.ForeColor = Color.FromArgb(27, 42, 61);
-            cboEtatMateriel.Items.AddRange(new object[] { "En service", "En panne", "Hors service" });
-            cboEtatMateriel.Location = new Point(212, 170);
+            cboEtatMateriel.Items.AddRange(new object[] { "En service", "En panne" });
+            cboEtatMateriel.Location = new Point(190, 170);
             cboEtatMateriel.Name = "cboEtatMateriel";
-            cboEtatMateriel.Size = new Size(172, 27);
+            cboEtatMateriel.Size = new Size(150, 27);
             cboEtatMateriel.TabIndex = 15;
-            // 
-            // lblSuiviMateriel
-            // 
-            lblSuiviMateriel.AutoSize = true;
-            lblSuiviMateriel.Font = new Font("Segoe UI Semibold", 9.75F);
-            lblSuiviMateriel.ForeColor = Color.FromArgb(71, 85, 105);
-            lblSuiviMateriel.Location = new Point(24, 206);
-            lblSuiviMateriel.Name = "lblSuiviMateriel";
-            lblSuiviMateriel.Size = new Size(36, 17);
-            lblSuiviMateriel.TabIndex = 16;
-            lblSuiviMateriel.Text = "Suivi";
-            // 
-            // txtSuiviMateriel
-            // 
-            txtSuiviMateriel.BackColor = Color.FromArgb(245, 248, 251);
-            txtSuiviMateriel.BorderStyle = BorderStyle.FixedSingle;
-            txtSuiviMateriel.Font = new Font("Segoe UI", 10.5F);
-            txtSuiviMateriel.ForeColor = Color.FromArgb(27, 42, 61);
-            txtSuiviMateriel.Location = new Point(24, 228);
-            txtSuiviMateriel.Name = "txtSuiviMateriel";
-            txtSuiviMateriel.Size = new Size(360, 26);
-            txtSuiviMateriel.TabIndex = 16;
             // 
             // btnAjouterMateriel
             // 
@@ -740,7 +714,7 @@
             btnAjouterMateriel.FlatStyle = FlatStyle.Flat;
             btnAjouterMateriel.Font = new Font("Segoe UI Semibold", 10F);
             btnAjouterMateriel.ForeColor = Color.White;
-            btnAjouterMateriel.Location = new Point(24, 270);
+            btnAjouterMateriel.Location = new Point(24, 228);
             btnAjouterMateriel.Name = "btnAjouterMateriel";
             btnAjouterMateriel.Size = new Size(140, 38);
             btnAjouterMateriel.TabIndex = 17;
@@ -751,7 +725,7 @@
             // separateurMateriel
             // 
             separateurMateriel.BackColor = Color.FromArgb(214, 224, 236);
-            separateurMateriel.Location = new Point(408, 58);
+            separateurMateriel.Location = new Point(362, 58);
             separateurMateriel.Name = "separateurMateriel";
             separateurMateriel.Size = new Size(1, 252);
             separateurMateriel.TabIndex = 18;
@@ -761,7 +735,7 @@
             lblConsultation.AutoSize = true;
             lblConsultation.Font = new Font("Segoe UI Semibold", 10.5F);
             lblConsultation.ForeColor = Color.FromArgb(27, 42, 61);
-            lblConsultation.Location = new Point(432, 58);
+            lblConsultation.Location = new Point(384, 58);
             lblConsultation.Name = "lblConsultation";
             lblConsultation.Size = new Size(176, 19);
             lblConsultation.TabIndex = 19;
@@ -774,9 +748,9 @@
             cboConsultMateriel.FlatStyle = FlatStyle.Flat;
             cboConsultMateriel.Font = new Font("Segoe UI", 10.5F);
             cboConsultMateriel.ForeColor = Color.FromArgb(27, 42, 61);
-            cboConsultMateriel.Location = new Point(432, 90);
+            cboConsultMateriel.Location = new Point(384, 90);
             cboConsultMateriel.Name = "cboConsultMateriel";
-            cboConsultMateriel.Size = new Size(250, 27);
+            cboConsultMateriel.Size = new Size(186, 27);
             cboConsultMateriel.TabIndex = 18;
             // 
             // btnAfficherMateriel
@@ -789,9 +763,9 @@
             btnAfficherMateriel.FlatStyle = FlatStyle.Flat;
             btnAfficherMateriel.Font = new Font("Segoe UI Semibold", 10F);
             btnAfficherMateriel.ForeColor = Color.FromArgb(24, 95, 165);
-            btnAfficherMateriel.Location = new Point(692, 88);
+            btnAfficherMateriel.Location = new Point(580, 88);
             btnAfficherMateriel.Name = "btnAfficherMateriel";
-            btnAfficherMateriel.Size = new Size(108, 30);
+            btnAfficherMateriel.Size = new Size(100, 30);
             btnAfficherMateriel.TabIndex = 19;
             btnAfficherMateriel.Text = "Afficher";
             btnAfficherMateriel.UseVisualStyleBackColor = false;
@@ -808,11 +782,11 @@
             panelDetail.Controls.Add(lblValeurLogiciels);
             panelDetail.Controls.Add(lblDetailEtat);
             panelDetail.Controls.Add(lblValeurEtat);
-            panelDetail.Controls.Add(lblDetailSuivi);
-            panelDetail.Controls.Add(lblValeurSuivi);
-            panelDetail.Location = new Point(432, 126);
+            panelDetail.Controls.Add(lblDetailDateAjout);
+            panelDetail.Controls.Add(lblValeurDateAjout);
+            panelDetail.Location = new Point(384, 126);
             panelDetail.Name = "panelDetail";
-            panelDetail.Size = new Size(368, 64);
+            panelDetail.Size = new Size(296, 126);
             panelDetail.TabIndex = 20;
             // 
             // lblDetailProcesseur
@@ -820,7 +794,7 @@
             lblDetailProcesseur.AutoSize = true;
             lblDetailProcesseur.Font = new Font("Segoe UI", 8.5F);
             lblDetailProcesseur.ForeColor = Color.FromArgb(90, 107, 128);
-            lblDetailProcesseur.Location = new Point(10, 8);
+            lblDetailProcesseur.Location = new Point(10, 6);
             lblDetailProcesseur.Name = "lblDetailProcesseur";
             lblDetailProcesseur.Size = new Size(64, 15);
             lblDetailProcesseur.TabIndex = 0;
@@ -828,12 +802,13 @@
             // 
             // lblValeurProcesseur
             // 
-            lblValeurProcesseur.AutoSize = true;
+            lblValeurProcesseur.AutoSize = false;
             lblValeurProcesseur.Font = new Font("Segoe UI Semibold", 10F);
             lblValeurProcesseur.ForeColor = Color.FromArgb(27, 42, 61);
-            lblValeurProcesseur.Location = new Point(10, 30);
+            lblValeurProcesseur.Location = new Point(10, 22);
             lblValeurProcesseur.Name = "lblValeurProcesseur";
-            lblValeurProcesseur.Size = new Size(15, 19);
+            lblValeurProcesseur.AutoEllipsis = true;
+            lblValeurProcesseur.Size = new Size(170, 20);
             lblValeurProcesseur.TabIndex = 1;
             lblValeurProcesseur.Text = "-";
             // 
@@ -842,7 +817,7 @@
             lblDetailDisque.AutoSize = true;
             lblDetailDisque.Font = new Font("Segoe UI", 8.5F);
             lblDetailDisque.ForeColor = Color.FromArgb(90, 107, 128);
-            lblDetailDisque.Location = new Point(82, 8);
+            lblDetailDisque.Location = new Point(190, 6);
             lblDetailDisque.Name = "lblDetailDisque";
             lblDetailDisque.Size = new Size(43, 15);
             lblDetailDisque.TabIndex = 2;
@@ -850,12 +825,13 @@
             // 
             // lblValeurDisque
             // 
-            lblValeurDisque.AutoSize = true;
+            lblValeurDisque.AutoSize = false;
             lblValeurDisque.Font = new Font("Segoe UI Semibold", 10F);
             lblValeurDisque.ForeColor = Color.FromArgb(27, 42, 61);
-            lblValeurDisque.Location = new Point(82, 30);
+            lblValeurDisque.Location = new Point(190, 22);
             lblValeurDisque.Name = "lblValeurDisque";
-            lblValeurDisque.Size = new Size(15, 19);
+            lblValeurDisque.AutoEllipsis = true;
+            lblValeurDisque.Size = new Size(96, 20);
             lblValeurDisque.TabIndex = 3;
             lblValeurDisque.Text = "-";
             // 
@@ -864,7 +840,7 @@
             lblDetailLogiciels.AutoSize = true;
             lblDetailLogiciels.Font = new Font("Segoe UI", 8.5F);
             lblDetailLogiciels.ForeColor = Color.FromArgb(90, 107, 128);
-            lblDetailLogiciels.Location = new Point(154, 8);
+            lblDetailLogiciels.Location = new Point(10, 46);
             lblDetailLogiciels.Name = "lblDetailLogiciels";
             lblDetailLogiciels.Size = new Size(53, 15);
             lblDetailLogiciels.TabIndex = 4;
@@ -872,12 +848,13 @@
             // 
             // lblValeurLogiciels
             // 
-            lblValeurLogiciels.AutoSize = true;
+            lblValeurLogiciels.AutoSize = false;
             lblValeurLogiciels.Font = new Font("Segoe UI Semibold", 10F);
             lblValeurLogiciels.ForeColor = Color.FromArgb(27, 42, 61);
-            lblValeurLogiciels.Location = new Point(154, 30);
+            lblValeurLogiciels.Location = new Point(10, 62);
             lblValeurLogiciels.Name = "lblValeurLogiciels";
-            lblValeurLogiciels.Size = new Size(15, 19);
+            lblValeurLogiciels.AutoEllipsis = true;
+            lblValeurLogiciels.Size = new Size(276, 20);
             lblValeurLogiciels.TabIndex = 5;
             lblValeurLogiciels.Text = "-";
             // 
@@ -886,7 +863,7 @@
             lblDetailEtat.AutoSize = true;
             lblDetailEtat.Font = new Font("Segoe UI", 8.5F);
             lblDetailEtat.ForeColor = Color.FromArgb(90, 107, 128);
-            lblDetailEtat.Location = new Point(226, 8);
+            lblDetailEtat.Location = new Point(10, 86);
             lblDetailEtat.Name = "lblDetailEtat";
             lblDetailEtat.Size = new Size(27, 15);
             lblDetailEtat.TabIndex = 6;
@@ -894,43 +871,45 @@
             // 
             // lblValeurEtat
             // 
-            lblValeurEtat.AutoSize = true;
+            lblValeurEtat.AutoSize = false;
             lblValeurEtat.Font = new Font("Segoe UI Semibold", 10F);
             lblValeurEtat.ForeColor = Color.FromArgb(27, 42, 61);
-            lblValeurEtat.Location = new Point(226, 30);
+            lblValeurEtat.Location = new Point(10, 102);
             lblValeurEtat.Name = "lblValeurEtat";
-            lblValeurEtat.Size = new Size(15, 19);
+            lblValeurEtat.AutoEllipsis = true;
+            lblValeurEtat.Size = new Size(100, 20);
             lblValeurEtat.TabIndex = 7;
             lblValeurEtat.Text = "-";
             // 
-            // lblDetailSuivi
+            // lblDetailDateAjout
             // 
-            lblDetailSuivi.AutoSize = true;
-            lblDetailSuivi.Font = new Font("Segoe UI", 8.5F);
-            lblDetailSuivi.ForeColor = Color.FromArgb(90, 107, 128);
-            lblDetailSuivi.Location = new Point(298, 8);
-            lblDetailSuivi.Name = "lblDetailSuivi";
-            lblDetailSuivi.Size = new Size(32, 15);
-            lblDetailSuivi.TabIndex = 8;
-            lblDetailSuivi.Text = "Suivi";
+            lblDetailDateAjout.AutoSize = true;
+            lblDetailDateAjout.Font = new Font("Segoe UI", 8.5F);
+            lblDetailDateAjout.ForeColor = Color.FromArgb(90, 107, 128);
+            lblDetailDateAjout.Location = new Point(120, 86);
+            lblDetailDateAjout.Name = "lblDetailDateAjout";
+            lblDetailDateAjout.Size = new Size(32, 15);
+            lblDetailDateAjout.TabIndex = 8;
+            lblDetailDateAjout.Text = "Ajouté le";
             // 
-            // lblValeurSuivi
+            // lblValeurDateAjout
             // 
-            lblValeurSuivi.AutoSize = true;
-            lblValeurSuivi.Font = new Font("Segoe UI Semibold", 10F);
-            lblValeurSuivi.ForeColor = Color.FromArgb(27, 42, 61);
-            lblValeurSuivi.Location = new Point(298, 30);
-            lblValeurSuivi.Name = "lblValeurSuivi";
-            lblValeurSuivi.Size = new Size(15, 19);
-            lblValeurSuivi.TabIndex = 9;
-            lblValeurSuivi.Text = "-";
+            lblValeurDateAjout.AutoSize = false;
+            lblValeurDateAjout.Font = new Font("Segoe UI Semibold", 10F);
+            lblValeurDateAjout.ForeColor = Color.FromArgb(27, 42, 61);
+            lblValeurDateAjout.Location = new Point(120, 102);
+            lblValeurDateAjout.Name = "lblValeurDateAjout";
+            lblValeurDateAjout.AutoEllipsis = true;
+            lblValeurDateAjout.Size = new Size(166, 20);
+            lblValeurDateAjout.TabIndex = 9;
+            lblValeurDateAjout.Text = "-";
             // 
             // lblSuppression
             // 
             lblSuppression.AutoSize = true;
             lblSuppression.Font = new Font("Segoe UI Semibold", 10.5F);
             lblSuppression.ForeColor = Color.FromArgb(27, 42, 61);
-            lblSuppression.Location = new Point(432, 206);
+            lblSuppression.Location = new Point(384, 266);
             lblSuppression.Name = "lblSuppression";
             lblSuppression.Size = new Size(172, 19);
             lblSuppression.TabIndex = 21;
@@ -943,9 +922,9 @@
             cboSupprMateriel.FlatStyle = FlatStyle.Flat;
             cboSupprMateriel.Font = new Font("Segoe UI", 10.5F);
             cboSupprMateriel.ForeColor = Color.FromArgb(27, 42, 61);
-            cboSupprMateriel.Location = new Point(432, 236);
+            cboSupprMateriel.Location = new Point(384, 292);
             cboSupprMateriel.Name = "cboSupprMateriel";
-            cboSupprMateriel.Size = new Size(250, 27);
+            cboSupprMateriel.Size = new Size(186, 27);
             cboSupprMateriel.TabIndex = 20;
             // 
             // btnSupprimerMateriel
@@ -958,9 +937,9 @@
             btnSupprimerMateriel.FlatStyle = FlatStyle.Flat;
             btnSupprimerMateriel.Font = new Font("Segoe UI Semibold", 10F);
             btnSupprimerMateriel.ForeColor = Color.FromArgb(163, 45, 45);
-            btnSupprimerMateriel.Location = new Point(692, 234);
+            btnSupprimerMateriel.Location = new Point(580, 290);
             btnSupprimerMateriel.Name = "btnSupprimerMateriel";
-            btnSupprimerMateriel.Size = new Size(108, 30);
+            btnSupprimerMateriel.Size = new Size(100, 30);
             btnSupprimerMateriel.TabIndex = 21;
             btnSupprimerMateriel.Text = "Supprimer";
             btnSupprimerMateriel.UseVisualStyleBackColor = false;
@@ -975,7 +954,7 @@
             carteIncidents.Controls.Add(btnPrendreEnCharge);
             carteIncidents.Location = new Point(16, 16);
             carteIncidents.Name = "carteIncidents";
-            carteIncidents.Size = new Size(400, 596);
+            carteIncidents.Size = new Size(520, 596);
             carteIncidents.TabIndex = 1;
             // 
             // lblIncidents
@@ -1000,7 +979,8 @@
             lstIncidents.ItemHeight = 19;
             lstIncidents.Location = new Point(24, 60);
             lstIncidents.Name = "lstIncidents";
-            lstIncidents.Size = new Size(352, 470);
+            lstIncidents.HorizontalScrollbar = true;
+            lstIncidents.Size = new Size(472, 470);
             lstIncidents.TabIndex = 22;
             lstIncidents.SelectedIndexChanged += lstIncidents_SelectedIndexChanged;
             // 
@@ -1036,9 +1016,9 @@
             carteTicket.Controls.Add(lblSuivi);
             carteTicket.Controls.Add(txtSuivi);
             carteTicket.Controls.Add(btnEnregistrer);
-            carteTicket.Location = new Point(432, 16);
+            carteTicket.Location = new Point(552, 16);
             carteTicket.Name = "carteTicket";
-            carteTicket.Size = new Size(824, 250);
+            carteTicket.Size = new Size(704, 250);
             carteTicket.TabIndex = 2;
             // 
             // lblTicketSelection
@@ -1057,7 +1037,7 @@
             lblEtatActuel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblEtatActuel.Font = new Font("Segoe UI", 10F);
             lblEtatActuel.ForeColor = Color.FromArgb(90, 107, 128);
-            lblEtatActuel.Location = new Point(560, 22);
+            lblEtatActuel.Location = new Point(440, 22);
             lblEtatActuel.Name = "lblEtatActuel";
             lblEtatActuel.Size = new Size(240, 22);
             lblEtatActuel.TabIndex = 1;
@@ -1079,43 +1059,29 @@
             // 
             panelEtat.BackColor = Color.White;
             panelEtat.Controls.Add(rbEnCours);
-            panelEtat.Controls.Add(rbResolu);
             panelEtat.Controls.Add(rbCloture);
             panelEtat.Location = new Point(24, 84);
             panelEtat.Name = "panelEtat";
-            panelEtat.Size = new Size(400, 30);
+            panelEtat.Size = new Size(230, 30);
             panelEtat.TabIndex = 24;
             // 
             // rbEnCours
             // 
             rbEnCours.AutoSize = true;
-            rbEnCours.Checked = true;
             rbEnCours.Font = new Font("Segoe UI", 10F);
             rbEnCours.ForeColor = Color.FromArgb(27, 42, 61);
             rbEnCours.Location = new Point(0, 4);
             rbEnCours.Name = "rbEnCours";
-            rbEnCours.Size = new Size(79, 23);
-            rbEnCours.TabIndex = 0;
-            rbEnCours.TabStop = true;
+            rbEnCours.Size = new Size(82, 23);
+            rbEnCours.TabIndex = 1;
             rbEnCours.Text = "En cours";
-            // 
-            // rbResolu
-            // 
-            rbResolu.AutoSize = true;
-            rbResolu.Font = new Font("Segoe UI", 10F);
-            rbResolu.ForeColor = Color.FromArgb(27, 42, 61);
-            rbResolu.Location = new Point(130, 4);
-            rbResolu.Name = "rbResolu";
-            rbResolu.Size = new Size(67, 23);
-            rbResolu.TabIndex = 1;
-            rbResolu.Text = "Résolu";
             // 
             // rbCloture
             // 
             rbCloture.AutoSize = true;
             rbCloture.Font = new Font("Segoe UI", 10F);
             rbCloture.ForeColor = Color.FromArgb(27, 42, 61);
-            rbCloture.Location = new Point(260, 4);
+            rbCloture.Location = new Point(115, 4);
             rbCloture.Name = "rbCloture";
             rbCloture.Size = new Size(72, 23);
             rbCloture.TabIndex = 2;
@@ -1126,7 +1092,7 @@
             lblUrgence.AutoSize = true;
             lblUrgence.Font = new Font("Segoe UI Semibold", 9.75F);
             lblUrgence.ForeColor = Color.FromArgb(71, 85, 105);
-            lblUrgence.Location = new Point(440, 62);
+            lblUrgence.Location = new Point(380, 62);
             lblUrgence.Name = "lblUrgence";
             lblUrgence.Size = new Size(114, 17);
             lblUrgence.TabIndex = 25;
@@ -1138,9 +1104,9 @@
             panelUrgence.Controls.Add(rbFaible);
             panelUrgence.Controls.Add(rbMoyen);
             panelUrgence.Controls.Add(rbCritique);
-            panelUrgence.Location = new Point(440, 84);
+            panelUrgence.Location = new Point(380, 84);
             panelUrgence.Name = "panelUrgence";
-            panelUrgence.Size = new Size(360, 30);
+            panelUrgence.Size = new Size(300, 30);
             panelUrgence.TabIndex = 25;
             // 
             // rbFaible
@@ -1161,7 +1127,7 @@
             rbMoyen.AutoSize = true;
             rbMoyen.Font = new Font("Segoe UI", 10F);
             rbMoyen.ForeColor = Color.FromArgb(27, 42, 61);
-            rbMoyen.Location = new Point(110, 4);
+            rbMoyen.Location = new Point(100, 4);
             rbMoyen.Name = "rbMoyen";
             rbMoyen.Size = new Size(70, 23);
             rbMoyen.TabIndex = 1;
@@ -1172,7 +1138,7 @@
             rbCritique.AutoSize = true;
             rbCritique.Font = new Font("Segoe UI", 10F);
             rbCritique.ForeColor = Color.FromArgb(27, 42, 61);
-            rbCritique.Location = new Point(220, 4);
+            rbCritique.Location = new Point(200, 4);
             rbCritique.Name = "rbCritique";
             rbCritique.Size = new Size(75, 23);
             rbCritique.TabIndex = 2;
@@ -1200,7 +1166,7 @@
             txtSuivi.Multiline = true;
             txtSuivi.Name = "txtSuivi";
             txtSuivi.ScrollBars = ScrollBars.Vertical;
-            txtSuivi.Size = new Size(620, 80);
+            txtSuivi.Size = new Size(500, 80);
             txtSuivi.TabIndex = 26;
             // 
             // btnEnregistrer
@@ -1214,7 +1180,7 @@
             btnEnregistrer.FlatStyle = FlatStyle.Flat;
             btnEnregistrer.Font = new Font("Segoe UI Semibold", 10F);
             btnEnregistrer.ForeColor = Color.White;
-            btnEnregistrer.Location = new Point(660, 188);
+            btnEnregistrer.Location = new Point(540, 188);
             btnEnregistrer.Name = "btnEnregistrer";
             btnEnregistrer.Size = new Size(140, 38);
             btnEnregistrer.TabIndex = 27;
@@ -1801,8 +1767,6 @@
         private System.Windows.Forms.TextBox txtLogiciels;
         private System.Windows.Forms.Label lblEtatMateriel;
         private System.Windows.Forms.ComboBox cboEtatMateriel;
-        private System.Windows.Forms.Label lblSuiviMateriel;
-        private System.Windows.Forms.TextBox txtSuiviMateriel;
         private System.Windows.Forms.Button btnAjouterMateriel;
         private System.Windows.Forms.Panel separateurMateriel;
         private System.Windows.Forms.Label lblConsultation;
@@ -1817,8 +1781,8 @@
         private System.Windows.Forms.Label lblValeurLogiciels;
         private System.Windows.Forms.Label lblDetailEtat;
         private System.Windows.Forms.Label lblValeurEtat;
-        private System.Windows.Forms.Label lblDetailSuivi;
-        private System.Windows.Forms.Label lblValeurSuivi;
+        private System.Windows.Forms.Label lblDetailDateAjout;
+        private System.Windows.Forms.Label lblValeurDateAjout;
         private System.Windows.Forms.Label lblSuppression;
         private System.Windows.Forms.ComboBox cboSupprMateriel;
         private System.Windows.Forms.Button btnSupprimerMateriel;
@@ -1832,7 +1796,6 @@
         private System.Windows.Forms.Label lblEtat;
         private System.Windows.Forms.Panel panelEtat;
         private System.Windows.Forms.RadioButton rbEnCours;
-        private System.Windows.Forms.RadioButton rbResolu;
         private System.Windows.Forms.RadioButton rbCloture;
         private System.Windows.Forms.Label lblUrgence;
         private System.Windows.Forms.Panel panelUrgence;

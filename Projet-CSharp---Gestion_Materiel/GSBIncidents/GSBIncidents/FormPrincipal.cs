@@ -109,7 +109,13 @@ namespace GSBIncidents
                 {
                     lstIncidents.Items.Add(t);
                 }
-
+                foreach (Materiel m in BD.GetMateriels())
+                {
+                    cboConsultMateriel.Items.Add(m);
+                    cboSupprMateriel.Items.Add(m);
+                }
+                technicienConnecte = BD.GetTechnicien(personneConnecte.id_Personnel);
+                carteTicket.Enabled = false;
             }
             else if (poste == "utilisateur")
             {
@@ -178,7 +184,7 @@ namespace GSBIncidents
 
             Materiel leMateriel = (Materiel)cboMateriel.SelectedItem;
 
-            Ticket unTicket = new Ticket(0, txtIncident.Text, "En Attente", "Non définie", "");
+            Ticket unTicket = new Ticket(0, txtIncident.Text, "En attente", "Non définie", "");
             unTicket.id_Materiel = leMateriel.id_Materiel;
             unTicket.id_Personnel = personneConnecte.id_Personnel;
 
@@ -212,14 +218,13 @@ namespace GSBIncidents
             }
 
             Materiel unMateriel = new Materiel(0, txtProcesseur.Text, txtDisque.Text, txtLogiciels.Text,
-                                               txtSuiviMateriel.Text, cboEtatMateriel.Text);
-            technicienConnecte.AjouterMateriel(unMateriel);
+                                   DateTime.Today, cboEtatMateriel.Text);
+            BD.AjouteMateriel(unMateriel);
 
             MessageBox.Show("Matériel ajouté");
             txtProcesseur.Clear();
             txtDisque.Clear();
             txtLogiciels.Clear();
-            txtSuiviMateriel.Clear();
             cboEtatMateriel.SelectedIndex = -1;
             RemplirComboSuppression();
 
@@ -227,49 +232,54 @@ namespace GSBIncidents
 
         private void btnAfficherMateriel_Click(object sender, EventArgs e)
         {
+            if (cboConsultMateriel.SelectedIndex == -1)
             {
-                cboConsultMateriel.Items.Clear();
-                foreach (Materiel m in technicienConnecte.ConsulterMateriels())
-                {
-                    cboConsultMateriel.Items.Add(m);
-                }
+                MessageBox.Show("Veuillez choisir un matériel !");
+                return;
             }
-        }
-        private void cboConsultMateriel_SelectedIndexChanged(object sender, EventArgs e)
-        {
             if (cboConsultMateriel.SelectedItem is Materiel m)
             {
                 lblValeurProcesseur.Text = m.processus;
                 lblValeurDisque.Text = m.disque;
                 lblValeurLogiciels.Text = m.logiciel;
                 lblValeurEtat.Text = m.etat;
-                lblValeurSuivi.Text = m.suivis;
+                lblValeurDateAjout.Text = m.date_Ajout.ToShortDateString();
             }
 
         }
 
         private void btnSupprimerMateriel_Click(object sender, EventArgs e)
         {
-            if (cboSupprMateriel.SelectedItem is Materiel m)
+            if (cboSupprMateriel.SelectedIndex == -1)
             {
-                DialogResult rep = MessageBox.Show("Supprimer " + m + " ?", "Confirmation", MessageBoxButtons.YesNo);
-                if (rep == DialogResult.Yes)
-                {
-                    technicienConnecte.SupprimerMateriel(m);
-                    MessageBox.Show("Matériel supprimé");
-                }
+                MessageBox.Show("Veuillez choisir un matériel !");
+                return;
+            }
+            Materiel m = (Materiel)cboSupprMateriel.SelectedItem;
+            DialogResult rep = MessageBox.Show("Supprimer " + m + " et tous ses tickets ?", "Confirmation", MessageBoxButtons.YesNo);
+            if (rep == DialogResult.Yes)
+            {
+                BD.DeleteMateriel(m);
+                MessageBox.Show("Matériel supprimé");
+
+                RemplirComboSuppression();
+                btnAffichIncident_Click(sender, e);
             }
 
-            RemplirComboSuppression();
         }
+
+
 
         private void RemplirComboSuppression()
         {
             cboSupprMateriel.Items.Clear();
+            cboConsultMateriel.Items.Clear();
             cboSupprMateriel.Text = "";
-            foreach (Materiel m in technicienConnecte.ConsulterMateriels())
+            foreach (Materiel m in BD.GetMateriels())
             {
                 cboSupprMateriel.Items.Add(m);
+                cboConsultMateriel.Items.Add(m);
+
             }
 
         }
@@ -278,16 +288,21 @@ namespace GSBIncidents
         {
             if (lstIncidents.SelectedItem is Ticket t)
             {
+
+                carteTicket.Enabled = t.etat != "En attente";
                 lblEtatActuel.Text = "État actuel : " + t.etat;
                 txtSuivi.Text = t.suivi;
 
                 rbEnCours.Checked = t.etat == "En cours";
-                rbResolu.Checked = t.etat == "Résolu";
                 rbCloture.Checked = t.etat == "Clôturé";
 
                 rbFaible.Checked = t.niveau_Urgence == "Faible";
                 rbMoyen.Checked = t.niveau_Urgence == "Moyen";
                 rbCritique.Checked = t.niveau_Urgence == "Critique";
+            }
+            else
+            {
+                carteTicket.Enabled = false;
             }
 
         }
@@ -296,39 +311,56 @@ namespace GSBIncidents
         {
             if (lstIncidents.SelectedItem is Ticket t)
             {
-                technicienConnecte.PrendreEnCharge(t);
+                if (t.etat != "En attente")
+                {
+                    MessageBox.Show("Cet incident est déjà pris en charge");
+                    return;
+                }
+
+                BD.PriseEnChargeIncident(t, technicienConnecte);
+                t.etat = "En cours";
+                BD.ModificationEtatIncident(t);
                 MessageBox.Show("Incident pris en charge");
+
+                int idTicket = t.id_Ticket;
+                btnAffichIncident_Click(sender, e);
+
+                Ticket aSelectionner = null;
+                foreach (Ticket ticket in lstIncidents.Items)
+                {
+                    if (ticket.id_Ticket == idTicket)
+                    {
+                        aSelectionner = ticket;
+                    }
+                }
+                lstIncidents.SelectedItem = aSelectionner;
             }
             else
             {
                 MessageBox.Show("Veuillez sélectionner un incident");
             }
-
         }
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
+            if (!(lstIncidents.SelectedItem is Ticket t))
             {
-                if (!(lstIncidents.SelectedItem is Ticket t))
-                {
-                    MessageBox.Show("Veuillez sélectionner un incident");
-                    return;
-                }
-
-                t.etat = rbResolu.Checked ? "Résolu" : rbCloture.Checked ? "Clôturé" : "En cours";
-                t.niveau_Urgence = rbCritique.Checked ? "Critique" : rbMoyen.Checked ? "Moyen" : "Faible";
-
-                technicienConnecte.ConsignerSuivis(t, txtSuivi.Text);
-                MessageBox.Show("Ticket enregistré");
-                btnAffichIncident_Click(sender, e);
-
+                MessageBox.Show("Veuillez sélectionner un incident");
+                return;
             }
+
+            t.etat = rbCloture.Checked ? "Clôturé" : "En cours";
+            t.niveau_Urgence = rbCritique.Checked ? "Critique" : rbMoyen.Checked ? "Moyen" : "Faible";
+
+            BD.ModificationTicket(t);
+            MessageBox.Show("Ticket enregistré");
+            btnAffichIncident_Click(sender, e);
         }
 
         private void btnAffichIncident_Click(object sender, EventArgs e)
         {
             lstIncidents.Items.Clear();
-            foreach (Ticket t in technicienConnecte.ConsulterTickets())
+            foreach (Ticket t in BD.GetTicket())
             {
                 lstIncidents.Items.Add(t);
             }

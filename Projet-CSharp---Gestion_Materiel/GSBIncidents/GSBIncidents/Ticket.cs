@@ -27,7 +27,7 @@ namespace GSBIncidents
         }
         public override string ToString()
         {
-            return "Ticket n°" + id_Ticket + " - " + incident + " [" + etat + " / " + niveau_Urgence + "]";
+            return "n°" + id_Ticket + " [" + etat + " / " + niveau_Urgence + "] " + incident +" " +etat;
         }
     }
 

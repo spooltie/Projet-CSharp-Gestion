@@ -69,16 +69,14 @@ namespace GSBIncidents
 
             string reqSql;
 
-            reqSql = "INSERT INTO Materiel (Id_Materiel, Processus, Disque, Logiciel, Suivis, Etat) "
-                   + "VALUES (@id_Materiel, @processus, @disque, @logiciel, @suivis, @etat)";
+            reqSql = "INSERT INTO Materiel (Processus, Disque, Logiciel, Date_Ajout, Etat) "
+       + "VALUES (@processus, @disque, @logiciel, CURDATE(), @etat)";
 
             MySqlCommand cmd = new MySqlCommand(reqSql, conn);
 
-            cmd.Parameters.AddWithValue("@id_Materiel", unMateriel.id_Materiel);
             cmd.Parameters.AddWithValue("@processus", unMateriel.processus);
             cmd.Parameters.AddWithValue("@disque", unMateriel.disque);
             cmd.Parameters.AddWithValue("@logiciel", unMateriel.logiciel);
-            cmd.Parameters.AddWithValue("@suivis", unMateriel.suivis);
             cmd.Parameters.AddWithValue("@etat", unMateriel.etat);
 
             cmd.ExecuteNonQuery();
@@ -103,10 +101,15 @@ namespace GSBIncidents
             cmd.Parameters.AddWithValue("@suivi", unTicket.suivi);
             cmd.Parameters.AddWithValue("@id_materiel", unTicket.id_Materiel);
             cmd.Parameters.AddWithValue("@idPersonnel", unTicket.id_Personnel);
-            
-            cmd.ExecuteNonQuery();
-            conn.Close();
 
+            cmd.ExecuteNonQuery();
+
+            // Le matériel du ticket passe "En panne"
+            MySqlCommand cmdPanne = new MySqlCommand("UPDATE Materiel SET Etat = 'En panne' WHERE id_materiel = @id", conn);
+            cmdPanne.Parameters.AddWithValue("@id", unTicket.id_Materiel);
+            cmdPanne.ExecuteNonQuery();
+
+            conn.Close();
         }
 
         public static void AjouteUtilisateur(Utilisateur unUtilisateur)
@@ -153,16 +156,17 @@ namespace GSBIncidents
         {
             MySqlConnection conn = Connexion();
 
-            string reqSql;
+            // 1. Supprimer les tickets liés à ce matériel
+            MySqlCommand cmdTickets = new MySqlCommand("DELETE FROM Ticket WHERE id_materiel = @id", conn);
+            cmdTickets.Parameters.AddWithValue("@id", unMateriel.id_Materiel);
+            cmdTickets.ExecuteNonQuery();
 
-            reqSql = "DELETE FROM Materiel WHERE Id_Materiel = @id_Materiel";
-
-            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
-            cmd.Parameters.AddWithValue("@id_Materiel", unMateriel.id_Materiel);
-
+            // 2. Supprimer le matériel
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM Materiel WHERE Id_Materiel = @id", conn);
+            cmd.Parameters.AddWithValue("@id", unMateriel.id_Materiel);
             cmd.ExecuteNonQuery();
-            conn.Close();
 
+            conn.Close();
         }
 
         public static void DeleteUtlisateur(Utilisateur unUtilisateur)
@@ -307,10 +311,9 @@ namespace GSBIncidents
                 string processus = reader["Processus"].ToString();
                 string disque = reader["Disque"].ToString();
                 string logiciel = reader["Logiciel"].ToString();
-                string suivis = reader["Suivis"].ToString();
+                DateTime dateAjout = Convert.ToDateTime(reader["Date_Ajout"]);
                 string etat = reader["Etat"].ToString();
-
-                Materiel materiel = new Materiel(id, processus, disque, logiciel, suivis, etat);
+                Materiel materiel = new Materiel(id, processus, disque, logiciel, dateAjout, etat);
                 lesMateriels.Add(materiel);
             }
 
@@ -542,7 +545,28 @@ namespace GSBIncidents
 
         internal static void ModificationTicket(Ticket unTicket)
         {
-            throw new NotImplementedException();
+            MySqlConnection conn = Connexion();
+            string reqSql;
+            reqSql = "UPDATE Ticket SET Etat = @etat, Niveau_urgence = @urgence, Suivi = @suivi WHERE Id_ticket = @id_Ticket";
+            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
+
+            cmd.Parameters.AddWithValue("@etat", unTicket.etat);
+            cmd.Parameters.AddWithValue("@urgence", unTicket.niveau_Urgence);
+            cmd.Parameters.AddWithValue("@suivi", unTicket.suivi);
+            cmd.Parameters.AddWithValue("@id_Ticket", unTicket.id_Ticket);
+
+            cmd.ExecuteNonQuery();
+            if (unTicket.etat == "Clôturé")
+            {
+                MySqlCommand cmdService = new MySqlCommand(
+                    "UPDATE Materiel SET Etat = 'En service' "
+                  + "WHERE id_materiel = (SELECT id_materiel FROM Ticket WHERE Id_ticket = @idTicket) "
+                  + "AND NOT EXISTS (SELECT 1 FROM Ticket WHERE id_materiel = Materiel.id_materiel AND Etat <> 'Clôturé')", conn);
+                cmdService.Parameters.AddWithValue("@idTicket", unTicket.id_Ticket);
+                cmdService.ExecuteNonQuery();
+            }
+            conn.Close();
+
         }
 
         internal static List<Ticket> GetTicketsNonClotures()

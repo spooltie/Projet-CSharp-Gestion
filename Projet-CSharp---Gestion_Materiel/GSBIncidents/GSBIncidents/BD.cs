@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace GSBIncidents
@@ -463,7 +462,7 @@ namespace GSBIncidents
                 stats.enCharge = Convert.ToInt32(reader["EnCharge"]);
                 stats.resolus = Convert.ToInt32(reader["Resolus"]);
 
-                if (reader["JoursMoyens"] != BDnull.Value)
+                if (reader["JoursMoyens"] != DBNull.Value)
                 {
 
                     stats.joursMoyensIntervention = Convert.ToDouble(reader["JoursMoyens"]);
@@ -528,7 +527,7 @@ namespace GSBIncidents
             while (reader.Read())
             {
                 StatsUtilisateur s = new StatsUtilisateur();
-                s.id_User = Convert.ToInt32(reader["Id_User"]);
+                s.id_User = Convert.ToInt32(reader["Id_Utilisateur"]);
                 s.nom = reader["Nom"].ToString();
                 s.prenom = reader["Prenom"].ToString();
                 s.declares = Convert.ToInt32(reader["Declares"]);

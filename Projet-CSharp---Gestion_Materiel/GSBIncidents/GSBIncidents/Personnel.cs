@@ -16,10 +16,10 @@ namespace GSBIncidents
         public string fonction;
         public string login;
         public string MDP;
-       public string poste;
+        public string poste;
 
 
-        public Personnel( int id_Personnel, string nom, string prenom, DateTime date_embauche, string fonction, string login, string mdp, string poste)
+        public Personnel(int id_Personnel, string nom, string prenom, DateTime date_embauche, string fonction, string login, string mdp, string poste)
 
         {
             this.id_Personnel = id_Personnel;
@@ -32,6 +32,9 @@ namespace GSBIncidents
             this.poste = poste;
         }
 
-       
+        public override string ToString()
+        {
+            return nom + " " + prenom;
+        }
     }
 }

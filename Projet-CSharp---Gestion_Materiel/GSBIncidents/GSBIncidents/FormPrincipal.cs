@@ -15,8 +15,6 @@ namespace GSBIncidents
 
         }
 
-
-
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
 
@@ -25,9 +23,6 @@ namespace GSBIncidents
             tabMenu.TabPages.Remove(tabResponsable);
             tabMenu.TabPages.Remove(tabTechnicien);
             btnDeconnexion.Hide();
-
-
-
 
         }
 
@@ -134,6 +129,9 @@ namespace GSBIncidents
                 tabMenu.TabPages.Add(tabResponsable);
                 tabMenu.SelectedTab = tabResponsable;
 
+                rbTechnicien.Checked = true;
+                rbTechnicien_CheckedChanged(sender, e);
+                btnActualiserStats_Click(sender, e);
 
 
             }
@@ -372,52 +370,205 @@ namespace GSBIncidents
         #region Onglet Responsable
         // Sur les boutons radios il faudra ajouter une méthode pour afficher ou non les textBox Formation et Compétence
 
+        private List<Personnel> lesPersonnels = new List<Personnel>();
+
         private void rbTechnicien_CheckedChanged(object sender, EventArgs e)
         {
             panelTechnicien.Show();
-            cboPersonne.Items.Add(lblNom);
+            lesPersonnels = BD.GetPersonnelParPoste("Technicien");
+            cboPersonne.Items.Clear();
+
+            foreach (Personnel p in lesPersonnels)
+            {
+                cboPersonne.Items.Add(p.nom + " " + p.prenom);
+            }
+
+            txtNom.Clear();
+            txtPrenom.Clear();
+            txtPostePersonne.Clear();
+            txtLoginPersonne.Clear();
+            txtMdpPersonne.Clear();
+            txtFormation.Clear();
+            txtCompetence.Clear();
+            dtpDateEmbauche.Value = DateTime.Today;
         }
         private void rbUtilisateur_CheckedChanged(object sender, EventArgs e)
         {
             panelTechnicien.Hide();
-            //cboPersonne.Items.Add(La liste des utilisateur - leurs id et nom ?);
+            lesPersonnels = BD.GetPersonnelParPoste("Utilisateur");
+
+            cboPersonne.Items.Clear();
+
+            foreach (Personnel p in lesPersonnels)
+            {
+                cboPersonne.Items.Add(p.nom + " " + p.prenom);
+            }
+
+            txtNom.Clear();
+            txtPrenom.Clear();
+            txtPostePersonne.Clear();
+            txtLoginPersonne.Clear();
+            txtMdpPersonne.Clear();
+            txtFormation.Clear();
+            txtCompetence.Clear();
+            dtpDateEmbauche.Value = DateTime.Today;
         }
         private void cboPersonne_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cboPersonne.SelectedIndex == -1) return;
 
+            Personnel p = lesPersonnels[cboPersonne.SelectedIndex];
+            txtNom.Text = p.nom;
+            txtPrenom.Text = p.prenom;
+            dtpDateEmbauche.Value = p.date_Embauche;
+            txtPostePersonne.Text = p.fonction;
+            txtLoginPersonne.Text = p.login;
+            txtMdpPersonne.Text = p.MDP;
+
+            if (rbTechnicien.Checked)
+            {
+                Technicien t = BD.GetTechnicien(p.id_Personnel);
+                if (t != null)
+                {
+                    txtFormation.Text = t.formation;
+                    txtCompetence.Text = t.competence;
+                }
+            }
         }
 
         private void btnAjouterPersonne_Click(object sender, EventArgs e)
         {
-            if (rbTechnicien.Checked)
+            if (string.IsNullOrWhiteSpace(txtNom.Text) || string.IsNullOrWhiteSpace(txtPrenom.Text)
+                || string.IsNullOrWhiteSpace(txtPostePersonne.Text) || string.IsNullOrWhiteSpace(txtLoginPersonne.Text)
+                || string.IsNullOrWhiteSpace(txtMdpPersonne.Text)
+                || (rbTechnicien.Checked && (string.IsNullOrWhiteSpace(txtFormation.Text) || string.IsNullOrWhiteSpace(txtCompetence.Text))))
             {
-
+                MessageBox.Show("Veillez remplir tous les champs !");
+                return;
             }
-            if (rbUtilisateur.Checked)
+            string poste = rbTechnicien.Checked ? "Technicien" : "Utilisateur";
+            Personnel p = new Personnel(0, txtNom.Text.Trim(), txtPrenom.Text.Trim(), dtpDateEmbauche.Value.Date,
+                                        txtPostePersonne.Text.Trim(), txtLoginPersonne.Text.Trim(), txtMdpPersonne.Text, poste);
+            try
             {
-                panelTechnicien.Hide();
+                BD.AjoutePersonnel(p);
+
+                foreach (Personnel x in BD.GetPersonnelParPoste(poste))
+                {
+                    if (x.login == p.login) p.id_Personnel = x.id_Personnel;
+                }
+
+                if (rbTechnicien.Checked)
+                    BD.AjouteTechnicien(new Technicien(0, 1, txtFormation.Text.Trim(), txtCompetence.Text.Trim(), p));
+                else
+                    BD.AjouteUtilisateur(new Utilisateur(0, p));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ajout impossible : " + ex.Message);
+                return;
             }
 
-
-
+            MessageBox.Show(poste + " ajouté");
+            if (rbTechnicien.Checked) rbTechnicien_CheckedChanged(sender, e);
+            else rbUtilisateur_CheckedChanged(sender, e);
         }
+
 
         private void btnModifierPersonne_Click(object sender, EventArgs e)
         {
+            if (cboPersonne.SelectedIndex == -1)
+            {
+                MessageBox.Show("Veuillez sélectionner une personne !");
+                return;
+            }
 
+            if (string.IsNullOrWhiteSpace(txtNom.Text) || string.IsNullOrWhiteSpace(txtPrenom.Text)
+                || string.IsNullOrWhiteSpace(txtPostePersonne.Text) || string.IsNullOrWhiteSpace(txtLoginPersonne.Text)
+                || string.IsNullOrWhiteSpace(txtMdpPersonne.Text)
+                || (rbTechnicien.Checked && (string.IsNullOrWhiteSpace(txtFormation.Text) || string.IsNullOrWhiteSpace(txtCompetence.Text))))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs !");
+                return;
+            }
+
+            Personnel p = lesPersonnels[cboPersonne.SelectedIndex];
+            p.nom = txtNom.Text.Trim();
+            p.prenom = txtPrenom.Text.Trim();
+            p.date_Embauche = dtpDateEmbauche.Value.Date;
+            p.fonction = txtPostePersonne.Text.Trim();
+            p.login = txtLoginPersonne.Text.Trim();
+            p.MDP = txtMdpPersonne.Text;
+
+            try
+            {
+                if (rbTechnicien.Checked)
+                    BD.UpdateTechnicien(new Technicien(0, 1, txtFormation.Text.Trim(), txtCompetence.Text.Trim(), p));
+                else
+                    BD.UpdateUtilisateur(new Utilisateur(0, p));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Modification impossible : " + ex.Message);
+                return;
+            }
+
+            MessageBox.Show("Modification enregistrée");
+            if (rbTechnicien.Checked) rbTechnicien_CheckedChanged(sender, e);
+            else rbUtilisateur_CheckedChanged(sender, e);
         }
 
         private void btnSupprimerPersonne_Click(object sender, EventArgs e)
         {
+            if (cboPersonne.SelectedIndex == -1)
+            {
+                MessageBox.Show("Veuillez sélectionner une personne !");
+                return;
+            }
 
+            Personnel p = lesPersonnels[cboPersonne.SelectedIndex];
+            try
+            {
+                if (rbTechnicien.Checked)
+                    BD.DeleteTechnicien(new Technicien(0, 1, "", "", p));
+                else
+                    BD.DeleteUtlisateur(new Utilisateur(0, p));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Suppression impossible : des incidents sont liés à cette personne.");
+                return;
+            }
+
+            MessageBox.Show("Personne supprimée");
+            if (rbTechnicien.Checked) rbTechnicien_CheckedChanged(sender, e);
+            else rbUtilisateur_CheckedChanged(sender, e);
         }
+
         private void btnActualiserStats_Click(object sender, EventArgs e)
         {
+            lstStatsIncidents.Items.Clear();
+            lstStatsTechniciens.Items.Clear();
+            lstStatsUtilisateurs.Items.Clear();
 
+            StatsIncidents si = BD.GetStatsIncidents();
+            lstStatsIncidents.Items.Add("Total : " + si.total);
+            lstStatsIncidents.Items.Add("Déclarés : " + si.declares + " (" + si.pourcentageDeclares.ToString("0.0") + " %)");
+            lstStatsIncidents.Items.Add("En charge : " + si.enCharge + " (" + si.pourcentageEnCharge.ToString("0.0") + " %)");
+            lstStatsIncidents.Items.Add("Résolus : " + si.resolus + " (" + si.pourcentageResolus.ToString("0.0") + " %)");
+            lstStatsIncidents.Items.Add("Délai moyen d'intervention : " + si.joursMoyensIntervention.ToString("0.0") + " jour(s)");
+
+            foreach (StatsTechnicien st in BD.GetStatsTechniciens())
+            {
+                lstStatsTechniciens.Items.Add(st.nom + " " + st.prenom + " : " + st.enCharge + " en charge, " + st.resolus + " résolus");
+            }
+
+            foreach (StatsUtilisateur su in BD.GetStatsUtilisateurs())
+            {
+                lstStatsUtilisateurs.Items.Add(su.nom + " " + su.prenom + " : " + su.declares + " déclarés, " + su.resolus + " résolus");
+            }
         }
         #endregion
-
-
 
     }
 }

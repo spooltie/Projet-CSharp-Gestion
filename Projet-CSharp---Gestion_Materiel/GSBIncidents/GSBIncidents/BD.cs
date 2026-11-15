@@ -13,7 +13,7 @@ namespace GSBIncidents
     {
         private static MySqlConnection Connexion()
         {
-            MySqlConnection conn = new MySqlConnection("Server=192.168.1.16;Port=8889;Database=projetgestion;Uid=admin;Password=1234");
+            MySqlConnection conn = new MySqlConnection("Server=127.0.0.1;Database=projetgestion;Uid=root;Password=;");
 
             conn.Open();
             return conn;
@@ -440,9 +440,9 @@ namespace GSBIncidents
                 leTechnicien = new Technicien(idTech, 1, formation, competence, p);
             }
 
-        reader.Close();
-        conn.Close();
-        return leTechnicien;
+            reader.Close();
+            conn.Close();
+            return leTechnicien;
         }
 
         internal static StatsIncidents GetStatsIncidents()
@@ -573,8 +573,6 @@ namespace GSBIncidents
         {
             throw new NotImplementedException();
         }
-
-
 
     }
 }

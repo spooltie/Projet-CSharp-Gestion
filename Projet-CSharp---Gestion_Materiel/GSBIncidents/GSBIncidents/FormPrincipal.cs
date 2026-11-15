@@ -565,7 +565,7 @@ namespace GSBIncidents
 
             foreach (StatsUtilisateur su in BD.GetStatsUtilisateurs())
             {
-                lstStatsUtilisateurs.Items.Add(su.nom + " " + su.prenom + " : " + su.declares + " déclarés, " + su.resolus + " résolus");
+                lstStatsUtilisateurs.Items.Add(su.nom + " " + su.prenom + " : " + su.declares + " déclarés, ");
             }
         }
         #endregion

@@ -13,18 +13,15 @@ namespace GSBIncidents
         public string formation;
         public string competence;
 
-        public Technicien(int id_Tech, string Formation, string Competence)
-            : this(id_Tech, 1, Formation, Competence)
-        {
-        }
-
-        public Technicien(int id_Tech, int niveau, string Formation, string Competence)
+        public Technicien(int id_Tech, int niveau, string Formation, string Competence, Personnel p)
+            : base(p.id_Personnel, p.nom, p.prenom, p.date_Embauche, p.fonction, p.login, p.MDP, p.poste)
         {
             this.id_Tech = id_Tech;
             this.niveau = niveau;
             this.formation = Formation;
             this.competence = Competence;
         }
+       
 
         // Tickets: consulterTickets, prendreEnCharge, changerEtat, consignerSuivis)
         public List<Ticket> ConsulterTickets()

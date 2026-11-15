@@ -10,7 +10,8 @@ namespace GSBIncidents
     {
         public int id_Responsable;
 
-        public Responsable (int id_Responsable)
+        public Responsable (int id_Responsable, Personnel p)
+            : base(p.id_Personnel, p.nom, p.prenom, p.date_Embauche, p.fonction, p.login, p.MDP, p.poste)
         {
             this.id_Responsable = id_Responsable;
         }

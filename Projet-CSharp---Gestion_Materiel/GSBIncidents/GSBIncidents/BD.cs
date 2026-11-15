@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace GSBIncidents
@@ -13,6 +15,7 @@ namespace GSBIncidents
         private static MySqlConnection Connexion()
         {
             MySqlConnection conn = new MySqlConnection("Server=192.168.1.16;Port=8889;Database=projetgestion;Uid=admin;Password=1234");
+
             conn.Open();
             return conn;
         }
@@ -371,6 +374,171 @@ namespace GSBIncidents
             conn.Close();
 
             return LesTickets;
+        }
+
+        internal static List<Personnel> GetPersonnelParPoste(string poste)
+        {
+            List<Personnel> LePersonnel=new List<Personnel>();
+            MySqlConnection conn = Connexion();
+
+            string reqSql = "SELECT * FROM personnel WHERE Poste=@poste";
+            MySqlCommand cmd= new MySqlCommand(reqSql, conn);
+            cmd.Parameters.AddWithValue("@poste", poste);
+
+            MySqlDataReader reader=cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = Convert.ToInt32(reader["Id_Personnel"]);
+                string nom = reader["Nom"].ToString();
+                string prenom = reader["Prenom"].ToString();
+                DateTime dateEmbauche = Convert.ToDateTime(reader["Date_Embauche"]);
+                string fonction = reader["Fonction"].ToString();
+                string loginBD = reader["Login"].ToString();
+                string mdpBD = reader["MDP"].ToString();
+                string posteBD = reader["Poste"].ToString();
+
+                LePersonnel.Add(new Personnel(id, nom, prenom, dateEmbauche, fonction, loginBD, mdpBD, posteBD));
+
+            }
+
+            reader.Close();
+            conn.Close();
+            return LePersonnel;
+        }
+
+        internal static Technicien GetTechnicien (int id_Personnel)
+        {
+            Technicien leTechnicien = null;
+            MySqlConnection conn = Connexion();
+
+            string reqSql = "SELECT p.*, t.Id_Tech, t.Formation, t.Competence FROM technicien t JOIN personnel p ON t.Id_personnel = p.Id_personnel "
+                          + "WHERE p.Id_personnel = @id_Personnel"; 
+            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
+
+            cmd.Parameters.AddWithValue("@id_Personnel", id_Personnel);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                int id = Convert.ToInt32(reader["Id_Personnel"]);
+                string nom = reader["Nom"].ToString();
+                string prenom = reader["Prenom"].ToString();
+                DateTime dateEmbauche = Convert.ToDateTime(reader["Date_Embauche"]);
+                string fonction = reader["Fonction"].ToString();
+                string loginBD = reader["Login"].ToString();
+                string mdpBD = reader["MDP"].ToString();
+                string poste = reader["Poste"].ToString();
+                int idTech = Convert.ToInt32(reader["Id_Tech"]);
+                string formation = reader["Formation"].ToString();
+                string competence = reader["Competence"].ToString();
+
+                Personnel p = new Personnel(id, nom, prenom, dateEmbauche, fonction, loginBD, mdpBD, poste);
+
+                leTechnicien = new Technicien(idTech, 1, formation, competence, p);
+            }
+
+        reader.Close();
+        conn.Close();
+        return leTechnicien;
+        }
+
+        internal static StatsIncidents GetStatsIncidents()
+        {
+            StatsIncidents stats = new StatsIncidents();
+            MySqlConnection conn = Connexion();
+
+            string reqSql = "SELECT COUNT(*) AS Total, IFNULL(SUM(Etat = 'En attente'), 0) AS Declares, IFNULL(SUM(Etat = 'En cours'), 0) AS EnCharge, "
+              + "IFNULL(SUM(Etat IN ('Résolu', 'Clôturé')), 0) AS Resolus, "
+              + "AVG(CASE WHEN Etat IN ('Résolu', 'Clôturé') "
+              + "THEN DATEDIFF(Date_Resolution, Date_Declaration) END) AS JoursMoyens "
+              + "FROM ticket";
+            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                stats.total = Convert.ToInt32(reader["Total"]);
+                stats.declares = Convert.ToInt32(reader["Declares"]);
+                stats.enCharge = Convert.ToInt32(reader["EnCharge"]);
+                stats.resolus = Convert.ToInt32(reader["Resolus"]);
+
+                if (reader["JoursMoyens"] != BDnull.Value)
+                {
+
+                    stats.joursMoyensIntervention = Convert.ToDouble(reader["JoursMoyens"]);
+                }
+
+                if (stats.total > 0)
+                {
+                    stats.pourcentageDeclares = 100.0 * stats.declares / stats.total;
+                    stats.pourcentageEnCharge = 100.0 * stats.enCharge / stats.total;
+                    stats.pourcentageResolus = 100.0 * stats.resolus / stats.total;
+                }
+            }
+
+            reader.Close();
+            conn.Close();
+            return stats;
+        }
+
+        internal static List<StatsTechnicien> GetStatsTechniciens()
+        {
+            List<StatsTechnicien> lesStats = new List<StatsTechnicien>();
+            MySqlConnection conn = Connexion();
+
+            string reqSql = "SELECT t.Id_Tech, p.Nom, p.Prenom, IFNULL(SUM(k.Etat = 'En cours'), 0) AS EnCharge, IFNULL(SUM(k.Etat IN ('Résolu', 'Clôturé')), 0) AS Resolus "
+              + "FROM technicien t "
+              + "JOIN personnel p ON t.Id_personnel = p.Id_personnel "
+              + "LEFT JOIN ticket k ON k.Id_Tech = t.Id_Tech "
+              + "GROUP BY t.Id_Tech, p.Nom, p.Prenom";
+
+            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                StatsTechnicien s = new StatsTechnicien();
+                s.id_Tech = Convert.ToInt32(reader["Id_Tech"]);
+                s.nom = reader["Nom"].ToString();
+                s.prenom = reader["Prenom"].ToString();
+                s.enCharge = Convert.ToInt32(reader["EnCharge"]);
+                s.resolus = Convert.ToInt32(reader["Resolus"]);
+                lesStats.Add(s);
+            }
+
+            reader.Close();
+            conn.Close();
+            return lesStats;
+        }
+
+        internal static List<StatsUtilisateur> GetStatsUtilisateurs()
+        {
+            List<StatsUtilisateur> lesStats = new List<StatsUtilisateur>();
+            MySqlConnection conn = Connexion();
+
+            string reqSql = "SELECT u.Id_Utilisateur, p.Nom, p.Prenom, COUNT(k.Id_ticket) AS Declares, IFNULL(SUM(k.Etat IN ('Résolu', 'Clôturé')), 0) AS Resolus "
+              + "FROM utilisateurs u "
+              + "JOIN personnel p ON u.Id_personnel = p.Id_personnel "
+              + "LEFT JOIN ticket k ON k.id_Utilisateur = u.Id_Utilisateur "
+              + "GROUP BY u.Id_Utilisateur, p.Nom, p.Prenom";
+            MySqlCommand cmd = new MySqlCommand(reqSql, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                StatsUtilisateur s = new StatsUtilisateur();
+                s.id_User = Convert.ToInt32(reader["Id_User"]);
+                s.nom = reader["Nom"].ToString();
+                s.prenom = reader["Prenom"].ToString();
+                s.declares = Convert.ToInt32(reader["Declares"]);
+                s.resolus = Convert.ToInt32(reader["Resolus"]);
+                lesStats.Add(s);
+            }
+
+            reader.Close();
+            conn.Close();
+            return lesStats;
         }
 
         internal static void ModificationTicket(Ticket unTicket)
